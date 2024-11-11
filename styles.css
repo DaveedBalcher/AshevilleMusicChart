@@ -131,6 +131,22 @@ h1 {
     transform: scale(1.05);
 }
 
+.up-arrow {
+    color: #2a9d8f; /* Teal color to represent growth and avoid green-red confusion */
+    font-size: 1.2em;
+    margin-left: 10px;
+    position: relative;
+    top: 5px;
+}
+
+.down-arrow {
+    color: #e63946; /* Distinct coral color to represent decrease, easier for colorblind users */
+    font-size: 1.2em;
+    margin-left: 10px;
+    position: relative;
+    top: 5px;
+}
+
 @media (max-width: 768px) {
     .artist {
         flex-direction: column;
