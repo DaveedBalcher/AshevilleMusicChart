@@ -9,6 +9,18 @@ body {
     line-height: 1.4;
 }
 
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #f8f9fa; /* Matches the body's background to make it blend in */
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #6c757d; /* Subtle gray color to make the text less noticeable */
+}
+
 .container {
     width: 90%;
     max-width: 1200px;
@@ -26,6 +38,38 @@ body {
     font-size: 2.5rem;
     margin: 20px 0;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #6b705c; /* A subtle color to complement the title */
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+    font-weight: 400;
+    text-align: center; /* Center the subtitle text */
+    animation: fadeIn 1s ease-in-out;
+}
+
+.subtitle:before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #1b4332; /* Same dark green as used in title for consistency */
+    margin: 10px auto; /* Center the decorative line */
+    border-radius: 2px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .support-button {
@@ -161,6 +205,10 @@ body {
     color: #e63946;
 }
 
+.mobile-break {
+    display: none;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .artist-cell {
@@ -193,6 +241,10 @@ body {
     .support-button {
         position: static;
         margin-bottom: 20px;
+    }
+
+    .mobile-break {
+        display: inline;
     }
 }
 
