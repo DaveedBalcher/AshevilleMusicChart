@@ -210,6 +210,12 @@ footer p {
 }
 
 /* Responsive Design */
+@media (max-width: 800px) {
+    .mobile-break {
+        display: inline;
+    }
+}
+
 @media (max-width: 768px) {
     .artist-cell {
         flex-direction: column;
@@ -243,8 +249,13 @@ footer p {
         margin-bottom: 20px;
     }
 
-    .mobile-break {
-        display: inline;
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+        padding: 0 20px;
     }
 }
 
@@ -261,5 +272,9 @@ footer p {
     .support-button {
         padding: 10px 15px;
         font-size: 0.9em;
+    }
+
+    .page-title {
+        font-size: 1.8rem;
     }
 }
