@@ -16,14 +16,14 @@ class ArtistCell {
                 <img src="${this.artistData.artist.imageUrl}" alt="${this.artistData.artist.name}" class="artist-img">
                 <div class="artist-details">
                     <h2 class="artist-name">${this.artistData.artist.name} ${!this.previousWeek ? '<span class="accent">NEW!</span>' : ''}</h2>
-                    <p class="genres">${this.artistData.artist.high_level_genre} - ${this.artistData.artist.specific_genre}</p>
+                    <p class="genres">${this.artistData.artist.specific_genre}</p>
                 </div>
             </div>
             <div class="stats">
                 <div class="stat-item">
                     <span class="stat-value">${this.currentWeek.totalListens.toLocaleString()}</span>
-                    <span class="stat-label">Spotify Listens</span>
                     ${this.getChangeIndicator()}
+                    <span class="stat-label">Spotify Listens</span>
                 </div>
             </div>
         `;
