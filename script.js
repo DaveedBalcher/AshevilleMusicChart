@@ -1,52 +1,63 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const container = document.getElementById('chart-container');
+class ArtistCell {
+    constructor(artistData, index) {
+        this.artistData = artistData;
+        this.index = index;
+        this.currentWeek = artistData.weeks[artistData.weeks.length - 1];
+        this.previousWeek = artistData.weeks.length > 1 ? artistData.weeks[artistData.weeks.length - 2] : null;
+    }
 
-    // Sort artists by current weekly Spotify listens in descending order
-    data.sort((a, b) => b.weekly_spotify_listens.current - a.weekly_spotify_listens.current);
+    render() {
+        const cell = document.createElement('div');
+        cell.classList.add('artist-cell');
 
-    data.forEach((artist, index) => {
-        const artistElement = document.createElement('div');
-        artistElement.classList.add('artist');
-
-        function getChangeIndicator(current, previous) {
-            if (previous === null) {
-                return '';
-            } else if (current > previous) {
-                return `<span class="up-arrow"><small>+${current - previous} </small>▲</span>`;
-            } else if (current < previous) {
-                return `<span class="down-arrow"><small>-${previous - current} </small>▼</span>`;
-            } else {
-                return '';
-            }
-        }
-
-        artistElement.innerHTML = `
+        cell.innerHTML = `
             <div class="artist-info">
-                <img src="${artist.image_url}" alt="${artist.name}" class="artist-img">
+                <div class="artist-rank">${this.index + 1}</div>
+                <img src="${this.artistData.artist.imageUrl}" alt="${this.artistData.artist.name}" class="artist-img">
                 <div class="artist-details">
-                    <h2 class="artist-name">${index + 1}. ${artist.name} ${artist.isNew ? '<span class="accent">NEW!</span>' : ''}</h2>
-                    <p class="genres">${artist.high_level_genre} - ${artist.specific_genre}</p>
+                    <h2 class="artist-name">${this.artistData.artist.name} ${!this.previousWeek ? '<span class="accent">NEW!</span>' : ''}</h2>
+                    <p class="genres">${this.artistData.artist.high_level_genre} - ${this.artistData.artist.specific_genre}</p>
                 </div>
             </div>
             <div class="stats">
                 <div class="stat-item">
-                    <span class="stat-value">${artist.weekly_spotify_listens.current}</span>
+                    <span class="stat-value">${this.currentWeek.totalListens.toLocaleString()}</span>
                     <span class="stat-label">Spotify Listens</span>
-                    ${artist.weekly_spotify_listens.previous !== null ? getChangeIndicator(artist.weekly_spotify_listens.current, artist.weekly_spotify_listens.previous) : ''}
-                </div>
-                <div class="stat-item">
-                    <span class="stat-value">${artist.weekly_soundcloud_listens.current}</span>
-                    <span class="stat-label">SoundCloud Listens</span>
-                    ${artist.weekly_soundcloud_listens.previous !== null ? getChangeIndicator(artist.weekly_soundcloud_listens.current, artist.weekly_soundcloud_listens.previous) : ''}
-                </div>
-                <div class="stat-item">
-                    <span class="stat-value">${artist.instagram_follows.current}</span>
-                    <span class="stat-label">Instagram Followers</span>
-                    ${artist.instagram_follows.previous !== null ? getChangeIndicator(artist.instagram_follows.current, artist.instagram_follows.previous) : ''}
+                    ${this.getChangeIndicator()}
                 </div>
             </div>
         `;
+        return cell;
+    }
 
-        container.appendChild(artistElement);
-    });
+    getChangeIndicator() {
+        if (!this.previousWeek) return '';
+        const diff = this.currentWeek.totalListens - this.previousWeek.totalListens;
+        const diffFormatted = Math.abs(diff).toLocaleString();
+        if (diff > 0) {
+            return `<span class="up-arrow"><i class="fas fa-arrow-up"></i> <small>+${diffFormatted}</small></span>`;
+        } else if (diff < 0) {
+            return `<span class="down-arrow"><i class="fas fa-arrow-down"></i> <small>-${diffFormatted}</small></span>`;
+        }
+        return '';
+    }
+}
+
+class ArtistChart {
+    constructor(data) {
+        this.data = data;
+        this.container = document.getElementById('chart-container');
+    }
+
+    render() {
+        this.data.forEach((artistData, index) => {
+            const cell = new ArtistCell(artistData, index);
+            this.container.appendChild(cell.render());
+        });
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    data.sort((a, b) => b.weeks[b.weeks.length - 1].totalListens - a.weeks[a.weeks.length - 1].totalListens);
+    new ArtistChart(data).render();
 });

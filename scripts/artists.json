@@ -1,0 +1,94 @@
+[
+    {
+      "uuid": "11e83fe6-babe-ddde-a7ff-aa1c026db3d8",
+      "name": "Indigo De Souza",
+      "imageUrl": "https://assets.soundcharts.com/artist/e/b/a/11e83fe6-babe-ddde-a7ff-aa1c026db3d8.jpg",
+      "high_level_genre": "Rock/Alternative",
+      "specific_genre": "Psychedelic Indie"
+    },
+    {
+      "uuid": "30e2b88a-c34c-11e8-afbf-525400009efb",
+      "name": "MJ Lenderman",
+      "imageUrl": "https://assets.soundcharts.com/artist/c/4/3/30e2b88a-c34c-11e8-afbf-525400009efb.jpg",
+      "high_level_genre": "Roots/Americana",
+      "specific_genre": "Slacker Americana"
+    },
+    {
+      "uuid": "11e81bca-54aa-ac48-bfab-a0369fe50396",
+      "name": "River Whyless",
+      "imageUrl": "https://assets.soundcharts.com/artist/a/a/4/11e81bca-54aa-ac48-bfab-a0369fe50396.jpg",
+      "high_level_genre": "Roots/Americana",
+      "specific_genre": "Appalachian Folk"
+    },
+    {
+      "uuid": "11e81bc6-bdeb-374e-b271-a0369fe50396",
+      "name": "Steep Canyon Rangers",
+      "imageUrl": "https://assets.soundcharts.com/artist/b/e/d/11e81bc6-bdeb-374e-b271-a0369fe50396.jpg",
+      "high_level_genre": "Roots/Americana",
+      "specific_genre": "Progressive Bluegrass"
+    },
+    {
+      "uuid": "11e81bd0-bb77-dc06-90e1-a0369fe50396",
+      "name": "Town Mountain",
+      "imageUrl": "https://assets.soundcharts.com/artist/7/7/b/11e81bd0-bb77-dc06-90e1-a0369fe50396.jpg",
+      "high_level_genre": "Roots/Americana",
+      "specific_genre": "Traditional Bluegrass"
+    },
+    {
+      "uuid": "11e83fee-9219-7d1e-96a1-aa1c026db3d8",
+      "name": "Wednesday",
+      "imageUrl": "https://assets.soundcharts.com/artist/9/1/2/11e83fee-9219-7d1e-96a1-aa1c026db3d8.jpg",
+      "high_level_genre": "Rock/Alternative",
+      "specific_genre": "Indie Rock"
+    },
+    {
+      "uuid": "4e415566-c39d-11e8-bc7d-525400009efb",
+      "name": "Secret Shame",
+      "imageUrl": "https://assets.soundcharts.com/artist/d/9/3/4e415566-c39d-11e8-bc7d-525400009efb.jpg",
+      "high_level_genre": "Rock/Alternative",
+      "specific_genre": "Post-Punk"
+    },
+    {
+      "uuid": "11e83fe3-93c3-f3ac-8914-aa1c026db3d8",
+      "name": "King Garbage",
+      "imageUrl": "https://assets.soundcharts.com/artist/3/c/3/11e83fe3-93c3-f3ac-8914-aa1c026db3d8.jpg",
+      "high_level_genre": "World/Fusion",
+      "specific_genre": "Cinematic Soul"
+    },
+    {
+      "uuid": "11e83fe6-36a0-9e16-8d54-a0369fe50396",
+      "name": "Jon Stickley Trio",
+      "imageUrl": "https://assets.soundcharts.com/artist/0/a/6/11e83fe6-36a0-9e16-8d54-a0369fe50396.jpg",
+      "high_level_genre": "Roots/Americana",
+      "specific_genre": "Progressive Bluegrass"
+    },
+    {
+      "uuid": "11e83fe9-5a8f-01ac-9eaa-a0369fe50396",
+      "name": "The Get Right Band",
+      "imageUrl": "https://assets.soundcharts.com/artist/f/8/a/11e83fe9-5a8f-01ac-9eaa-a0369fe50396.jpg",
+      "high_level_genre": "Rock/Alternative",
+      "specific_genre": "Funk Rock"
+    },
+    {
+      "uuid": "11e81bc0-5bdc-79ce-9589-a0369fe50396",
+      "name": "The Honeycutters",
+      "imageUrl": "https://assets.soundcharts.com/artist/c/d/b/11e81bc0-5bdc-79ce-9589-a0369fe50396.jpg",
+      "high_level_genre": "Roots/Americana",
+      "specific_genre": "Roots Country"
+    },
+    {
+      "uuid": "11e81bd0-6236-470e-b1a3-a0369fe50396",
+      "name": "Empire Strikes Brass",
+      "imageUrl": "https://assets.soundcharts.com/artist/6/3/2/11e81bd0-6236-470e-b1a3-a0369fe50396.jpg",
+      "high_level_genre": "World/Fusion",
+      "specific_genre": "Brass-Funk-Rock"
+    },
+    {
+      "uuid": "11e83fe7-6b66-7fc0-bd02-a0369fe50396",
+      "name": "C.Shreve the Professor",
+      "imageUrl": "https://assets.soundcharts.com/artist/6/6/b/11e83fe7-6b66-7fc0-bd02-a0369fe50396.jpg",
+      "high_level_genre": "Urban/Electronic",
+      "specific_genre": "Boom-Bap Hip-Hop"
+    }
+  ]
+  

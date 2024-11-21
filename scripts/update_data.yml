@@ -1,0 +1,4 @@
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15  # Set timeout to 15 minutes
