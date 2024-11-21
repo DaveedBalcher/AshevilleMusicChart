@@ -23,7 +23,6 @@ class ArtistCell {
                 <div class="stat-item">
                     <span class="stat-value">${this.currentWeek.totalListens.toLocaleString()}</span>
                     ${this.getChangeIndicator()}
-                    <span class="stat-label">Spotify Listens</span>
                 </div>
             </div>
         `;
