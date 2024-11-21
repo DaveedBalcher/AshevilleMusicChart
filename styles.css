@@ -31,6 +31,11 @@ footer p {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
+#chart-container {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out 1s forwards;
+}
+
 .page-title {
     font-family: 'Pacifico', cursive;
     text-align: center;
@@ -70,6 +75,11 @@ footer p {
     to {
         opacity: 1;
     }
+}
+
+.subtitle strong {
+    color: #1b4332; /* Match the dark green used in the title for emphasis */
+    font-weight: 600;
 }
 
 .support-button {
