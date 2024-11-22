@@ -111,7 +111,6 @@ footer p {
     align-items: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-    cursor: pointer; /* Indicates interactivity */
 }
 
 .artist-cell:hover,
@@ -133,14 +132,6 @@ footer p {
 
 .artist-cell .artist-name {
     position: relative;
-}
-
-.artist-cell .artist-name::after {
-    content: '↗';
-    font-size: 0.8rem;
-    color: #1d3557;
-    margin-left: 5px;
-    vertical-align: middle;
 }
 
 .artist-info {
