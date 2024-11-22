@@ -5,7 +5,8 @@ const data = [
       "name": "Indigo De Souza",
       "imageUrl": "https://assets.soundcharts.com/artist/e/b/a/11e83fe6-babe-ddde-a7ff-aa1c026db3d8.jpg",
       "high_level_genre": "Rock/Alternative",
-      "specific_genre": "Psychedelic Indie"
+      "specific_genre": "Psychedelic Indie",
+      "spotifyUrl": "https://open.spotify.com/artist/3ir2pF2mkiEWqyPenKTh5e"
     },
     "weeks": [
       {
@@ -27,7 +28,8 @@ const data = [
       "name": "MJ Lenderman",
       "imageUrl": "https://assets.soundcharts.com/artist/c/4/3/30e2b88a-c34c-11e8-afbf-525400009efb.jpg",
       "high_level_genre": "Roots/Americana",
-      "specific_genre": "Slacker Americana"
+      "specific_genre": "Slacker Americana",
+      "spotifyUrl": "https://open.spotify.com/artist/4tK6Z8fK7Sc9133byjPGIT"
     },
     "weeks": [
       {
@@ -49,7 +51,8 @@ const data = [
       "name": "River Whyless",
       "imageUrl": "https://assets.soundcharts.com/artist/a/a/4/11e81bca-54aa-ac48-bfab-a0369fe50396.jpg",
       "high_level_genre": "Roots/Americana",
-      "specific_genre": "Appalachian Folk"
+      "specific_genre": "Appalachian Folk",
+      "spotifyUrl": "https://open.spotify.com/artist/7gRGh8w4G9zaFJSaIYp8HH"
     },
     "weeks": [
       {
@@ -71,7 +74,8 @@ const data = [
       "name": "Steep Canyon Rangers",
       "imageUrl": "https://assets.soundcharts.com/artist/b/e/d/11e81bc6-bdeb-374e-b271-a0369fe50396.jpg",
       "high_level_genre": "Roots/Americana",
-      "specific_genre": "Progressive Bluegrass"
+      "specific_genre": "Progressive Bluegrass",
+      "spotifyUrl": "https://open.spotify.com/artist/1a6tqLJPUs4DBAnNUZkr2O"
     },
     "weeks": [
       {
@@ -93,7 +97,8 @@ const data = [
       "name": "Town Mountain",
       "imageUrl": "https://assets.soundcharts.com/artist/7/7/b/11e81bd0-bb77-dc06-90e1-a0369fe50396.jpg",
       "high_level_genre": "Roots/Americana",
-      "specific_genre": "Traditional Bluegrass"
+      "specific_genre": "Traditional Bluegrass",
+      "spotifyUrl": "https://open.spotify.com/artist/5cudslRGWg0GsXaN79Wifs"
     },
     "weeks": [
       {
@@ -115,7 +120,8 @@ const data = [
       "name": "Wednesday",
       "imageUrl": "https://assets.soundcharts.com/artist/9/1/2/11e83fee-9219-7d1e-96a1-aa1c026db3d8.jpg",
       "high_level_genre": "Rock/Alternative",
-      "specific_genre": "Indie Rock"
+      "specific_genre": "Indie Rock",
+      "spotifyUrl": "https://open.spotify.com/artist/4j7DrazfBZLLD0OrVoAtEe"
     },
     "weeks": [
       {
@@ -137,7 +143,8 @@ const data = [
       "name": "Secret Shame",
       "imageUrl": "https://assets.soundcharts.com/artist/d/9/3/4e415566-c39d-11e8-bc7d-525400009efb.jpg",
       "high_level_genre": "Rock/Alternative",
-      "specific_genre": "Post-Punk"
+      "specific_genre": "Post-Punk",
+      "spotifyUrl": "https://open.spotify.com/artist/0QFIowD5P1Ej1Pb0gsZPzN"
     },
     "weeks": [
       {
@@ -159,7 +166,8 @@ const data = [
       "name": "King Garbage",
       "imageUrl": "https://assets.soundcharts.com/artist/3/c/3/11e83fe3-93c3-f3ac-8914-aa1c026db3d8.jpg",
       "high_level_genre": "World/Fusion",
-      "specific_genre": "Cinematic Soul"
+      "specific_genre": "Cinematic Soul",
+      "spotifyUrl": "https://open.spotify.com/artist/2ziuYXYq2WG6cZpa43fWpX"
     },
     "weeks": [
       {
@@ -181,7 +189,8 @@ const data = [
       "name": "Jon Stickley Trio",
       "imageUrl": "https://assets.soundcharts.com/artist/0/a/6/11e83fe6-36a0-9e16-8d54-a0369fe50396.jpg",
       "high_level_genre": "Roots/Americana",
-      "specific_genre": "Progressive Bluegrass"
+      "specific_genre": "Progressive Bluegrass",
+      "spotifyUrl": "https://open.spotify.com/artist/72Swt388IKfP1jAgkiE17L"
     },
     "weeks": [
       {
@@ -203,7 +212,8 @@ const data = [
       "name": "The Get Right Band",
       "imageUrl": "https://assets.soundcharts.com/artist/f/8/a/11e83fe9-5a8f-01ac-9eaa-a0369fe50396.jpg",
       "high_level_genre": "Rock/Alternative",
-      "specific_genre": "Funk Rock"
+      "specific_genre": "Funk Rock",
+      "spotifyUrl": "https://open.spotify.com/artist/2n9NilZcDzen7IXYBFgMi3"
     },
     "weeks": [
       {
@@ -225,7 +235,8 @@ const data = [
       "name": "The Honeycutters",
       "imageUrl": "https://assets.soundcharts.com/artist/c/d/b/11e81bc0-5bdc-79ce-9589-a0369fe50396.jpg",
       "high_level_genre": "Roots/Americana",
-      "specific_genre": "Roots Country"
+      "specific_genre": "Roots Country",
+      "spotifyUrl": "https://open.spotify.com/artist/2LloZ5av9chx06YQi2Spuj"
     },
     "weeks": [
       {
@@ -247,7 +258,8 @@ const data = [
       "name": "Empire Strikes Brass",
       "imageUrl": "https://assets.soundcharts.com/artist/6/3/2/11e81bd0-6236-470e-b1a3-a0369fe50396.jpg",
       "high_level_genre": "World/Fusion",
-      "specific_genre": "Brass-Funk-Rock"
+      "specific_genre": "Brass-Funk-Rock",
+      "spotifyUrl": "https://open.spotify.com/artist/6puUKWNePi9oAm5jcnYpCl"
     },
     "weeks": [
       {
@@ -269,7 +281,8 @@ const data = [
       "name": "C.Shreve the Professor",
       "imageUrl": "https://assets.soundcharts.com/artist/6/6/b/11e83fe7-6b66-7fc0-bd02-a0369fe50396.jpg",
       "high_level_genre": "Urban/Electronic",
-      "specific_genre": "Boom-Bap Hip-Hop"
+      "specific_genre": "Boom-Bap Hip-Hop",
+      "spotifyUrl": "https://open.spotify.com/artist/0dz8m7I16TtxL7TAuFDu8Z"
     },
     "weeks": [
       {

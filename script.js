@@ -9,6 +9,22 @@ class ArtistCell {
     render() {
         const cell = document.createElement('div');
         cell.classList.add('artist-cell');
+        cell.setAttribute('tabindex', '0'); // Make cell focusable for better UX
+        cell.setAttribute('role', 'button'); // Indicate it's clickable for accessibility
+        cell.title = `Go to Spotify profile for ${this.artistData.artist.name}`;
+
+        // Add click listener to navigate to Spotify URL
+        cell.addEventListener('click', () => {
+            window.open(this.artistData.artist.spotifyUrl, '_blank');
+        });
+
+        // Add keyboard support for accessibility
+        cell.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                window.open(this.artistData.artist.spotifyUrl, '_blank');
+            }
+        });
 
         cell.innerHTML = `
             <div class="artist-info">
