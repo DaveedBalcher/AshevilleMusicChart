@@ -223,13 +223,6 @@ footer p {
     display: none;
 }
 
-/* Responsive Design */
-@media (max-width: 800px) {
-    .mobile-break {
-        display: inline;
-    }
-}
-
 @media (max-width: 768px) {
     .artist-cell {
         flex-direction: column;
@@ -252,6 +245,10 @@ footer p {
 
     .artist-details {
         padding: 0;
+    }
+
+    .mobile-break {
+        display: inline;
     }
 
     .stats {
