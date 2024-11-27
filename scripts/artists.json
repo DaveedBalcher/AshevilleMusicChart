@@ -102,5 +102,13 @@
       "high_level_genre": "Urban/Electronic",
       "specific_genre": "Boom-Bap Hip-Hop",
       "spotifyUrl": "https://open.spotify.com/artist/0dz8m7I16TtxL7TAuFDu8Z"
+  },
+  {
+      "uuid": "d8b88748-c1ca-11e8-bd36-525400009efb",
+      "name": "TrancEnd",
+      "imageUrl": "https://assets.soundcharts.com/artist/a/c/1/d8b88748-c1ca-11e8-bd36-525400009efb.jpg",
+      "high_level_genre": "Urban/Electronic",
+      "specific_genre": "Trip-hop Electronica",
+      "spotifyUrl": "https://open.spotify.com/artist/7v5ZMCoiaAqFOHm95yIneG"
   }
 ]

@@ -12,13 +12,13 @@ body {
 footer {
     text-align: center;
     padding: 10px 0;
-    background-color: #f8f9fa; /* Matches the body's background to make it blend in */
+    background-color: #f8f9fa;
 }
 
 footer p {
     margin: 0;
     font-size: 0.9rem;
-    color: #6c757d; /* Subtle gray color to make the text less noticeable */
+    color: #6c757d;
 }
 
 .container {
@@ -47,14 +47,14 @@ footer p {
 
 .subtitle {
     font-size: 1.2rem;
-    color: #6b705c; /* A subtle color to complement the title */
+    color: #6b705c;
     margin-bottom: 30px;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
     line-height: 1.5;
     font-weight: 400;
-    text-align: center; /* Center the subtitle text */
+    text-align: center;
     animation: fadeIn 1s ease-in-out;
 }
 
@@ -63,8 +63,8 @@ footer p {
     display: block;
     width: 60px;
     height: 4px;
-    background-color: #1b4332; /* Same dark green as used in title for consistency */
-    margin: 10px auto; /* Center the decorative line */
+    background-color: #1b4332;
+    margin: 10px auto;
     border-radius: 2px;
 }
 
@@ -78,7 +78,7 @@ footer p {
 }
 
 .subtitle strong {
-    color: #1b4332; /* Match the dark green used in the title for emphasis */
+    color: #1b4332;
     font-weight: 600;
 }
 
@@ -109,29 +109,14 @@ footer p {
     overflow: hidden;
     display: flex;
     align-items: center;
+    justify-content: space-between; /* Ensure space between artist info and stats */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
-.artist-cell:hover,
-.artist-cell:focus {
+.artist-cell:hover {
     transform: translateY(-2px);
     background-color: #f8f9fa;
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
-    outline: none; /* Removes default focus outline */
-}
-
-.artist-cell:focus {
-    border: 2px solid #1d3557; /* Focus indicator for accessibility */
-}
-
-.artist-cell:active {
-    transform: translateY(0); /* Mimics a pressed effect */
-    background-color: #e9ecef;
-}
-
-.artist-cell .artist-name {
-    position: relative;
 }
 
 .artist-info {
@@ -161,6 +146,8 @@ footer p {
 }
 
 .artist-name {
+    display: flex;
+    align-items: center; /* Ensure the Spotify icon aligns vertically */
     font-size: 1.5em;
     margin: 0;
     color: #1b4332;
@@ -199,7 +186,6 @@ footer p {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     margin: 8px;
 }
-
 
 .stat-value {
     font-size: 1.2em;
@@ -308,4 +294,16 @@ footer p {
     .page-title {
         font-size: 1.8rem;
     }
+}
+
+/* Spotify Link Styles */
+.spotify-link {
+    margin-left: 10px;
+    color: #1DB954; /* Spotify Green */
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+.spotify-link:hover {
+    color: #14833b; /* Darker Green on Hover */
 }
