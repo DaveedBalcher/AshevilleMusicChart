@@ -8,9 +8,8 @@ yarn-error.log*
 
 # Ignore environment variable files in the scripts directory
 scripts/.env
-
-# Optional: Ignore any .env files in any directory
 *.env
+*.env.*
 
 # Mac files
 .DS_Store
