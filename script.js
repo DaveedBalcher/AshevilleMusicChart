@@ -50,7 +50,7 @@ class ArtistCell {
 
 class ArtistChart {
     constructor(data) {
-        this.data = data;
+        this.data = data.data
         this.container = document.getElementById('chart-container');
     }
 
@@ -63,6 +63,6 @@ class ArtistChart {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    data.sort((a, b) => b.weeks[b.weeks.length - 1].totalListens - a.weeks[a.weeks.length - 1].totalListens);
+    data.data.sort((a, b) => b.weeks[b.weeks.length - 1].totalListens - a.weeks[a.weeks.length - 1].totalListens);
     new ArtistChart(data).render();
 });

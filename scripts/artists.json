@@ -20,7 +20,7 @@
       "name": "River Whyless",
       "imageUrl": "https://assets.soundcharts.com/artist/a/a/4/11e81bca-54aa-ac48-bfab-a0369fe50396.jpg",
       "high_level_genre": "Roots/Americana",
-      "specific_genre": "Appalachian Folk",
+      "specific_genre": "Modern Appalachian Folk",
       "spotifyUrl": "https://open.spotify.com/artist/7gRGh8w4G9zaFJSaIYp8HH"
   },
   {
@@ -44,7 +44,7 @@
       "name": "Wednesday",
       "imageUrl": "https://assets.soundcharts.com/artist/9/1/2/11e83fee-9219-7d1e-96a1-aa1c026db3d8.jpg",
       "high_level_genre": "Rock/Alternative",
-      "specific_genre": "Indie Rock",
+      "specific_genre": "Raw Indie Rock",
       "spotifyUrl": "https://open.spotify.com/artist/4j7DrazfBZLLD0OrVoAtEe"
   },
   {
@@ -52,7 +52,7 @@
       "name": "Secret Shame",
       "imageUrl": "https://assets.soundcharts.com/artist/d/9/3/4e415566-c39d-11e8-bc7d-525400009efb.jpg",
       "high_level_genre": "Rock/Alternative",
-      "specific_genre": "Post-Punk",
+      "specific_genre": "Moody Post-Punk",
       "spotifyUrl": "https://open.spotify.com/artist/0QFIowD5P1Ej1Pb0gsZPzN"
   },
   {
@@ -60,7 +60,7 @@
       "name": "King Garbage",
       "imageUrl": "https://assets.soundcharts.com/artist/3/c/3/11e83fe3-93c3-f3ac-8914-aa1c026db3d8.jpg",
       "high_level_genre": "World/Fusion",
-      "specific_genre": "Cinematic Soul",
+      "specific_genre": "Soulful Cinematic Funk",
       "spotifyUrl": "https://open.spotify.com/artist/2ziuYXYq2WG6cZpa43fWpX"
   },
   {
@@ -68,7 +68,7 @@
       "name": "Jon Stickley Trio",
       "imageUrl": "https://assets.soundcharts.com/artist/0/a/6/11e83fe6-36a0-9e16-8d54-a0369fe50396.jpg",
       "high_level_genre": "Roots/Americana",
-      "specific_genre": "Progressive Bluegrass",
+      "specific_genre": "High-Energy Bluegrass Fusion",
       "spotifyUrl": "https://open.spotify.com/artist/72Swt388IKfP1jAgkiE17L"
   },
   {
@@ -76,7 +76,7 @@
       "name": "The Get Right Band",
       "imageUrl": "https://assets.soundcharts.com/artist/f/8/a/11e83fe9-5a8f-01ac-9eaa-a0369fe50396.jpg",
       "high_level_genre": "Rock/Alternative",
-      "specific_genre": "Funk Rock",
+      "specific_genre": "Funky Psychedelic Rock",
       "spotifyUrl": "https://open.spotify.com/artist/2n9NilZcDzen7IXYBFgMi3"
   },
   {
@@ -110,5 +110,53 @@
       "high_level_genre": "Urban/Electronic",
       "specific_genre": "Trip-hop Electronica",
       "spotifyUrl": "https://open.spotify.com/artist/7v5ZMCoiaAqFOHm95yIneG"
+  },
+  {
+      "uuid": "76e19c8a-8fd7-4b0a-9ca6-c4b2d9d3c09f",
+      "name": "Kennedy OneSelf",
+      "imageUrl": "https://assets.soundcharts.com/artist/7/d/f/76e19c8a-8fd7-4b0a-9ca6-c4b2d9d3c09f.jpg",
+      "high_level_genre": "World/Fusion",
+      "specific_genre": "Sound Healing",
+      "spotifyUrl": "https://open.spotify.com/artist/14Ci0JdkZTpZ8ZKTuUY6Yl"
+  },
+  {
+      "uuid": "3cb76266-32f7-11ea-b53e-801844ee83a6",
+      "name": "Life Like Water",
+      "imageUrl": "https://assets.soundcharts.com/artist/7/f/2/3cb76266-32f7-11ea-b53e-801844ee83a6.jpg",
+      "high_level_genre": "World/Fusion",
+      "specific_genre": "Indie World Fusion Folk",
+      "spotifyUrl": "https://open.spotify.com/artist/0kxvbBOhNqVRJgpyDyWGX0"
+  },
+  {
+      "uuid": "11e81bcd-5c2c-e4ec-bd13-a0369fe50396",
+      "name": "Toubab Krewe",
+      "imageUrl": "https://assets.soundcharts.com/artist/c/2/c/11e81bcd-5c2c-e4ec-bd13-a0369fe50396.jpg",
+      "high_level_genre": "Rock/Alternative",
+      "specific_genre": "Afro-Psychedelic Rock",
+      "spotifyUrl": "https://open.spotify.com/artist/1jeEITLt57dM6g3JjToUmN"
+  },
+  {
+      "uuid": "11e81bd2-d8b6-a070-972f-a0369fe50396",
+      "name": "Yo Mama's Big Fat Booty Band",
+      "imageUrl": "https://assets.soundcharts.com/artist/6/b/8/11e81bd2-d8b6-a070-972f-a0369fe50396.jpg",
+      "high_level_genre": "Rock/Alternative",
+      "specific_genre": "Funkabilly Groove",
+      "spotifyUrl": "https://open.spotify.com/artist/17yG70sNJCecYiTGc0LIj3"
+  },
+  {
+      "uuid": "11e83fe6-1e8f-aa42-bd29-aa1c026db3d8",
+      "name": "The Fritz",
+      "imageUrl": "https://assets.soundcharts.com/artist/f/8/e/11e83fe6-1e8f-aa42-bd29-aa1c026db3d8.jpg",
+      "high_level_genre": "Rock/Alternative",
+      "specific_genre": "Psychedelic Soul Funk",
+      "spotifyUrl": "https://open.spotify.com/artist/792UqbFMNV10U1J1onyAq8"
+  },
+  {
+      "uuid": "11e81bbc-1bad-93f0-a75c-a0369fe50396",
+      "name": "Balsam Range",
+      "imageUrl": "https://assets.soundcharts.com/artist/d/a/b/11e81bbc-1bad-93f0-a75c-a0369fe50396.jpg",
+      "high_level_genre": "Rock/Alternative",
+      "specific_genre": "Neo-Traditional Appalachian Bluegrass",
+      "spotifyUrl": "https://open.spotify.com/artist/18iUQdDfdsusFp9Qtt2NPU"
   }
 ]
