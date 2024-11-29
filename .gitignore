@@ -11,3 +11,7 @@ scripts/.env
 
 # Optional: Ignore any .env files in any directory
 *.env
+
+# Mac files
+.DS_Store
+*/.DS_Store
