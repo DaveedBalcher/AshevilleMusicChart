@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600&display=swap');
 
+/* Global Styles */
 body {
     font-family: 'Inter', sans-serif;
     background-color: #f8f9fa;
@@ -7,6 +8,12 @@ body {
     padding: 16px;
     color: #212529;
     line-height: 1.4;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 footer {
@@ -21,6 +28,60 @@ footer p {
     color: #6c757d;
 }
 
+/* Navigation */
+.main-menu {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 20px;
+}
+
+.menu-links {
+    display: flex;
+    gap: 15px;
+    justify-content: center; /* Center all menu items horizontally */
+    align-items: center;
+    /* No list-style needed since we're not using ul/li */
+}
+
+.menu-links a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 20px;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #fff;
+}
+
+/* Buttons */
+.support-button, .recommend-button, .feedback-button {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.8em;
+    letter-spacing: 0.25px;
+    text-decoration: none;
+    border-radius: 25px;
+    padding: 12px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.support-button {
+    background-color: #457b9d;
+}
+.support-button:hover {
+    background-color: #1d3557;
+    transform: scale(1.05);
+}
+
+.recommend-button, .feedback-button {
+    background-color: #f8961e;
+}
+.recommend-button:hover, .feedback-button:hover {
+    background-color: #d17802;
+    transform: scale(1.05);
+}
+
+/* Container */
 .container {
     width: 90%;
     max-width: 1200px;
@@ -31,22 +92,23 @@ footer p {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
+/* Chart Container Animation */
 #chart-container {
     opacity: 0;
     animation: fadeIn 1s ease-in-out 1s forwards;
 }
 
+/* Typography & Headings */
 .page-title {
     font-family: 'Pacifico', cursive;
-    text-align: center;
+    font-size: 2.8rem;
     color: #1a1a1a;
-    font-size: 2.5rem;
-    margin: 20px 0;
+    text-align: center;
+    margin: 40px 0;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .subtitle {
-    margin-top: 20px;
     margin-bottom: 30px;
     max-width: 800px;
     margin-left: auto;
@@ -60,28 +122,28 @@ footer p {
     animation-delay: 0.5s;
 }
 
+.subtitle:before {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #1b4332;
+    margin-bottom: 15px;
+    border-radius: 2px;
+}
+
 .main-subtitle {
     font-size: 1.2rem;
-    color: #6b705c;
+    color: #343a40;
     font-weight: 500;
     margin: 0;
 }
 
 .sub-subtitle {
     font-size: 1rem;
-    color: #6b705c;
+    color: #343a40;
     font-weight: 400;
     margin: 0;
-}
-
-.subtitle:before {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background-color: #1b4332;
-    margin: 10px auto 15px auto;
-    border-radius: 2px;
 }
 
 .subtitle strong {
@@ -89,6 +151,7 @@ footer p {
     font-weight: 600;
 }
 
+/* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -98,31 +161,7 @@ footer p {
     }
 }
 
-.subtitle strong {
-    color: #1b4332;
-    font-weight: 600;
-}
-
-.support-button {
-    position: absolute;
-    top: 10px;
-    right: 36px;
-    background-color: #457b9d;
-    color: white;
-    padding: 12px 20px;
-    text-decoration: none;
-    border-radius: 25px;
-    font-weight: bold;
-    font-size: 1em;
-    transition: background-color 0.3s, transform 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.support-button:hover {
-    background-color: #1d3557;
-    transform: scale(1.05);
-}
-
+/* Artist Cell and Related Elements */
 .artist-cell {
     background-color: #fff;
     margin-bottom: 20px;
@@ -130,7 +169,7 @@ footer p {
     overflow: hidden;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Ensure space between artist info and stats */
+    justify-content: space-between;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
@@ -168,7 +207,7 @@ footer p {
 
 .artist-name {
     display: flex;
-    align-items: center; /* Ensure the Spotify icon aligns vertically */
+    align-items: center;
     font-size: 1.5em;
     margin: 0;
     color: #1b4332;
@@ -193,7 +232,7 @@ footer p {
 }
 
 .spotify-link:hover {
-    color: #14833b; /* Darker Green on Hover */
+    color: #14833b;
 }
 
 .genres {
@@ -202,6 +241,7 @@ footer p {
     margin: 5px 0;
 }
 
+/* Stats Section */
 .stats {
     display: flex;
     align-items: center;
@@ -258,7 +298,18 @@ footer p {
     display: none;
 }
 
+/* Responsive Adjustments */
 @media (max-width: 768px) {
+    .menu-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .menu-links a {
+        width: 100%;
+        text-align: center;
+    }
+
     .artist-cell {
         flex-direction: column;
         align-items: center;
@@ -290,13 +341,8 @@ footer p {
         padding: 10px;
     }
 
-    .support-button {
-        position: static;
-        margin-bottom: 20px;
-    }
-
     .page-title {
-        font-size: 2rem;
+        font-size: 2.4rem;
     }
 
     .subtitle {
@@ -327,17 +373,12 @@ footer p {
         font-size: 0.85em;
     }
 
-    .support-button {
-        padding: 10px 15px;
-        font-size: 0.9em;
-    }
-
     .page-title {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 
     .main-subtitle {
-        font-size: .9rem;
+        font-size: 0.9rem;
     }
     
     .sub-subtitle {
