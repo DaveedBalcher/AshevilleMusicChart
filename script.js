@@ -18,17 +18,19 @@ class ArtistCell {
                     <h2 class="artist-name">
                         ${this.artistData.artist.name} 
                         ${!this.previousWeek ? '<span class="accent">NEW!</span>' : ''}
-                        <a href="${this.artistData.artist.spotifyUrl}" target="_blank" rel="noopener noreferrer" class="spotify-link" title="Listen on Spotify" aria-label="Listen to ${this.artistData.artist.name} on Spotify">
-                            <i class="fab fa-spotify"></i>
-                        </a>
                     </h2>
                     <p class="genres">${this.artistData.artist.specific_genre}</p>
                 </div>
             </div>
-            <div class="stats">
-                <div class="stat-item">
-                    <span class="stat-value">${this.currentWeek.totalListens.toLocaleString()}</span>
-                    ${this.getChangeIndicator()}
+            <div class="spotify-view">
+                <a href="${this.artistData.artist.spotifyUrl}" target="_blank" rel="noopener noreferrer" class="spotify-link" title="Listen on Spotify" aria-label="Listen to ${this.artistData.artist.name} on Spotify">
+                    <i class="fab fa-spotify"></i>
+                </a>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-value">${this.currentWeek.totalListens.toLocaleString()}</span>
+                        ${this.getChangeIndicator()}
+                    </div>
                 </div>
             </div>
         `;
