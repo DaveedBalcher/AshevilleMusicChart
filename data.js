@@ -1,4 +1,4 @@
-const data = {
+export const data = {
   "timestamp": "2025-01-03T20:54:17.052Z",
   "data": [
     {

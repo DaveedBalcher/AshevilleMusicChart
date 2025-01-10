@@ -1,0 +1,208 @@
+/******************************************
+ * ARTIST CELLS STYLES
+ ******************************************/
+ 
+ #chart-items {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 20px;
+  margin: 20px auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  max-width: 1200px;
+}
+ 
+ .artist-cell {
+    background-color: #fff;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .artist-cell:hover {
+    transform: translateY(-2px);
+    background-color: #f8f9fa;
+  }
+  
+  /* Artist Info Section */
+  .artist-info {
+    display: flex;
+    align-items: center;
+    flex: 1;
+  }
+  
+  .artist-rank {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1b4332;
+    padding: 20px;
+  }
+  
+  .artist-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #2f3e46;
+    margin: 20px;
+  }
+  
+  .artist-details {
+    flex: 1;
+  }
+  
+  /* Artist Name & Accent */
+  .artist-name {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    margin: 0;
+    color: #1b4332;
+  }
+  
+  .accent {
+    background-color: #f8961e;
+    padding: 5px;
+    border-radius: 4px;
+    color: #ffffff;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 10px;
+  }
+  
+  /* Genres (italic) */
+  .genres {
+    color: #4a5a4f;
+    font-style: italic;
+    margin: 5px 0;
+  }
+  
+  .spotify-link {
+    text-decoration: none;
+    color: #1DB954;
+    font-size: 1.5em;
+    background: rgba(29, 185, 84, 0.1);
+    padding: 12px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(29, 185, 84, 0.2),
+                inset 0 0 15px rgba(29, 185, 84, 0.2);
+    border: 2px solid rgba(29, 185, 84, 0.3);
+}
+
+.spotify-link:hover {
+    color: #1DB954;
+    background: rgba(29, 185, 84, 0.15);
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(29, 185, 84, 0.4),
+                inset 0 0 20px rgba(29, 185, 84, 0.4);
+    border-color: rgba(29, 185, 84, 0.6);
+}
+
+@keyframes spotify-glow {
+    0% { box-shadow: 0 0 15px rgba(29, 185, 84, 0.2); }
+    50% { box-shadow: 0 0 25px rgba(29, 185, 84, 0.4); }
+    100% { box-shadow: 0 0 15px rgba(29, 185, 84, 0.2); }
+}
+  
+  .stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+  }
+  
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    min-width: 120px;
+    align-items: center;
+    background: #e9ecef;
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 8px;
+  }
+  
+  .stat-value {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #1d3557;
+    line-height: 1.4;
+  }
+  
+  /* Up & Down Arrows */
+  .up-arrow, .down-arrow {
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+  }
+  .up-arrow i, .down-arrow i {
+    margin-right: 5px;
+  }
+  .up-arrow {
+    color: #2a9d8f;
+  }
+  .down-arrow {
+    color: #e63946;
+  }
+  
+  /******************************************
+   * RESPONSIVE QUERIES
+   ******************************************/
+  @media (max-width: 768px) {
+    .artist-cell {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .artist-name {
+      display: flex;
+      justify-content: center;
+      align-items: center;  
+    }
+  
+    .artist-info {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .artist-rank {
+      padding: 10px;
+    }
+  
+    .artist-img {
+      margin: 10px 0;
+    }
+  
+    .artist-details {
+      padding: 0;
+    }
+  
+    .stats {
+      padding: 10px;
+      margin-right: 0px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .artist-img {
+      width: 80px;
+      height: 80px;
+    }
+  
+    .stat-value {
+      font-size: 1.1em;
+    }
+  }
+  

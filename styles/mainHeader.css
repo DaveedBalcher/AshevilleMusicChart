@@ -1,0 +1,114 @@
+/******************************************
+ * MAIN MENU STYLES (Desktop)
+ ******************************************/
+
+/* Container (header) */
+.main-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 16px;
+  }
+  
+  /* Page Title */
+  .main-header .page-title {
+    font-family: 'Pacifico', cursive; /* or your preferred font */
+    font-size: 2.8rem;
+    color: #1a1a1a;
+    text-align: center;
+    margin: 24px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Subtitle Container */
+  .main-header .subtitle {
+    margin-bottom: 12px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  /* The decorative line above the subtitles */
+  .main-header .subtitle:after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #1b4332;
+    margin-top: 24px;
+    border-radius: 2px;
+  }
+  
+  /* Subtitle Headings */
+  .main-header .main-subtitle {
+    font-size: 1.2rem;
+    color: #343a40;
+    font-weight: 500;
+    margin: 0;
+  }
+  
+  .main-header .sub-subtitle {
+    font-size: 1rem;
+    color: #343a40;
+    font-weight: 400;
+    margin: 0;
+  }
+  
+  .main-header .subtitle strong {
+    color: #1b4332;
+    font-weight: 600;
+  }
+  
+  /* Mobile Break (by default, hidden on desktop) */
+  .main-header .mobile-break {
+    display: none;
+  }
+  
+/******************************************
+ * MAIN MENU: MOBILE STYLES
+ ******************************************/
+  @media (max-width: 768px) {
+    /* Decrease title size on tablets/smaller screens */
+    .main-header .page-title {
+      font-size: 2.4rem;
+    }
+  
+    .main-header .subtitle {
+      font-size: 1rem;
+      padding: 0 20px;
+    }
+  
+    .main-header .main-subtitle {
+      font-size: 1.1rem;
+    }
+  
+    .main-header .sub-subtitle {
+      font-size: 0.85rem;
+    }
+  
+    /* Show the line-break on narrower screens */
+    .main-header .mobile-break {
+      display: inline;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    /* For very small screens (e.g., phones) */
+    .main-header .page-title {
+      font-size: 2rem;
+    }
+  
+    .main-header .main-subtitle {
+      font-size: 0.9rem;
+    }
+  
+    .main-header .sub-subtitle {
+      font-size: 0.75rem;
+    }
+  }
+  

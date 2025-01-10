@@ -1,0 +1,42 @@
+/******************************************
+ * CHART HEADER STYLES
+ ******************************************/
+ .chart-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .chart-title {
+    font-size: 1.6rem;
+    margin: 0;
+    color: #1a1a1a;
+  }
+  
+  .chart-date-range {
+    margin: 0;
+    color: #343a40;
+    font-weight: 400;
+    font-size: 0.9rem;
+  }
+  
+  /******************************************
+   * RESPONSIVE QUERIES
+   ******************************************/
+  @media (max-width: 768px) {
+    .chart-title {
+      font-size: 1.4rem;
+    }
+    .chart-date-range {
+      font-size: 0.85rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .chart-title {
+      font-size: 1.3em;
+    }
+    .chart-date-range {
+      font-size: 0.8rem;
+    }
+  }
+  

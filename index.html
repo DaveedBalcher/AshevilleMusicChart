@@ -1,51 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2CMRZC02S5"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+  <meta charset="UTF-8">
+  <title>Asheville Music Chart</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        gtag('config', 'G-2CMRZC02S5');
-    </script>
-    <meta charset="UTF-8">
-    <title>Asheville Music Chart</title>
-    <!-- Meta viewport tag ensures responsive design on mobile devices -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
+  <link 
+  rel="stylesheet" 
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  crossorigin="anonymous"
+>
+
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/mainMenu.css">
+  <link rel="stylesheet" href="styles/mainHeader.css">
+  <link rel="stylesheet" href="styles/chartHeader.css">
+  <link rel="stylesheet" href="styles/artistCells.css">
 </head>
 
 <body>
-    <header>
-        <nav class="main-menu">
-            <div class="menu-links">
-                <a href="https://www.belovedasheville.com/" target="_blank" class="support-button">Support Asheville</a>
-                <a href="https://forms.gle/R81jvhUgKHBqRsVo7" target="_blank" class="recommend-button">Recommend an
-                    Artist</a>
-                <a href="https://forms.gle/kvvXWXjaGhtq1n7n6" target="_blank" class="feedback-button">Give Feedback</a>
-            </div>
-        </nav>
+  <div id="main-action-menu"></div>
+  <div id="main-header"></div>
+  <div id="chart-container"></div>
 
-        <h1 class="page-title">Asheville<br class="mobile-break"> Music Chart</h1>
-        <div class="subtitle">
-            <h2 class="main-subtitle">Discover your next favorite local artist</h2>
-            <h3 class="sub-subtitle">New rankings by <strong>Spotify listens</strong> every Friday</h3>
-        </div>
-    </header>
+  <!-- Load component scripts -->
+  <script src="js/mainMenu.js"></script>
+  <script src="js/mainHeader.js"></script>
+  <script src="js/chart.js"></script>
 
-    <div id="chart-container" class="container"></div>
+  <script type="module">
+    import { renderChart } from './js/chart.js';
+    import { data } from './data.js';
+  
+    document.addEventListener('DOMContentLoaded', () => {      
+      renderMainMenu(document.getElementById('main-action-menu'));
+      renderMainHeader(document.getElementById('main-header'));
+      renderChart(document.getElementById('chart-container'), data.data); // Pass data.data
+    });
+  </script>
 
-    <footer>
-        <p>&copy; 2024 Asheville Music Chart. All rights reserved.</p>
-    </footer>
-
-    <script src="data.js"></script>
-    <script src="script.js"></script>
 </body>
-
 </html>
