@@ -7,7 +7,7 @@ export function renderChart(container, data) {
   const chartItemsEl = container.querySelector('#chart-items');
   
   const headerDiv = document.createElement('div');
-  renderChartHeader(headerDiv, 'Dec 26, 2024', 'Jan 2, 2025');
+  renderChartHeader(headerDiv, 'January 2nd', '9th');
   chartItemsEl.appendChild(headerDiv);
 
   const cellsContainer = document.createElement('div');
@@ -31,3 +31,4 @@ export function renderChart(container, data) {
 
   renderArtistCells(chartItemsEl, artistsData);
 }
+

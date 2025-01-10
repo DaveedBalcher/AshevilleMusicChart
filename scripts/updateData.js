@@ -58,7 +58,7 @@ function calculateDateRanges() {
 
 // Function to write updated data.js
 function writeData(filePath, data) {
-  const jsContent = `const data = ${JSON.stringify(data, null, 2)};`;
+  const jsContent = `export const data = ${JSON.stringify(data, null, 2)};`;
   try {
     fs.writeFileSync(filePath, jsContent);
     console.log('Data successfully written to data.js');

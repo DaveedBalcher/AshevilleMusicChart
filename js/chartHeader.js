@@ -4,7 +4,8 @@ export function renderChartHeader(container, startDateStr, endDateStr) {
     <div class="chart-header">
       <h2 class="chart-title">Top Asheville Artists</h2>
       <p class="chart-date-range">
-        Ranking by <strong>Spotify Listens</strong> <br>from ${startDateStr} to ${endDateStr}
+        Ranked by <strong>Spotify Listens</strong> <br>
+        (${startDateStr} to ${endDateStr}) <br>
       </p>
     </div>
   `;
