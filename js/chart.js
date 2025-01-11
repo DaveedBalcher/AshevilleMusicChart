@@ -14,7 +14,13 @@ export function renderChart(container, data) {
   cellsContainer.classList.add('cells-container');
   chartItemsEl.appendChild(cellsContainer);
 
-  const artistsData = data.map((artistObj, index) => ({
+  const sortedData = data.sort((a, b) => {
+    const aListens = a.weeks[a.weeks.length - 1].totalListens;
+    const bListens = b.weeks[b.weeks.length - 1].totalListens;
+    return bListens - aListens; // Descending order
+  });
+
+  const artistsData = sortedData.map((artistObj, index) => ({
     ...artistObj,
     index,
     getChangeIndicator: function() {
