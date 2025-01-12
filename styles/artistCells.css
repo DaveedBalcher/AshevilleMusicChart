@@ -155,6 +155,68 @@
   .down-arrow {
     color: #e63946;
   }
+
+    /******************************************
+   * ON FIRE STYLES
+   ******************************************/
+
+  .highest-improver {
+    position: relative;
+    border: none;
+    z-index: 1;
+    background: #fff;
+    transform-style: preserve-3d;
+    box-shadow: 0 0 30px rgba(255, 69, 0, 0.4);
+}
+
+.highest-improver::before {
+    content: '';
+    position: absolute;
+    inset: -25px;
+    background: linear-gradient(
+        45deg,
+        #ff0000,
+        #ff4500 20%,
+        #ff7f50 40%,
+        #ff8c00 60%,
+        #ffa500 80%,
+        #ff4500
+    );
+    border-radius: inherit;
+    z-index: -1;
+    animation: flameBorder 2s ease-out infinite;
+    filter: blur(12px) contrast(1.5);
+    opacity: 0.9;
+}
+
+.highest-improver::after {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    background: #fff;
+    border-radius: inherit;
+    z-index: -1;
+}
+
+@keyframes flameBorder {
+    0% {
+        transform: translateY(0) scale(1);
+        filter: blur(12px) brightness(1) contrast(1.5);
+    }
+    50% {
+        transform: translateY(-15px) scale(1.05);
+        filter: blur(16px) brightness(1.7) contrast(1.8);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        filter: blur(12px) brightness(1) contrast(1.5);
+    }
+}
+
+.highest-improver:hover::before {
+    animation: flameBorder 1s ease-out infinite;
+    filter: blur(16px) contrast(2);
+}
   
   /******************************************
    * RESPONSIVE QUERIES

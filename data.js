@@ -302,29 +302,6 @@ export const data = {
     },
     {
       "artist": {
-        "uuid": "d8b88748-c1ca-11e8-bd36-525400009efb",
-        "name": "TrancEnd",
-        "imageUrl": "https://assets.soundcharts.com/artist/a/c/1/d8b88748-c1ca-11e8-bd36-525400009efb.jpg",
-        "high_level_genre": "Urban/Electronic",
-        "specific_genre": "Trip-hop Electronica",
-        "spotifyUrl": "https://open.spotify.com/artist/7v5ZMCoiaAqFOHm95yIneG"
-      },
-      "weeks": [
-        {
-          "weekStartDate": "2024-12-25",
-          "weekEndDate": "2025-01-01",
-          "totalListens": 55
-        },
-        {
-          "weekStartDate": "2025-01-02",
-          "weekEndDate": "2025-01-09",
-          "totalListens": 82,
-          "listensDifference": 27
-        }
-      ]
-    },
-    {
-      "artist": {
         "uuid": "76e19c8a-8fd7-4b0a-9ca6-c4b2d9d3c09f",
         "name": "Kennedy OneSelf",
         "imageUrl": "https://assets.soundcharts.com/artist/7/d/f/76e19c8a-8fd7-4b0a-9ca6-c4b2d9d3c09f.jpg",
