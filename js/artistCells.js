@@ -37,27 +37,30 @@ class ArtistCell {
   }
 
   render() {
-      const cell = document.createElement('div');
-      cell.classList.add('artist-cell');
+    const cell = document.createElement('div');
+    cell.classList.add('artist-cell');
+    
+    if (this.hasHighestImprovement()) {
+        cell.classList.add('highest-improver');
+    }
 
-      if (this.hasHighestImprovement()) {
-          cell.classList.add('highest-improver');
-      }
+    const onFireLabel = this.hasHighestImprovement() 
+        ? '<span class="on-fire-label">🔥</span>' 
+        : '';
 
-      cell.innerHTML = `
-          <div class="artist-info">
-              <div class="artist-rank">${this.index + 1}</div>
-              <img src="${this.artistData.artist.imageUrl}" 
-                   alt="${this.artistData.artist.name}" 
-                   class="artist-img" />
-              <div class="artist-details">
-                  <h2 class="artist-name">
-                      ${this.artistData.artist.name} 
-                      ${!this.previousWeek ? '<span class="accent">NEW!</span>' : ''}
-                  </h2>
-                  <p class="genres">${this.artistData.artist.specific_genre}</p>
-              </div>
-          </div>
+    cell.innerHTML = `
+        <div class="artist-info">
+            <div class="artist-rank">${this.index + 1}</div>
+            <img src="${this.artistData.artist.imageUrl}" alt="${this.artistData.artist.name}" class="artist-img" />
+            <div class="artist-details">
+                <h2 class="artist-name">
+                    ${this.artistData.artist.name}
+                    ${!this.previousWeek ? '<span class="accent">NEW!</span>' : ''}
+                    ${onFireLabel}
+                </h2>
+                <p class="genres">${this.artistData.artist.specific_genre}</p>
+            </div>
+        </div>
           <div class="stats">
               <div class="stat-item">
                   <a href="${this.artistData.artist.spotifyUrl}" 
