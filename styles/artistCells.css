@@ -228,69 +228,6 @@
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.2); }
 }
-
-  /******************************************
-   * Info Popup Styles
-   ******************************************/
-
-.stat-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.info-container {
-  position: relative;
-  display: inline-block;
-}
-
-.info-icon {
-  color: #666;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.info-icon:hover {
-  color: #333;
-}
-
-.info-popup {
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: white;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  width: 200px;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-  z-index: 10;
-}
-
-.info-container:hover .info-popup {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(-10px);
-}
-
-.popup-content {
-  font-size: 0.9em;
-  color: #333;
-}
-
-.popup-content h3 {
-  margin: 0 0 8px 0;
-  font-size: 1em;
-  color: #1b4332;
-}
-
-.popup-content p {
-  margin: 5px 0;
-  line-height: 1.4;
-}
   
   /******************************************
    * RESPONSIVE QUERIES
