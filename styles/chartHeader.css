@@ -98,16 +98,10 @@
       font-size: 0.85rem;
     }
 
-    .info-popup {
-        max-width: 250px;
-        pointer-events: none; /* Prevent accidental clicks */
-    }
-
     /* Add these new rules for mobile-friendly interaction */
     .icon-wrapper {
       position: relative;
       display: inline-block;
-      margin-left: 2px;
       cursor: pointer;
     }
     
@@ -129,6 +123,12 @@
       color: #1d3557;
       /* Optional feedback color */
     }
+
+    .info-popup {
+      max-width: 250px;
+      pointer-events: none; /* Prevent accidental clicks */
+    }
+  }
     
     @media (max-width: 480px) {
       .chart-title {
