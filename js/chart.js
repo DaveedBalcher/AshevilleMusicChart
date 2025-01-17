@@ -7,7 +7,7 @@ export function renderChart(container, data) {
   const chartItemsEl = container.querySelector('#chart-items');
   
   const headerDiv = document.createElement('div');
-  renderChartHeader(headerDiv, 'January 2nd', '9th');
+  renderChartHeader(headerDiv, 'January 10th', '17th');
   chartItemsEl.appendChild(headerDiv);
 
   const cellsContainer = document.createElement('div');

@@ -24,9 +24,6 @@
   /* Subtitle Container */
   .main-header .subtitle {
     margin-bottom: 12px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -49,13 +46,6 @@
     font-size: 1.2rem;
     color: #343a40;
     font-weight: 500;
-    margin: 0;
-  }
-  
-  .main-header .sub-subtitle {
-    font-size: 1rem;
-    color: #343a40;
-    font-weight: 400;
     margin: 0;
   }
   
@@ -87,10 +77,6 @@
       font-size: 1.1rem;
     }
   
-    .main-header .sub-subtitle {
-      font-size: 0.85rem;
-    }
-  
     /* Show the line-break on narrower screens */
     .main-header .mobile-break {
       display: inline;
@@ -104,11 +90,7 @@
     }
   
     .main-header .main-subtitle {
-      font-size: 0.9rem;
-    }
-  
-    .main-header .sub-subtitle {
-      font-size: 0.75rem;
+      font-size: 0.85rem;
     }
   }
   
