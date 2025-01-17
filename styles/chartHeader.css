@@ -100,13 +100,40 @@
 
     .info-popup {
         max-width: 250px;
+        pointer-events: none; /* Prevent accidental clicks */
     }
-  }
-  
-  @media (max-width: 480px) {
-    .chart-title {
-      font-size: 1.3em;
+
+    /* Add these new rules for mobile-friendly interaction */
+    .icon-wrapper {
+      position: relative;
+      display: inline-block;
+      margin-left: 2px;
+      cursor: pointer;
     }
+    
+    .icon-wrapper:hover .info-popup,
+    .icon-wrapper.active .info-popup {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: auto;
+      /* Enable interactions when visible */
+    }
+    
+    .info-icon {
+      cursor: pointer;
+      color: #457b9d;
+      transition: color 0.3s;
+    }
+    
+    .icon-wrapper:active .info-icon {
+      color: #1d3557;
+      /* Optional feedback color */
+    }
+    
+    @media (max-width: 480px) {
+      .chart-title {
+        font-size: 1.3em;
+      }
     .chart-date-range {
       font-size: 0.8rem;
     }
