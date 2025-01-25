@@ -57,6 +57,7 @@
   opacity: 0;
   top: 100%;
   left: 50%;
+  text-align: left;
   transform: translateX(-50%);
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(8px);
@@ -65,7 +66,7 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(0, 0, 0, 0.1);
   width: max-content;
-  max-width: 300px;
+  max-width: 350px;
   margin-top: 10px;
   z-index: 100;
   pointer-events: none; /* Prevent accidental clicks when hidden */
