@@ -100,6 +100,7 @@
 
   .info-popup {
     max-width: 250px; /* Adjust popup width for smaller screens */
+    pointer-events: auto;
   }
 }
 
