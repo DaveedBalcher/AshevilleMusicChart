@@ -9,7 +9,7 @@ function renderMainHeader(container) {
           Asheville<br class="mobile-break"> Music Chart
         </h1>
         <div class="subtitle">
-          <h2 class="main-subtitle">Discover your next favorite creative neighbor</h2>
+          <h2 class="main-subtitle">Where Community Creativity Rises to the Top</h2>
         </div>
       </header>
     `;
