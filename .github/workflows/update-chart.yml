@@ -16,13 +16,20 @@ jobs:
       with:
         fetch-depth: 0 # Fetch all history for proper versioning
     
+    - name: Debug - List files
+      run: |
+        pwd
+        ls -la
+    
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
         node-version: '18'
     
     - name: Install dependencies
-      run: npm install
+      run: |
+        cat package.json
+        npm install
     
     - name: Run update script
       run: node scripts/updateData.js
