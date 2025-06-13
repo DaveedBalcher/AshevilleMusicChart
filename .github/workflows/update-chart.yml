@@ -12,14 +12,22 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v3
       with:
-        fetch-depth: 0 # Fetch all history for proper versioning
+        fetch-depth: 0
+        path: repo
     
     - name: Debug - List files
       run: |
+        echo "Current directory:"
         pwd
+        echo "Listing root directory:"
         ls -la
+        echo "Listing repo directory:"
+        ls -la repo/
+        echo "Checking package.json in repo:"
+        ls -la repo/package.json || echo "package.json not found in repo"
     
     - name: Setup Node.js
       uses: actions/setup-node@v3
@@ -27,11 +35,18 @@ jobs:
         node-version: '18'
     
     - name: Install dependencies
+      working-directory: repo
       run: |
+        echo "Current directory:"
+        pwd
+        echo "Listing files:"
+        ls -la
+        echo "Contents of package.json:"
         cat package.json
         npm install
     
     - name: Run update script
+      working-directory: repo
       run: node scripts/updateData.js
       env:
         APP_ID: ${{ secrets.APP_ID }}
@@ -43,6 +58,7 @@ jobs:
         git config --global user.email 'actions@github.com'
     
     - name: Commit and push if changed
+      working-directory: repo
       run: |
         git add data.js
         git diff --quiet && git diff --staged --quiet || (git commit -m "Update chart data [skip ci]" && git push) 
