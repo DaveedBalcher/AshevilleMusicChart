@@ -3,14 +3,18 @@ name: Update Chart Data
 on:
   schedule:
     # Runs at 12:01 AM EST every Friday
-    - cron: '1 5 * * 5'
-  workflow_dispatch: # Allows manual triggering
+    - cron: '0 5 * * 5'  # 5 AM UTC = 12 AM EST
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 
 env:
   TZ: 'America/New_York'
 
 jobs:
   update-data:
+    name: Update Chart Data
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -24,6 +28,8 @@ jobs:
         ls -la
         echo "Current time:"
         date
+        echo "Current timezone:"
+        date +"%Z %z"
     
     - name: Checkout repository
       uses: actions/checkout@v3
