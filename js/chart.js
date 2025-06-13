@@ -1,13 +1,19 @@
 import { renderChartHeader } from './chartHeader.js';
 import { renderArtistCells } from './artistCells.js';
+import { formatDate, formatEndDate } from './dateFormatting.js';
 
 export function renderChart(container, data) {
   container.innerHTML = `<div id="chart-items"></div>`;
 
   const chartItemsEl = container.querySelector('#chart-items');
   
+  // Get the last week's dates from the first artist's data
+  const lastWeek = data[0].weeks[data[0].weeks.length - 1];
+  const startDate = formatDate(lastWeek.weekStartDate);
+  const endDate = formatEndDate(lastWeek.weekStartDate, lastWeek.weekEndDate);
+  
   const headerDiv = document.createElement('div');
-  renderChartHeader(headerDiv, 'June 6th', '13th');
+  renderChartHeader(headerDiv, startDate, endDate);
   chartItemsEl.appendChild(headerDiv);
 
   const cellsContainer = document.createElement('div');
