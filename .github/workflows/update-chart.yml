@@ -3,9 +3,11 @@ name: Update Chart Data
 on:
   schedule:
     # Runs at 12:01 AM EST every Friday
-    # Using UTC time (EST is UTC-5)
     - cron: '1 5 * * 5'
   workflow_dispatch: # Allows manual triggering
+
+env:
+  TZ: 'America/New_York'
 
 jobs:
   update-data:
@@ -20,6 +22,8 @@ jobs:
         pwd
         echo "Initial directory contents:"
         ls -la
+        echo "Current time:"
+        date
     
     - name: Checkout repository
       uses: actions/checkout@v3
