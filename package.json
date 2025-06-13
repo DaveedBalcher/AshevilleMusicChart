@@ -1,0 +1,14 @@
+{
+  "name": "asheville-music-chart",
+  "version": "1.0.0",
+  "description": "Asheville Music Chart data updater",
+  "main": "scripts/updateData.js",
+  "scripts": {
+    "update": "node scripts/updateData.js"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.7",
+    "dotenv": "^16.0.3",
+    "date-fns": "^2.29.3"
+  }
+} 
