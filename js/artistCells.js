@@ -101,3 +101,52 @@ class ArtistCell {
       return '';
   }
 }
+
+// --- JUMPING SPOTIFY LINK ON MOBILE ---
+function setupJumpingSpotifyOnScroll() {
+  if (window.innerWidth > 768) return; // Only on mobile
+  const cells = Array.from(document.querySelectorAll('.artist-cell'));
+  let lastActive = null;
+
+  function getCellCenterY(cell) {
+    const rect = cell.getBoundingClientRect();
+    return rect.top + rect.height / 2;
+  }
+
+  function onScroll() {
+    const viewportCenter = window.innerHeight / 2;
+    let minDist = Infinity;
+    let centerCell = null;
+    cells.forEach(cell => {
+      const centerY = getCellCenterY(cell);
+      const dist = Math.abs(centerY - viewportCenter);
+      if (dist < minDist) {
+        minDist = dist;
+        centerCell = cell;
+      }
+    });
+    if (!centerCell) return;
+    // Remove jumping from all
+    cells.forEach(cell => {
+      const spotify = cell.querySelector('.spotify-link');
+      if (!spotify) return;
+      if (cell === centerCell) {
+        spotify.classList.add('jumping-spotify');
+        spotify.classList.remove('fade-out');
+      } else if (spotify.classList.contains('jumping-spotify')) {
+        spotify.classList.add('fade-out');
+        setTimeout(() => spotify.classList.remove('jumping-spotify', 'fade-out'), 1000);
+      } else {
+        spotify.classList.remove('jumping-spotify', 'fade-out');
+      }
+    });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  setTimeout(onScroll, 100); // Initial trigger after render
+}
+
+// Attach after render
+if (typeof window !== 'undefined') {
+  window.setupJumpingSpotifyOnScroll = setupJumpingSpotifyOnScroll;
+}

@@ -267,25 +267,52 @@
       margin: 2px 0;
     }
     .stats {
-      padding: 4px;
+      flex-direction: column;
+      padding: 2px 10px 2px 0;
       margin-right: 0;
+      gap: 2px;
+      align-items: flex-end;
+      text-align: right;
     }
     .stat-item {
-      min-width: 70px;
-      padding: 6px;
-      margin: 4px;
-      border-radius: 8px;
+      min-width: 0;
+      padding: 2px 0;
+      margin: 2px 0;
+      border-radius: 0;
+      background: none;
+      box-shadow: none;
+      align-items: flex-end;
+      text-align: right;
     }
     .stat-value {
-      font-size: 1em;
+      font-size: 0.78em;
+      font-weight: 600;
+      color: #1d3557;
+      line-height: 1.2;
+      margin-bottom: 0;
     }
     .spotify-link {
-      font-size: 1.1em;
-      padding: 8px;
+      margin-bottom: 4px;
+      display: inline-flex;
+      align-self: flex-end;
     }
     .on-fire-label {
       font-size: 1em;
       margin-left: 4px;
+    }
+    @keyframes spotify-jump {
+      0%, 100% { transform: translateY(0); }
+      20% { transform: translateY(-6px); }
+      40% { transform: translateY(0); }
+      60% { transform: translateY(-4px); }
+      80% { transform: translateY(0); }
+    }
+    .jumping-spotify {
+      animation: spotify-jump 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+    .jumping-spotify.fade-out {
+      animation: spotify-jump 1s cubic-bezier(0.4, 0, 0.2, 1) 1;
+      animation-fill-mode: forwards;
     }
   }
   
@@ -315,17 +342,32 @@
     .artist-name {
       font-size: 1em;
     }
-    .stat-value {
-      font-size: 0.95em;
+    .stats {
+      flex-direction: column;
+      padding: 1px 10px 1px 0;
+      margin-right: 0;
+      gap: 1px;
+      align-items: flex-end;
+      text-align: right;
     }
     .stat-item {
-      min-width: 50px;
-      padding: 4px;
-      margin: 2px;
+      min-width: 0;
+      padding: 1px 0;
+      margin: 1px 0;
+      border-radius: 0;
+      background: none;
+      box-shadow: none;
+      align-items: flex-end;
+      text-align: right;
+    }
+    .stat-value {
+      font-size: 0.68em;
+      margin-bottom: 0;
     }
     .spotify-link {
-      font-size: 1em;
-      padding: 6px;
+      margin-bottom: 3px;
+      display: inline-flex;
+      align-self: flex-end;
     }
   }
   

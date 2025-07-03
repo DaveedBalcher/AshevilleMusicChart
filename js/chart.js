@@ -42,5 +42,8 @@ export function renderChart(container, data) {
   }));
 
   renderArtistCells(chartItemsEl, artistsData);
+  if (typeof window !== 'undefined' && window.setupJumpingSpotifyOnScroll) {
+    window.setupJumpingSpotifyOnScroll();
+  }
 }
 

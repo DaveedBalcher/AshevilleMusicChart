@@ -1,7 +1,7 @@
 export function renderChartHeader(container, startDateStr, endDateStr) {
   const headerHTML = `
     <div class="chart-header">
-      <h2 class="chart-title">Top Asheville Artists</h2>
+      <h2 class="chart-title">Top Artists</h2>
       <div class="chart-date-range">
         <div class="content-wrapper">
           <span class="ranking-text">
