@@ -233,49 +233,99 @@
    * RESPONSIVE QUERIES
    ******************************************/
   @media (max-width: 768px) {
+    #chart-items {
+      padding-left: 0;
+      padding-right: 0;
+    }
     .artist-cell {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+      margin-left: 0;
+      margin-right: 0;
     }
-
-    .artist-name {
-      display: flex;
-      justify-content: center;
-      align-items: center;  
-    }
-  
-    .artist-info {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .artist-rank {
-      padding: 10px;
-    }
-  
-    .artist-img {
-      margin: 10px 0;
-    }
-  
     .artist-details {
-      padding: 0;
+      padding-left: 12px;
     }
-  
+    .artist-img {
+      width: 70px;
+      height: 70px;
+      margin: 5px 0 5px 10px;
+      border-width: 1px;
+    }
+    .artist-rank {
+      font-size: 1.2rem;
+      padding: 8px;
+    }
+    .artist-name {
+      font-size: 1.1em;
+    }
+    .accent {
+      font-size: 0.95em;
+      padding: 3px 6px;
+      margin-left: 6px;
+    }
+    .genres {
+      font-size: 0.95em;
+      margin: 2px 0;
+    }
     .stats {
-      padding: 10px;
-      margin-right: 0px;
+      padding: 4px;
+      margin-right: 0;
+    }
+    .stat-item {
+      min-width: 70px;
+      padding: 6px;
+      margin: 4px;
+      border-radius: 8px;
+    }
+    .stat-value {
+      font-size: 1em;
+    }
+    .spotify-link {
+      font-size: 1.1em;
+      padding: 8px;
+    }
+    .on-fire-label {
+      font-size: 1em;
+      margin-left: 4px;
     }
   }
   
   @media (max-width: 480px) {
-    .artist-img {
-      width: 80px;
-      height: 80px;
+    #chart-items {
+      padding-left: 0;
+      padding-right: 0;
     }
-  
+    .artist-cell {
+      margin-left: 0;
+      margin-right: 0;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+    }
+    .artist-details {
+      padding-left: 8px;
+    }
+    .artist-img {
+      width: 50px;
+      height: 50px;
+    }
+    .artist-rank {
+      font-size: 1em;
+      padding: 5px;
+    }
+    .artist-name {
+      font-size: 1em;
+    }
     .stat-value {
-      font-size: 1.1em;
+      font-size: 0.95em;
+    }
+    .stat-item {
+      min-width: 50px;
+      padding: 4px;
+      margin: 2px;
+    }
+    .spotify-link {
+      font-size: 1em;
+      padding: 6px;
     }
   }
   

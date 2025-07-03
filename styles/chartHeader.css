@@ -90,27 +90,37 @@
 
 /* Styles for devices with max width 768px */
 @media (max-width: 768px) {
+  .chart-header {
+    margin-bottom: 10px;
+  }
   .chart-title {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
+    margin: 0 0 2px 0;
+    color: #1a1a1a;
+    font-weight: 600;
   }
-
   .chart-date-range {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
+    gap: 0;
   }
-
   .info-popup {
-    max-width: 250px; /* Adjust popup width for smaller screens */
-    pointer-events: auto;
+    max-width: 180px;
+    padding: 8px 10px;
+    font-size: 0.85em;
   }
 }
 
 /* Styles for devices with max width 480px */
 @media (max-width: 480px) {
   .chart-title {
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
-
   .chart-date-range {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+  }
+  .info-popup {
+    max-width: 140px;
+    padding: 6px 6px;
+    font-size: 0.8em;
   }
 }

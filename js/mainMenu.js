@@ -23,7 +23,7 @@ function renderMainMenu(container) {
             rel="noopener noreferrer" 
             class="recommend-button"
           >
-            Recommend an Artist
+            Recommend Artist
           </a>
   
           <!-- GIVE FEEDBACK -->
