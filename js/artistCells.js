@@ -39,19 +39,17 @@ class ArtistCell {
   render() {
     const cell = document.createElement('div');
     cell.classList.add('artist-cell');
-    
-    if (this.hasHighestImprovement()) {
-        cell.classList.add('highest-improver');
-    }
 
     const onFireLabel = this.hasHighestImprovement() 
         ? '<span class="on-fire-label">🔥</span>' 
         : '';
 
+    const imgClass = 'artist-img' + (this.hasHighestImprovement() ? ' highest-improver' : '');
+
     cell.innerHTML = `
         <div class="artist-info">
             <div class="artist-rank">${this.index + 1}</div>
-            <img src="${this.artistData.artist.imageUrl}" alt="${this.artistData.artist.name}" class="artist-img" />
+            <img src="${this.artistData.artist.imageUrl}" alt="${this.artistData.artist.name}" class="${imgClass}" />
             <div class="artist-details">
                 <h2 class="artist-name">
                     ${this.artistData.artist.name}
@@ -114,12 +112,13 @@ function setupJumpingSpotifyOnScroll() {
   }
 
   function onScroll() {
-    const viewportCenter = window.innerHeight / 2;
+    // 33% from the top of the screen
+    const triggerY = window.innerHeight * 0.33;
     let minDist = Infinity;
     let centerCell = null;
     cells.forEach(cell => {
       const centerY = getCellCenterY(cell);
-      const dist = Math.abs(centerY - viewportCenter);
+      const dist = Math.abs(centerY - triggerY);
       if (dist < minDist) {
         minDist = dist;
         centerCell = cell;
