@@ -30,6 +30,8 @@ export class FilterController {
       if (existing) existing.remove();
       const container = document.body;
       container.appendChild(this.filterButton.render());
+      // Immediately restore the filter state after rendering
+      this.updateFilterButton();
     }
   }
 
