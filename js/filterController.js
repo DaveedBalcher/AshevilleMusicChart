@@ -117,7 +117,12 @@ export class FilterController {
         this.filterButton.destroy();
       }
     } else {
-      this.renderFilterButton();
+      // Only render if button doesn't exist
+      if (!this.filterButton.element) {
+        this.renderFilterButton();
+        // Restore filter state after recreating button
+        this.updateFilterButton();
+      }
     }
   }
 
