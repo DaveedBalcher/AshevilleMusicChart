@@ -1,6 +1,10 @@
 import { renderChartHeader } from './chartHeader.js';
 import { renderArtistCells } from './artistCells.js';
 import { formatDate, formatEndDate } from './dateFormatting.js';
+import { FilterService } from './filterService.js';
+import { FilterButton } from './filterButton.js';
+import { FilterController } from './filterController.js';
+import { FilterMenu } from './filterMenu.js';
 
 export function renderChart(container, data) {
   container.innerHTML = `<div id="chart-items"></div>`;
@@ -41,9 +45,39 @@ export function renderChart(container, data) {
     }
   }));
 
-  renderArtistCells(chartItemsEl, artistsData);
+  // Initialize filter system
+  const filterService = new FilterService();
+  const filterButton = new FilterButton(() => {
+    filterController.handleFilterButtonClick();
+  });
+  
+  const filterController = new FilterController(
+    filterService,
+    filterButton,
+    (filteredData) => {
+      // Clear existing cells
+      cellsContainer.innerHTML = '';
+      // Render filtered data
+      renderArtistCells(cellsContainer, filteredData);
+    }
+  );
+
+  // Initialize with original data and render initial cells
+  filterController.initialize(artistsData);
+  
+  // Setup jumping Spotify effect
   if (typeof window !== 'undefined' && window.setupJumpingSpotifyOnScroll) {
     window.setupJumpingSpotifyOnScroll();
   }
+
+  // Handle window resize for filter system
+  window.addEventListener('resize', () => {
+    filterController.handleResize();
+  });
+
+  // Cleanup on page unload
+  window.addEventListener('beforeunload', () => {
+    filterController.destroy();
+  });
 }
 
