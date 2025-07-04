@@ -25,6 +25,9 @@ export class FilterController {
   // Render the filter button
   renderFilterButton() {
     if (window.innerWidth <= 768) {
+      // Remove any existing filter button before rendering a new one
+      const existing = document.querySelector('.filter-button');
+      if (existing) existing.remove();
       const container = document.body;
       container.appendChild(this.filterButton.render());
     }
