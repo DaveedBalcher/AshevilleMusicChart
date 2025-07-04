@@ -2,11 +2,11 @@ export function renderChartHeader(container, startDateStr, endDateStr) {
   const isMobile = window.innerWidth <= 768;
   const headerHTML = `
     <div class="chart-header">
-      <h2 class="chart-title">Top Artists</h2>
+      <h2 class="chart-title">Top Artists (${startDateStr} to ${endDateStr})</h2>
       <div class="chart-date-range">
         <div class="content-wrapper">
           <span class="ranking-text">
-            Ranked by <strong>Spotify Listens</strong>
+            Ranked by weekly <strong>Spotify Listens</strong>
             <span class="icon-wrapper">
               <i class="fas fa-info-circle info-icon"></i>
               <span class="info-popup">
@@ -18,9 +18,6 @@ export function renderChartHeader(container, startDateStr, endDateStr) {
               </span>
             </span>
           </span>
-        </div>
-        <div class="date-text">
-          ${startDateStr} to ${endDateStr}
         </div>
       </div>
     </div>

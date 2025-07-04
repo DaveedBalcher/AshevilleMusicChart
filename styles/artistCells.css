@@ -45,12 +45,12 @@
   }
   
   .artist-img {
-    width: 100px;
-    height: 100px;
+    width: 112px;
+    height: 112px;
     object-fit: cover;
     border-radius: 50%;
-    border: 2px solid #2f3e46;
-    margin: 20px;
+    border: 2.5px solid #2f3e46;
+    margin: 22px;
   }
   
   .artist-details {
@@ -257,10 +257,10 @@
       padding-left: 12px;
     }
     .artist-img {
-      width: 70px;
-      height: 70px;
-      margin: 5px 0 5px 10px;
-      border-width: 1px;
+      width: 82px;
+      height: 82px;
+      margin: 10px 0 10px 14px;
+      border-width: 1.5px;
     }
     .artist-rank {
       font-size: 1.2rem;
@@ -344,8 +344,8 @@
       padding-left: 8px;
     }
     .artist-img {
-      width: 50px;
-      height: 50px;
+      width: 62px;
+      height: 62px;
     }
     .artist-rank {
       font-size: 1em;
