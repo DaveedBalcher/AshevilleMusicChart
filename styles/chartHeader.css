@@ -64,6 +64,12 @@
   box-shadow: 0 4px 16px 2px #457b9d44, 0 0 0 3px #a8dadc55;
 }
 
+.icon-wrapper .info-icon.active {
+  background: linear-gradient(135deg, #f8961e 80%, #e63946 100%);
+  color: #fff;
+  box-shadow: 0 4px 16px 2px #f8961e44, 0 0 0 3px #e6394655;
+}
+
 .info-popup {
   position: absolute;
   left: 50%;

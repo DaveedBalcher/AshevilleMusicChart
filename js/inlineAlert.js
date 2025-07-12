@@ -76,6 +76,9 @@ export class InlineAlert {
       setTimeout(() => {
         this.element.classList.remove('visible', 'hiding');
         this.isVisible = false;
+        // Remove active state from info icon when alert is closed
+        const infoIcon = document.querySelector('.info-icon');
+        if (infoIcon) infoIcon.classList.remove('active');
         this.onClose();
       }, 300); // Match CSS animation duration
     }

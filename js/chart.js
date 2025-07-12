@@ -21,8 +21,14 @@ export function renderChart(container, data) {
   renderChartHeader(headerDiv, startDate, endDate, () => {
     if (inlineAlert.isCurrentlyVisible()) {
       inlineAlert.hide();
+      // Remove active state from info icon
+      const infoIcon = headerDiv.querySelector('.info-icon');
+      if (infoIcon) infoIcon.classList.remove('active');
     } else {
       inlineAlert.show();
+      // Add active state to info icon
+      const infoIcon = headerDiv.querySelector('.info-icon');
+      if (infoIcon) infoIcon.classList.add('active');
     }
   });
   chartItemsEl.appendChild(headerDiv);
