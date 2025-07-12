@@ -18,19 +18,32 @@ export class InlineAlert {
     alert.innerHTML = `
       <div class="inline-alert-content">
         <div class="inline-alert-text">
-          <h2>How It Works:</h2>
-          <p><em>This project exists to spotlight Asheville’s local music talent and help neighbors discover the artists shaping our city’s sound.</em></p>
-          
-          <p>These rankings are based on global Spotify streams for artists based in the Asheville area. Charts are updated every week.</p>
+          <section>
+            <p>
+              <em>
+                This project spotlights Asheville's local music talent and helps neighbors discover the artists shaping our city's sound.
+              </em>
+            </p>
 
-          <p>For each artist, you'll see:</p>
-          <ul>
-            <li>Total streams from the most recent week</li>
-            <li>Change from the previous week</li>
-          </ul>
+            <h2>How It Works</h2>
 
-          <p><strong>🔥 = Biggest Weekly Growth</strong><br>
-          The 🔥 icon marks the artist with the highest percentage increase in streams this week.</p>
+            <p>
+              These rankings are based on global Spotify streams for artists based in the Asheville area. Charts update weekly.
+            </p>
+
+            <p>Each artist's entry shows:</p>
+            <ul>
+              <li><strong>Total streams</strong> from the most recent week</li>
+              <li><strong>Change</strong> from the previous week</li>
+            </ul>
+
+            <div class="fire-highlight">
+              <p>
+                <strong>🔥 Biggest Weekly Growth:</strong><br>
+                The <span class="fire-icon">🔥</span> icon marks the artist with the highest percentage increase in streams this week.
+              </p>
+            </div>
+          </section>
         </div>
         <button class="inline-alert-close" aria-label="Close information">
           <i class="fas fa-times"></i>

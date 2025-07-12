@@ -67,6 +67,55 @@
   font-weight: 600;
 }
 
+.inline-alert-text h2 {
+  color: #0d47a1;
+  font-size: 1.3rem;
+  margin: 0 0 12px 0;
+  font-weight: 600;
+}
+
+.inline-alert-text section {
+  margin: 0;
+}
+
+.inline-alert-text p {
+  margin: 0 0 12px 0;
+}
+
+.inline-alert-text p:last-child {
+  margin-bottom: 0;
+}
+
+.inline-alert-text ul {
+  margin: 8px 0 12px 0;
+  padding-left: 20px;
+}
+
+.inline-alert-text li {
+  margin-bottom: 4px;
+}
+
+.fire-highlight {
+  background-color: #fff3cd;
+  border-left: 6px solid #ffa726;
+  padding: 0.75em;
+  margin-top: 1em;
+  border-radius: 0 4px 4px 0;
+}
+
+.fire-highlight p {
+  margin: 0;
+  color: #856404;
+}
+
+.fire-highlight strong {
+  color: #856404;
+}
+
+.fire-icon {
+  font-size: 1.2em;
+}
+
 /* Close Button */
 .inline-alert-close {
   flex-shrink: 0;
