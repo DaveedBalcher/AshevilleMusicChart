@@ -19,7 +19,11 @@ export function renderChart(container, data) {
   
   const headerDiv = document.createElement('div');
   renderChartHeader(headerDiv, startDate, endDate, () => {
-    inlineAlert.show();
+    if (inlineAlert.isCurrentlyVisible()) {
+      inlineAlert.hide();
+    } else {
+      inlineAlert.show();
+    }
   });
   chartItemsEl.appendChild(headerDiv);
 

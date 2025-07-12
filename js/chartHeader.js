@@ -1,18 +1,15 @@
 export function renderChartHeader(container, startDateStr, endDateStr, onInfoClick) {
   const headerHTML = `
     <div class="chart-header">
-      <h2 class="chart-title">Top Asheville Artists</h2>
+      <h2 class="chart-title">Top Artists (${startDateStr} to ${endDateStr})</h2>
       <div class="chart-date-range">
         <div class="content-wrapper">
           <span class="ranking-text">
-            Ranked by <strong>Spotify Listens</strong>
+            Ranked by weekly <strong>Spotify Listens</strong>
             <span class="icon-wrapper">
               <i class="fas fa-info-circle info-icon" role="button" tabindex="0" aria-label="Show ranking information"></i>
             </span>
           </span>
-        </div>
-        <div class="date-text">
-          ${startDateStr} to ${endDateStr}
         </div>
       </div>
     </div>
