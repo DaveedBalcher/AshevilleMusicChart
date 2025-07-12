@@ -17,15 +17,20 @@ export class InlineAlert {
     
     alert.innerHTML = `
       <div class="inline-alert-content">
-        <div class="inline-alert-icon">
-          <i class="fas fa-info-circle"></i>
-        </div>
         <div class="inline-alert-text">
-          <strong>How Rankings Work:</strong> Rankings are based on global Spotify streams for artists based in the Asheville area. Updates weekly.
-          <br><br>
-          For each artist, the number of Spotify listens is shown for the most recent week and the difference from the previous week.
-          <br><br>
-          <strong>🔥</strong> Indicates the artist with the highest percentage increase in listens from the previous week.
+          <h2>How It Works:</h2>
+          <p><em>This project exists to spotlight Asheville’s local music talent and help neighbors discover the artists shaping our city’s sound.</em></p>
+          
+          <p>These rankings are based on global Spotify streams for artists based in the Asheville area. Charts are updated every week.</p>
+
+          <p>For each artist, you'll see:</p>
+          <ul>
+            <li>Total streams from the most recent week</li>
+            <li>Change from the previous week</li>
+          </ul>
+
+          <p><strong>🔥 = Biggest Weekly Growth</strong><br>
+          The 🔥 icon marks the artist with the highest percentage increase in streams this week.</p>
         </div>
         <button class="inline-alert-close" aria-label="Close information">
           <i class="fas fa-times"></i>

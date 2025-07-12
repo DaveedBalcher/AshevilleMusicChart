@@ -5,7 +5,7 @@ export function renderChartHeader(container, startDateStr, endDateStr, onInfoCli
       <div class="chart-date-range">
         <div class="content-wrapper">
           <span class="ranking-text">
-            Ranked by weekly <strong>Spotify Listens</strong>
+            Ranked by Weekly <strong>Spotify</strong> Streams
             <span class="icon-wrapper">
               <i class="fas fa-info-circle info-icon" role="button" tabindex="0" aria-label="Show ranking information"></i>
             </span>
