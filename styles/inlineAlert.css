@@ -1,0 +1,160 @@
+/******************************************
+ * INLINE ALERT STYLES
+ ******************************************/
+
+/* Inline Alert Container */
+.inline-alert {
+  background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+  border: 1px solid #bbdefb;
+  border-radius: 12px;
+  margin: 16px 0;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.1);
+}
+
+.inline-alert.visible {
+  max-height: 500px;
+  opacity: 1;
+  transform: translateY(0);
+  margin: 16px 0;
+}
+
+.inline-alert.hiding {
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-20px);
+  margin: 0;
+}
+
+/* Alert Content */
+.inline-alert-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px;
+  position: relative;
+}
+
+/* Alert Icon */
+.inline-alert-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  background: #2196f3;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.9rem;
+  margin-top: 2px;
+}
+
+/* Alert Text */
+.inline-alert-text {
+  flex: 1;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #1976d2;
+}
+
+.inline-alert-text strong {
+  color: #0d47a1;
+  font-weight: 600;
+}
+
+/* Close Button */
+.inline-alert-close {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  color: #6c757d;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  margin-top: -4px;
+  margin-right: -4px;
+}
+
+.inline-alert-close:hover {
+  background: rgba(108, 117, 125, 0.1);
+  color: #495057;
+}
+
+.inline-alert-close:active {
+  transform: scale(0.95);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .inline-alert {
+    margin: 12px 0;
+    border-radius: 10px;
+  }
+  
+  .inline-alert.visible {
+    margin: 12px 0;
+  }
+  
+  .inline-alert-content {
+    padding: 16px;
+    gap: 12px;
+  }
+  
+  .inline-alert-icon {
+    width: 20px;
+    height: 20px;
+    font-size: 0.8rem;
+  }
+  
+  .inline-alert-text {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  .inline-alert-close {
+    font-size: 1rem;
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .inline-alert {
+    margin: 8px 0;
+    border-radius: 8px;
+  }
+  
+  .inline-alert.visible {
+    margin: 8px 0;
+  }
+  
+  .inline-alert-content {
+    padding: 12px;
+    gap: 10px;
+  }
+  
+  .inline-alert-text {
+    font-size: 0.85rem;
+  }
+}
+
+/* Animation for artist cells moving up */
+.artist-cells-container {
+  transition: margin-top 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.artist-cells-container.alert-space {
+  margin-top: 0;
+} 

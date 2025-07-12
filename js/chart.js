@@ -5,6 +5,7 @@ import { FilterService } from './filterService.js';
 import { FilterButton } from './filterButton.js';
 import { FilterController } from './filterController.js';
 import { FilterMenu } from './filterMenu.js';
+import { InlineAlert } from './inlineAlert.js';
 
 export function renderChart(container, data) {
   container.innerHTML = `<div id="chart-items"></div>`;
@@ -17,12 +18,27 @@ export function renderChart(container, data) {
   const endDate = formatEndDate(lastWeek.weekStartDate, lastWeek.weekEndDate);
   
   const headerDiv = document.createElement('div');
-  renderChartHeader(headerDiv, startDate, endDate);
+  renderChartHeader(headerDiv, startDate, endDate, () => {
+    inlineAlert.show();
+  });
   chartItemsEl.appendChild(headerDiv);
 
+  // Create inline alert
+  const inlineAlert = new InlineAlert(() => {
+    // When alert is closed, animate artist cells up
+    cellsContainer.classList.remove('alert-space');
+  });
+  const alertElement = inlineAlert.render();
+  chartItemsEl.appendChild(alertElement);
+
   const cellsContainer = document.createElement('div');
-  cellsContainer.classList.add('cells-container');
+  cellsContainer.classList.add('cells-container', 'artist-cells-container');
   chartItemsEl.appendChild(cellsContainer);
+
+  // Show the alert when the website first loads
+  setTimeout(() => {
+    inlineAlert.show();
+  }, 100); // Small delay to ensure DOM is ready
 
   const sortedData = data.sort((a, b) => {
     const aListens = a.weeks[a.weeks.length - 1].totalListens;
@@ -78,6 +94,7 @@ export function renderChart(container, data) {
   // Cleanup on page unload
   window.addEventListener('beforeunload', () => {
     filterController.destroy();
+    inlineAlert.destroy();
   });
 }
 
