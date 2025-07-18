@@ -29,19 +29,21 @@ export class InlineAlert {
 
             <p>
               These rankings are based on global Spotify streams for artists based in the Asheville area. Charts update weekly.
+              <button class="inline-alert-details-toggle" aria-expanded="false" aria-controls="inline-alert-details" style="margin-left: 0.75em; vertical-align: middle;">More Details</button>
             </p>
 
-            <p>Each artist's entry shows:</p>
-            <ul>
-              <li><strong>Total streams</strong> from the most recent week</li>
-              <li><strong>Change</strong> from the previous week</li>
-            </ul>
-
-            <div class="fire-highlight">
-              <p>
-                <strong>🔥 Biggest Weekly Growth:</strong><br>
-                The <span class="fire-icon">🔥</span> icon marks the artist with the highest percentage increase in streams this week.
-              </p>
+            <div id="inline-alert-details" class="inline-alert-details" style="display: none;">
+              <p>Each artist's entry shows:</p>
+              <ul>
+                <li><strong>Total streams</strong> from the most recent week</li>
+                <li><strong>Change</strong> from the previous week</li>
+              </ul>
+              <div class="fire-highlight">
+                <p>
+                  <strong>🔥 Biggest Weekly Growth:</strong><br>
+                  The <span class="fire-icon">🔥</span> icon marks the artist with the highest percentage increase in streams this week.
+                </p>
+              </div>
             </div>
           </section>
         </div>
@@ -57,6 +59,22 @@ export class InlineAlert {
       e.preventDefault();
       e.stopPropagation();
       this.hide();
+    });
+
+    // Add event listener for details toggle button
+    const detailsToggle = alert.querySelector('.inline-alert-details-toggle');
+    const detailsSection = alert.querySelector('#inline-alert-details');
+    detailsToggle.addEventListener('click', () => {
+      const expanded = detailsToggle.getAttribute('aria-expanded') === 'true';
+      if (expanded) {
+        detailsSection.style.display = 'none';
+        detailsToggle.setAttribute('aria-expanded', 'false');
+        detailsToggle.textContent = 'More Details';
+      } else {
+        detailsSection.style.display = 'block';
+        detailsToggle.setAttribute('aria-expanded', 'true');
+        detailsToggle.textContent = 'Hide Details';
+      }
     });
 
     this.element = alert;

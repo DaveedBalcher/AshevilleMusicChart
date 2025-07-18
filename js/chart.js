@@ -1,4 +1,3 @@
-import { renderChartHeader } from './chartHeader.js';
 import { renderArtistCells } from './artistCells.js';
 import { formatDate, formatEndDate } from './dateFormatting.js';
 import { FilterService } from './filterService.js';
@@ -17,21 +16,61 @@ export function renderChart(container, data) {
   const startDate = formatDate(lastWeek.weekStartDate);
   const endDate = formatEndDate(lastWeek.weekStartDate, lastWeek.weekEndDate);
   
-  const headerDiv = document.createElement('div');
-  renderChartHeader(headerDiv, startDate, endDate, () => {
-    if (inlineAlert.isCurrentlyVisible()) {
-      inlineAlert.hide();
-      // Remove active state from info icon
-      const infoIcon = headerDiv.querySelector('.info-icon');
-      if (infoIcon) infoIcon.classList.remove('active');
-    } else {
-      inlineAlert.show();
-      // Add active state to info icon
-      const infoIcon = headerDiv.querySelector('.info-icon');
-      if (infoIcon) infoIcon.classList.add('active');
-    }
-  });
-  chartItemsEl.appendChild(headerDiv);
+  // Create chart title section with date range for sticky header
+  const chartTitleSection = document.createElement('div');
+  chartTitleSection.className = 'chart-title-section';
+  chartTitleSection.innerHTML = `<h2 class="chart-title">Top Artists (${startDate} to ${endDate})</h2>`;
+  
+  // Add chart title to sticky header
+  const stickyHeader = document.querySelector('.sticky-header');
+  if (stickyHeader) {
+    stickyHeader.appendChild(chartTitleSection);
+  }
+  
+  // Create tab description (scrollable content)
+  const tabDescription = document.createElement('div');
+  tabDescription.className = 'tab-description';
+  tabDescription.innerHTML = `
+    <div class="content-wrapper">
+      <span class="ranking-text">
+        Ranked by Weekly <strong>Spotify</strong> Streams
+        <span class="icon-wrapper">
+          <i class="fas fa-info-circle info-icon" role="button" tabindex="0" aria-label="Show ranking information"></i>
+        </span>
+      </span>
+    </div>
+  `;
+  chartItemsEl.appendChild(tabDescription);
+
+  // Add info icon click handler
+  const infoIcon = tabDescription.querySelector('.info-icon');
+  if (infoIcon) {
+    infoIcon.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (inlineAlert.isCurrentlyVisible()) {
+        inlineAlert.hide();
+        infoIcon.classList.remove('active');
+      } else {
+        inlineAlert.show();
+        infoIcon.classList.add('active');
+      }
+    });
+    
+    // Add keyboard support
+    infoIcon.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        if (inlineAlert.isCurrentlyVisible()) {
+          inlineAlert.hide();
+          infoIcon.classList.remove('active');
+        } else {
+          inlineAlert.show();
+          infoIcon.classList.add('active');
+        }
+      }
+    });
+  }
 
   // Create inline alert
   const inlineAlert = new InlineAlert(() => {

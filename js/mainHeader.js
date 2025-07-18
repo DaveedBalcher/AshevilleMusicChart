@@ -5,9 +5,9 @@
 function renderMainHeader(container) {
     const headerHTML = `
       <header class="main-header">
-        <h1 class="page-title">
-          Asheville<br class="mobile-break"> Music Chart
-        </h1>
+        <div class="amc-header">
+          <img src="assets/asheville-music-chart-logo.png" alt="Asheville Music Chart Logo" class="amc-logo" />
+        </div>
         <div class="subtitle">
           <h2 class="main-subtitle">Where Community Creativity Rises to the Top</h2>
         </div>
