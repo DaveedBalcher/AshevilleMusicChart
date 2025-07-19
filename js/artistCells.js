@@ -86,13 +86,13 @@ class ArtistCell {
       
       if (diff > 0) {
           return `<span class="up-arrow">
-              <i class="fas fa-arrow-up"></i> +${diff.toLocaleString()}
+              +${diff.toLocaleString()}
           </span>`;
       } 
       
       if (diff < 0) {
           return `<span class="down-arrow">
-              <i class="fas fa-arrow-down"></i> ${diff.toLocaleString()}
+              ${diff.toLocaleString()}
           </span>`;
       }
       

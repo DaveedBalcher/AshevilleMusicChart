@@ -35,8 +35,9 @@
   display: flex;
   align-items: flex-start;
   gap: 16px;
-  padding: 20px;
+  padding: 20px 20px 0 20px;
   position: relative;
+  padding-bottom: 0 !important;
 }
 
 /* Alert Icon */
@@ -59,16 +60,17 @@
   flex: 1;
   font-size: 0.95rem;
   line-height: 1.6;
-  color: #1976d2;
+  color: #4b3b5f;
+  padding-bottom: 0 !important;
 }
 
 .inline-alert-text strong {
-  color: #0d47a1;
+  color: #4b3b5f;
   font-weight: 600;
 }
 
 .inline-alert-text h2 {
-  color: #0d47a1;
+  color: #4b3b5f;
   font-size: 1.3rem;
   margin: 0 0 12px 0;
   font-weight: 600;
@@ -109,7 +111,7 @@
 }
 
 .fire-highlight strong {
-  color: #856404;
+  color: #2a7092;
 }
 
 .fire-icon {
@@ -147,8 +149,12 @@
 
 /* More Details Toggle Button */
 .inline-alert-details-toggle {
-  display: inline-block;
-  margin: 8px 0 10px 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  text-align: center;
+  margin: 0 0 0 0.5em;
   padding: 4px 14px;
   background: linear-gradient(90deg, #1976d2 0%, #64b5f6 100%);
   color: #fff;
@@ -160,6 +166,7 @@
   cursor: pointer;
   transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
   outline: none;
+  padding-bottom: 0;
 }
 
 .inline-alert-details-toggle:hover,
@@ -240,8 +247,16 @@
 /* Animation for artist cells moving up */
 .artist-cells-container {
   transition: margin-top 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: 0;
 }
 
 .artist-cells-container.alert-space {
-  margin-top: 0;
+  margin-top: 0 !important;
+} 
+
+.inline-alert-text p:last-child,
+.inline-alert-text ul:last-child,
+.inline-alert-text .fire-highlight:last-child {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
 } 

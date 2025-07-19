@@ -23,6 +23,8 @@
     justify-content: space-between;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    color: #4b3b5f;
+    border: none;
   }
   
   .artist-cell:hover {
@@ -40,7 +42,7 @@
   .artist-rank {
     font-size: 2rem;
     font-weight: bold;
-    color: #1b4332;
+    color: #2a7092;
     padding: 20px;
   }
   
@@ -63,14 +65,14 @@
     align-items: center;
     font-size: 1.5em;
     margin: 0;
-    color: #1b4332;
+    color: #4b3b5f;
   }
   
   .accent {
-    background-color: #f8961e;
+    background: #2a7092;
     padding: 5px;
     border-radius: 4px;
-    color: #ffffff;
+    color: #f3e3d3;
     font-weight: bold;
     display: inline-block;
     margin-left: 10px;
@@ -169,7 +171,7 @@
     margin-right: 5px;
   }
   .up-arrow {
-    color: #2a9d8f;
+    color: #2a7092;
   }
   .down-arrow {
     color: #e63946;
