@@ -1,5 +1,5 @@
 export const data = {
-  "timestamp": "2025-08-29T05:05:15.471Z",
+  "timestamp": "2025-09-05T05:05:02.651Z",
   "data": [
     {
       "artist": {
@@ -12,15 +12,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-08-13",
-          "weekEndDate": "2025-08-20",
-          "totalListens": 10037483
+          "weekStartDate": "2025-08-20",
+          "weekEndDate": "2025-08-27",
+          "totalListens": 9766932
         },
         {
-          "weekStartDate": "2025-08-21",
-          "weekEndDate": "2025-08-28",
-          "totalListens": 9648009,
-          "listensDifference": -389474
+          "weekStartDate": "2025-08-28",
+          "weekEndDate": "2025-09-04",
+          "totalListens": 8787806,
+          "listensDifference": -979126
         }
       ]
     },
@@ -35,15 +35,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-08-13",
-          "weekEndDate": "2025-08-20",
-          "totalListens": 4793215
+          "weekStartDate": "2025-08-20",
+          "weekEndDate": "2025-08-27",
+          "totalListens": 4594361
         },
         {
-          "weekStartDate": "2025-08-21",
-          "weekEndDate": "2025-08-28",
-          "totalListens": 4569483,
-          "listensDifference": -223732
+          "weekStartDate": "2025-08-28",
+          "weekEndDate": "2025-09-04",
+          "totalListens": 4387128,
+          "listensDifference": -207233
         }
       ]
     },
@@ -58,15 +58,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-08-13",
-          "weekEndDate": "2025-08-20",
-          "totalListens": 7260478
+          "weekStartDate": "2025-08-20",
+          "weekEndDate": "2025-08-27",
+          "totalListens": 7205264
         },
         {
-          "weekStartDate": "2025-08-21",
-          "weekEndDate": "2025-08-28",
-          "totalListens": 7217872,
-          "listensDifference": -42606
+          "weekStartDate": "2025-08-28",
+          "weekEndDate": "2025-09-04",
+          "totalListens": 7389130,
+          "listensDifference": 183866
         }
       ]
     },
@@ -81,15 +81,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-08-13",
-          "weekEndDate": "2025-08-20",
-          "totalListens": 1303965
+          "weekStartDate": "2025-08-20",
+          "weekEndDate": "2025-08-27",
+          "totalListens": 1325080
         },
         {
-          "weekStartDate": "2025-08-21",
-          "weekEndDate": "2025-08-28",
-          "totalListens": 1326051,
-          "listensDifference": 22086
+          "weekStartDate": "2025-08-28",
+          "weekEndDate": "2025-09-04",
+          "totalListens": 1322832,
+          "listensDifference": -2248
         }
       ]
     },
@@ -104,15 +104,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-08-13",
-          "weekEndDate": "2025-08-20",
-          "totalListens": 2804021
+          "weekStartDate": "2025-08-20",
+          "weekEndDate": "2025-08-27",
+          "totalListens": 2751380
         },
         {
-          "weekStartDate": "2025-08-21",
-          "weekEndDate": "2025-08-28",
-          "totalListens": 2744760,
-          "listensDifference": -59261
+          "weekStartDate": "2025-08-28",
+          "weekEndDate": "2025-09-04",
+          "totalListens": 2724924,
+          "listensDifference": -26456
         }
       ]
     },
@@ -127,15 +127,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-08-13",
-          "weekEndDate": "2025-08-20",
-          "totalListens": 4136254
+          "weekStartDate": "2025-08-20",
+          "weekEndDate": "2025-08-27",
+          "totalListens": 4039669
         },
         {
-          "weekStartDate": "2025-08-21",
-          "weekEndDate": "2025-08-28",
-          "totalListens": 4043171,
-          "listensDifference": -93083
+          "weekStartDate": "2025-08-28",
+          "weekEndDate": "2025-09-04",
+          "totalListens": 4081192,
+          "listensDifference": 41523
         }
       ]
     },
@@ -150,15 +150,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-08-13",
-          "weekEndDate": "2025-08-20",
-          "totalListens": 24707
+          "weekStartDate": "2025-08-20",
+          "weekEndDate": "2025-08-27",
+          "totalListens": 24888
         },
         {
-          "weekStartDate": "2025-08-21",
-          "weekEndDate": "2025-08-28",
-          "totalListens": 25063,
-          "listensDifference": 356
+          "weekStartDate": "2025-08-28",
+          "weekEndDate": "2025-09-04",
+          "totalListens": 25867,
+          "listensDifference": 979
         }
       ]
     },
@@ -173,15 +173,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-08-13",
-          "weekEndDate": "2025-08-20",
-          "totalListens": 57048
+          "weekStartDate": "2025-08-20",
+          "weekEndDate": "2025-08-27",
+          "totalListens": 57802
         },
         {
-          "weekStartDate": "2025-08-21",
-          "weekEndDate": "2025-08-28",
-          "totalListens": 58303,
-          "listensDifference": 1255
+          "weekStartDate": "2025-08-28",
+          "weekEndDate": "2025-09-04",
+          "totalListens": 60165,
+          "listensDifference": 2363
         }
       ]
     },
@@ -196,15 +196,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-08-13",
-          "weekEndDate": "2025-08-20",
-          "totalListens": 14204
+          "weekStartDate": "2025-08-20",
+          "weekEndDate": "2025-08-27",
+          "totalListens": 13718
         },
         {
-          "weekStartDate": "2025-08-21",
-          "weekEndDate": "2025-08-28",
-          "totalListens": 13718,
-          "listensDifference": -486
+          "weekStartDate": "2025-08-28",
+          "weekEndDate": "2025-09-04",
+          "totalListens": 13765,
+          "listensDifference": 47
         }
       ]
     },
@@ -219,15 +219,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-08-13",
-          "weekEndDate": "2025-08-20",
-          "totalListens": 8589
+          "weekStartDate": "2025-08-20",
+          "weekEndDate": "2025-08-27",
+          "totalListens": 8145
         },
         {
-          "weekStartDate": "2025-08-21",
-          "weekEndDate": "2025-08-28",
-          "totalListens": 8145,
-          "listensDifference": -444
+          "weekStartDate": "2025-08-28",
+          "weekEndDate": "2025-09-04",
+          "totalListens": 8362,
+          "listensDifference": 217
         }
       ]
     },
@@ -242,15 +242,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-08-13",
-          "weekEndDate": "2025-08-20",
-          "totalListens": 115066
+          "weekStartDate": "2025-08-20",
+          "weekEndDate": "2025-08-27",
+          "totalListens": 103970
         },
         {
-          "weekStartDate": "2025-08-21",
-          "weekEndDate": "2025-08-28",
-          "totalListens": 102821,
-          "listensDifference": -12245
+          "weekStartDate": "2025-08-28",
+          "weekEndDate": "2025-09-04",
+          "totalListens": 77160,
+          "listensDifference": -26810
         }
       ]
     },
@@ -265,15 +265,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-08-13",
-          "weekEndDate": "2025-08-20",
-          "totalListens": 2368
+          "weekStartDate": "2025-08-20",
+          "weekEndDate": "2025-08-27",
+          "totalListens": 2322
         },
         {
-          "weekStartDate": "2025-08-21",
-          "weekEndDate": "2025-08-28",
-          "totalListens": 2322,
-          "listensDifference": -46
+          "weekStartDate": "2025-08-28",
+          "weekEndDate": "2025-09-04",
+          "totalListens": 5128,
+          "listensDifference": 2806
         }
       ]
     },
@@ -288,15 +288,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-08-13",
-          "weekEndDate": "2025-08-20",
-          "totalListens": 3170
+          "weekStartDate": "2025-08-20",
+          "weekEndDate": "2025-08-27",
+          "totalListens": 2932
         },
         {
-          "weekStartDate": "2025-08-21",
-          "weekEndDate": "2025-08-28",
-          "totalListens": 2932,
-          "listensDifference": -238
+          "weekStartDate": "2025-08-28",
+          "weekEndDate": "2025-09-04",
+          "totalListens": 2820,
+          "listensDifference": -112
         }
       ]
     },
@@ -311,15 +311,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-08-13",
-          "weekEndDate": "2025-08-20",
-          "totalListens": 263
+          "weekStartDate": "2025-08-20",
+          "weekEndDate": "2025-08-27",
+          "totalListens": 538
         },
         {
-          "weekStartDate": "2025-08-21",
-          "weekEndDate": "2025-08-28",
-          "totalListens": 273,
-          "listensDifference": 10
+          "weekStartDate": "2025-08-28",
+          "weekEndDate": "2025-09-04",
+          "totalListens": 921,
+          "listensDifference": 383
         }
       ]
     },
@@ -334,15 +334,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-08-13",
-          "weekEndDate": "2025-08-20",
-          "totalListens": 508
+          "weekStartDate": "2025-08-20",
+          "weekEndDate": "2025-08-27",
+          "totalListens": 521
         },
         {
-          "weekStartDate": "2025-08-21",
-          "weekEndDate": "2025-08-28",
-          "totalListens": 521,
-          "listensDifference": 13
+          "weekStartDate": "2025-08-28",
+          "weekEndDate": "2025-09-04",
+          "totalListens": 524,
+          "listensDifference": 3
         }
       ]
     },
@@ -357,15 +357,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-08-13",
-          "weekEndDate": "2025-08-20",
-          "totalListens": 117649
+          "weekStartDate": "2025-08-20",
+          "weekEndDate": "2025-08-27",
+          "totalListens": 126423
         },
         {
-          "weekStartDate": "2025-08-21",
-          "weekEndDate": "2025-08-28",
-          "totalListens": 127161,
-          "listensDifference": 9512
+          "weekStartDate": "2025-08-28",
+          "weekEndDate": "2025-09-04",
+          "totalListens": 126092,
+          "listensDifference": -331
         }
       ]
     },
@@ -380,15 +380,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-08-13",
-          "weekEndDate": "2025-08-20",
-          "totalListens": 3958
+          "weekStartDate": "2025-08-20",
+          "weekEndDate": "2025-08-27",
+          "totalListens": 3817
         },
         {
-          "weekStartDate": "2025-08-21",
-          "weekEndDate": "2025-08-28",
-          "totalListens": 3817,
-          "listensDifference": -141
+          "weekStartDate": "2025-08-28",
+          "weekEndDate": "2025-09-04",
+          "totalListens": 3746,
+          "listensDifference": -71
         }
       ]
     },
@@ -403,15 +403,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-08-13",
-          "weekEndDate": "2025-08-20",
-          "totalListens": 11441
+          "weekStartDate": "2025-08-20",
+          "weekEndDate": "2025-08-27",
+          "totalListens": 11089
         },
         {
-          "weekStartDate": "2025-08-21",
-          "weekEndDate": "2025-08-28",
-          "totalListens": 11089,
-          "listensDifference": -352
+          "weekStartDate": "2025-08-28",
+          "weekEndDate": "2025-09-04",
+          "totalListens": 10885,
+          "listensDifference": -204
         }
       ]
     },
@@ -426,15 +426,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-08-13",
-          "weekEndDate": "2025-08-20",
-          "totalListens": 224819
+          "weekStartDate": "2025-08-20",
+          "weekEndDate": "2025-08-27",
+          "totalListens": 228273
         },
         {
-          "weekStartDate": "2025-08-21",
-          "weekEndDate": "2025-08-28",
-          "totalListens": 228846,
-          "listensDifference": 4027
+          "weekStartDate": "2025-08-28",
+          "weekEndDate": "2025-09-04",
+          "totalListens": 230905,
+          "listensDifference": 2632
         }
       ]
     }
