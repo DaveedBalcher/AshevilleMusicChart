@@ -14,3 +14,9 @@ scripts/.env
 # Mac files
 .DS_Store
 */.DS_Store
+
+# Build output
+dist/
+**/dist/
+*.tsbuildinfo
+**/*.tsbuildinfo

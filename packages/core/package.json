@@ -1,0 +1,13 @@
+{
+  "name": "@asheville-music-chart/core",
+  "version": "0.0.0",
+  "description": "Domain entities and value objects for the Asheville Music Chart",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -b tsconfig.json",
+    "lint": "eslint \"src/**/*.ts\"",
+    "test": "npm run build && node --loader ../../test-support/esm-loader.mjs --test ./tests/*.test.js"
+  }
+}

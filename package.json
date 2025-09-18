@@ -1,14 +1,19 @@
 {
   "name": "asheville-music-chart",
+  "private": true,
   "version": "1.0.0",
-  "description": "Asheville Music Chart data updater",
-  "main": "scripts/updateData.js",
+  "description": "Asheville Music Chart monorepo",
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "tools/*"
+  ],
   "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
     "update": "node scripts/updateData.js"
   },
-  "dependencies": {
-    "node-fetch": "^2.6.7",
-    "dotenv": "^16.0.3",
-    "date-fns": "^2.29.3"
-  }
-} 
+  "dependencies": {},
+  "devDependencies": {}
+}
