@@ -1,0 +1,11 @@
+{
+  "name": "@asheville-music-chart/web",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Web presentation app for the Asheville Music Chart",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "eslint \"src/**/*.{ts,tsx}\"",
+    "test": "vitest"
+  }
+}
