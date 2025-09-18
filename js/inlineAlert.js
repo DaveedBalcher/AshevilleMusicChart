@@ -23,16 +23,14 @@ export class InlineAlert {
               <em>
                 This project spotlights Asheville's local music talent and helps neighbors discover the artists shaping our city's sound.
               </em>
-            </p>
-
-            <h2>How It Works</h2>
-
-            <p>
-              These rankings are based on global Spotify streams for artists based in the Asheville area. Charts update weekly.
-              <button class="inline-alert-details-toggle" aria-expanded="false" aria-controls="inline-alert-details" style="margin-left: 0.75em; vertical-align: middle;">More Details</button>
+              <button class="inline-alert-details-toggle" aria-expanded="false" aria-controls="inline-alert-details" style="margin-left: 0.75em; vertical-align: middle;">How it works</button>
             </p>
 
             <div id="inline-alert-details" class="inline-alert-details" style="display: none;">
+              <h2>How It Works</h2>
+              <p>
+                These rankings are based on global Spotify streams for artists based in the Asheville area. Charts update weekly.
+              </p>
               <p>Each artist's entry shows:</p>
               <ul>
                 <li><strong>Total streams</strong> from the most recent week</li>
@@ -69,11 +67,11 @@ export class InlineAlert {
       if (expanded) {
         detailsSection.style.display = 'none';
         detailsToggle.setAttribute('aria-expanded', 'false');
-        detailsToggle.textContent = 'More Details';
+        detailsToggle.textContent = 'How it works';
       } else {
         detailsSection.style.display = 'block';
         detailsToggle.setAttribute('aria-expanded', 'true');
-        detailsToggle.textContent = 'Hide Details';
+        detailsToggle.textContent = 'Hide details';
       }
     });
 

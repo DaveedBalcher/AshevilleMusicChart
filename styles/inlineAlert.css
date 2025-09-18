@@ -102,6 +102,7 @@
   border-left: 6px solid #ffa726;
   padding: 0.75em;
   margin-top: 1em;
+  margin-bottom: 1em;
   border-radius: 0 4px 4px 0;
 }
 
@@ -147,7 +148,7 @@
   transform: scale(0.95);
 }
 
-/* More Details Toggle Button */
+/* Details Toggle Button */
 .inline-alert-details-toggle {
   display: inline-flex;
   align-items: center;
@@ -257,6 +258,6 @@
 .inline-alert-text p:last-child,
 .inline-alert-text ul:last-child,
 .inline-alert-text .fire-highlight:last-child {
-  margin-bottom: 0 !important;
+  margin-bottom: 1em !important;
   padding-bottom: 0 !important;
-} 
+}
