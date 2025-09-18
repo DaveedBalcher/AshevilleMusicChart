@@ -34,12 +34,23 @@
 
   <script type="module">
     import { renderChart } from './js/chart.js';
-    import { data } from './data.js';
-  
-    document.addEventListener('DOMContentLoaded', () => {      
+    import { loadChartData } from './js/dataLoader.js';
+
+    document.addEventListener('DOMContentLoaded', async () => {
       renderMainMenu(document.getElementById('main-action-menu'));
       renderMainHeader(document.getElementById('main-header'));
-      renderChart(document.getElementById('chart-container'), data.data); // Pass data.data
+      try {
+        const { dataset, displayWeekStart, displayWeekEnd } = await loadChartData();
+        const chartData = Array.isArray(dataset?.data) ? dataset.data : [];
+        renderChart(
+          document.getElementById('chart-container'),
+          chartData,
+          { displayWeekStart, displayWeekEnd }
+        );
+      } catch (error) {
+        console.error('Failed to load chart data:', error);
+        renderChart(document.getElementById('chart-container'), []);
+      }
     });
   </script>
 

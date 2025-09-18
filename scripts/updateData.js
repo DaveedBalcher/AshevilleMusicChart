@@ -67,6 +67,23 @@ function writeData(filePath, data) {
   }
 }
 
+function writeArchiveManifest(archiveDir) {
+  const manifestPath = path.join(archiveDir, 'manifest.js');
+  const files = fs
+    .readdirSync(archiveDir)
+    .filter(name => /^data_.+\.js$/.test(name))
+    .sort((a, b) => b.localeCompare(a));
+
+  const entries = files
+    .map(name => `  { importPath: '../archive/${name}', filename: '${name}' }`)
+    .join(',\n');
+
+  const manifestContent = `export const archiveManifest = [\n${entries}\n];\n`;
+
+  fs.writeFileSync(manifestPath, manifestContent);
+  console.log('Archive manifest updated.');
+}
+
 // Function to fetch data for an artist
 async function fetchDataForArtist(artist, dateRanges) {
   const { uuid, name, imageUrl, high_level_genre, specific_genre, spotifyUrl } = artist;
@@ -192,6 +209,12 @@ async function fetchData() {
 
   console.log('Writing updated data to data.js');
   writeData(dataFilePath, dataWithTimestamp);
+
+  try {
+    writeArchiveManifest(archiveDir);
+  } catch (manifestError) {
+    console.error('Failed to update archive manifest:', manifestError.message);
+  }
 }
 
 // Execute the main function

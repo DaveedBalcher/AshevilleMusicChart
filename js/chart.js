@@ -6,17 +6,19 @@ import { FilterController } from './filterController.js';
 import { FilterMenu } from './filterMenu.js';
 import { InlineAlert } from './inlineAlert.js';
 
-export function renderChart(container, data) {
+export function renderChart(container, data, options = {}) {
   container.innerHTML = `<div id="chart-items"></div>`;
 
   const chartItemsEl = container.querySelector('#chart-items');
-  
-  // Get the last week's dates from the first artist's data
-  const lastWeek = data[0].weeks[data[0].weeks.length - 1];
-  const startDate = formatDate(lastWeek.weekStartDate);
-  const endDate = formatEndDate(lastWeek.weekStartDate, lastWeek.weekEndDate);
-  
-  // Create chart tabs section
+
+  const { displayWeekStart = null, displayWeekEnd = null } = options;
+
+  const stickyHeader = document.querySelector('.sticky-header');
+  if (stickyHeader) {
+    const existingTabs = stickyHeader.querySelector('.chart-tabs');
+    if (existingTabs) existingTabs.remove();
+  }
+
   const chartTabsSection = document.createElement('div');
   chartTabsSection.className = 'chart-tabs';
   chartTabsSection.innerHTML = `
@@ -25,134 +27,180 @@ export function renderChart(container, data) {
     <button class="chart-tab" data-tab="shows">Shows</button>
   `;
 
-  // Add chart tabs to sticky header
-  const stickyHeader = document.querySelector('.sticky-header');
   if (stickyHeader) {
     stickyHeader.appendChild(chartTabsSection);
   }
 
-  // Tab descriptions for each tab
+  const tabDescription = document.createElement('div');
+  tabDescription.className = 'tab-description';
+  chartItemsEl.appendChild(tabDescription);
+
+  const cellsContainer = document.createElement('div');
+  cellsContainer.classList.add('cells-container', 'artist-cells-container');
+
+  const inlineAlert = new InlineAlert(() => {
+    cellsContainer.classList.remove('alert-space');
+  });
+  const alertElement = inlineAlert.render();
+  chartItemsEl.appendChild(alertElement);
+  chartItemsEl.appendChild(cellsContainer);
+
+  const hasData = Array.isArray(data) && data.length > 0;
+  const missingDataMessage = 'Chart data is missing right now. Try rerunning the update or refresh later.';
   const currentMonth = new Date().toLocaleString('default', { month: 'long' });
-  const tabDescriptions = {
-    top: `<div class="content-wrapper">
+
+  function addDays(isoDate, days) {
+    const [year, month, day] = isoDate.split('-').map(Number);
+    const date = new Date(year, month - 1, day);
+    date.setDate(date.getDate() + days);
+    return date.toISOString().slice(0, 10);
+  }
+
+  let startDateIso = displayWeekStart;
+  let endDateIso = displayWeekEnd;
+
+  if (!startDateIso && hasData) {
+    startDateIso = data[0].weeks[data[0].weeks.length - 1].weekStartDate;
+  }
+  if (!endDateIso && hasData) {
+    endDateIso = data[0].weeks[data[0].weeks.length - 1].weekEndDate;
+  }
+  if (startDateIso && !endDateIso) {
+    endDateIso = addDays(startDateIso, 7);
+  }
+
+  const hasDisplayRange = Boolean(startDateIso && endDateIso);
+  const formattedStartDate = startDateIso ? formatDate(startDateIso) : '';
+  const formattedEndDate = hasDisplayRange ? formatEndDate(startDateIso, endDateIso) : '';
+  const dateRangeMarkup = hasDisplayRange
+    ? `<span class="date-range-text">(${formattedStartDate} to ${formattedEndDate})</span>`
+    : '';
+
+  const tabDescriptions = hasData
+    ? {
+        top: `<div class="content-wrapper">
       <span class="icon-wrapper">
         <i class="fas fa-info-circle info-icon" role="button" tabindex="0" aria-label="Show ranking information"></i>
       </span>
       <span class="ranking-text">
         Ranked by Weekly <strong>Spotify</strong> Streams
       </span>
-      <span class="date-range-text">(${startDate} to ${endDate})</span>
+      ${dateRangeMarkup}
     </div>`,
-    hottest: `<div class="content-wrapper">
+        hottest: `<div class="content-wrapper">
       <span class="icon-wrapper">
         <i class="fas fa-info-circle info-icon" role="button" tabindex="0" aria-label="Show ranking information"></i>
       </span>
       <span class="ranking-text">
         Artists with the Biggest Weekly Growth
       </span>
-      <span class="date-range-text">(${startDate} to ${endDate})</span>
+      ${dateRangeMarkup}
     </div>`,
-    shows: `<div class="content-wrapper">
+        shows: `<div class="content-wrapper shows-tab">
       <span class="ranking-text">
         Local Shows for <span class="date-range-text">(${currentMonth})</span>
       </span>
     </div>`
-  };
-
-  // Create tab description (scrollable content)
-  const tabDescription = document.createElement('div');
-  tabDescription.className = 'tab-description';
-  chartItemsEl.appendChild(tabDescription);
-
-  // Add info icon click handler
-  const infoIcon = tabDescription.querySelector('.info-icon');
-  if (infoIcon) {
-    infoIcon.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      if (inlineAlert.isCurrentlyVisible()) {
-        inlineAlert.hide();
-        infoIcon.classList.remove('active');
-      } else {
-        inlineAlert.show();
-        infoIcon.classList.add('active');
       }
-    });
-    
-    // Add keyboard support
-    infoIcon.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        if (inlineAlert.isCurrentlyVisible()) {
-          inlineAlert.hide();
-          infoIcon.classList.remove('active');
-        } else {
-          inlineAlert.show();
-          infoIcon.classList.add('active');
-        }
-      }
-    });
+    : {
+        top: `<div class="content-wrapper">
+      <span class="ranking-text">${missingDataMessage}</span>
+    </div>`,
+        hottest: `<div class="content-wrapper">
+      <span class="ranking-text">${missingDataMessage}</span>
+    </div>`,
+        shows: `<div class="content-wrapper shows-tab">
+      <span class="ranking-text">
+        Local Shows for <span class="date-range-text">(${currentMonth})</span>
+      </span>
+    </div>`
+      };
+
+  function renderEmptyState(message) {
+    cellsContainer.innerHTML = `
+      <div class="chart-empty-state">
+        <p class="chart-empty-state__message">${message}</p>
+      </div>
+    `;
   }
 
-  // Create inline alert
-  const inlineAlert = new InlineAlert(() => {
-    // When alert is closed, animate artist cells up
-    cellsContainer.classList.remove('alert-space');
-  });
-  const alertElement = inlineAlert.render();
-  chartItemsEl.appendChild(alertElement);
+  const sortedData = hasData
+    ? [...data].sort((a, b) => {
+        const aListens = a.weeks[a.weeks.length - 1].totalListens;
+        const bListens = b.weeks[b.weeks.length - 1].totalListens;
+        return bListens - aListens;
+      })
+    : [];
 
-  const cellsContainer = document.createElement('div');
-  cellsContainer.classList.add('cells-container', 'artist-cells-container');
-  chartItemsEl.appendChild(cellsContainer);
+  const artistsData = hasData
+    ? sortedData.map((artistObj, index) => ({
+        ...artistObj,
+        index,
+        getChangeIndicator: function() {
+          const weeks = this.weeks || [];
+          if (weeks.length < 2) return '';
+          const currentWeek = weeks[weeks.length - 1];
+          const previousWeek = weeks[weeks.length - 2];
+          const diff = currentWeek.totalListens - previousWeek.totalListens;
+          if (diff > 0) {
+            return `<span class="up-arrow"><i class="fas fa-arrow-up"></i> +${diff.toLocaleString()}</span>`;
+          } else if (diff < 0) {
+            return `<span class="down-arrow"><i class="fas fa-arrow-down"></i> ${diff.toLocaleString()}</span>`;
+          }
+          return '';
+        }
+      }))
+    : [];
 
-  // Show the alert when the website first loads
-  setTimeout(() => {
-    inlineAlert.show();
-  }, 100); // Small delay to ensure DOM is ready
-
-  const sortedData = data.sort((a, b) => {
-    const aListens = a.weeks[a.weeks.length - 1].totalListens;
-    const bListens = b.weeks[b.weeks.length - 1].totalListens;
-    return bListens - aListens; // Descending order
-  });
-
-  const artistsData = sortedData.map((artistObj, index) => ({
-    ...artistObj,
-    index,
-    getChangeIndicator: function() {
-      if (!this.previousWeek) return '';
-      const diff = this.currentWeek.totalListens - this.previousWeek.totalListens;
-      if (diff > 0) {
-        return `<span class="up-arrow"><i class="fas fa-arrow-up"></i> +${diff.toLocaleString()}</span>`;
-      } else if (diff < 0) {
-        return `<span class="down-arrow"><i class="fas fa-arrow-down"></i> ${diff.toLocaleString()}</span>`;
-      }
-      return '';
-    }
-  }));
-
-  // Initialize filter system
   const filterService = new FilterService();
   const filterButton = new FilterButton(() => {
     filterController.handleFilterButtonClick();
   });
-  
+
   const filterController = new FilterController(
     filterService,
     filterButton,
     (filteredData) => {
-      // Clear existing cells
+      if (!filteredData.length) {
+        renderEmptyState(hasData ? 'No artists match the current filters yet.' : missingDataMessage);
+        return;
+      }
       cellsContainer.innerHTML = '';
-      // Render filtered data
       renderArtistCells(cellsContainer, filteredData);
     }
   );
 
-  // Initialize with original data and render initial cells
-  filterController.initialize(artistsData);
-  
-  // --- Sorting Functions ---
+  if (hasData) {
+    filterController.initialize(artistsData);
+  }
+
+  function setupInfoIcon(icon) {
+    if (!icon) return;
+    const toggleAlert = (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      if (inlineAlert.isCurrentlyVisible()) {
+        inlineAlert.hide();
+        icon.classList.remove('active');
+      } else {
+        inlineAlert.show();
+        icon.classList.add('active');
+      }
+    };
+    icon.addEventListener('click', toggleAlert);
+    icon.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        toggleAlert(event);
+      }
+    });
+  }
+
+  if (hasData) {
+    setTimeout(() => {
+      inlineAlert.show();
+    }, 100);
+  }
+
   function sortByTop(artists) {
     return [...artists].sort((a, b) => {
       const aListens = a.weeks[a.weeks.length - 1].totalListens;
@@ -179,80 +227,57 @@ export function renderChart(container, data) {
       });
   }
 
-  // Tab switching logic
   const tabs = chartTabsSection.querySelectorAll('.chart-tab');
+
   function showTab(tabName) {
     tabs.forEach(tab => tab.classList.remove('active'));
     const selectedTab = chartTabsSection.querySelector(`[data-tab="${tabName}"]`);
     if (selectedTab) selectedTab.classList.add('active');
+
     tabDescription.innerHTML = tabDescriptions[tabName] || '';
+
     if (tabName === 'top') {
       cellsContainer.style.display = '';
-      cellsContainer.innerHTML = '';
-      renderArtistCells(cellsContainer, sortByTop(artistsData));
+      if (hasData) {
+        cellsContainer.innerHTML = '';
+        renderArtistCells(cellsContainer, sortByTop(artistsData));
+      }
     } else if (tabName === 'hottest') {
       cellsContainer.style.display = '';
-      cellsContainer.innerHTML = '';
-      renderArtistCells(cellsContainer, sortByImprovement(artistsData));
+      if (hasData) {
+        cellsContainer.innerHTML = '';
+        renderArtistCells(cellsContainer, sortByImprovement(artistsData));
+      }
     } else {
       cellsContainer.style.display = '';
       cellsContainer.innerHTML = '<div class="coming-soon-banner">Coming Soon</div>';
+      inlineAlert.hide();
     }
-    // Re-attach info icon event listeners for new tab description
-    if (tabName === 'top' || tabName === 'hottest') {
-      const infoIcon = tabDescription.querySelector('.info-icon');
-      if (infoIcon) {
-        infoIcon.addEventListener('click', (e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          if (inlineAlert.isCurrentlyVisible()) {
-            inlineAlert.hide();
-            infoIcon.classList.remove('active');
-          } else {
-            inlineAlert.show();
-            infoIcon.classList.add('active');
-          }
-        });
-        infoIcon.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            if (inlineAlert.isCurrentlyVisible()) {
-              inlineAlert.hide();
-              infoIcon.classList.remove('active');
-            } else {
-              inlineAlert.show();
-              infoIcon.classList.add('active');
-            }
-          }
-        });
-      }
-    } else {
-      // Hide the inline alert if switching to Shows tab
+
+    setupInfoIcon(tabDescription.querySelector('.info-icon'));
+    if (tabName !== 'top' && tabName !== 'hottest') {
       inlineAlert.hide();
     }
   }
+
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
       showTab(tab.getAttribute('data-tab'));
     });
   });
-  // Show Top tab by default
+
   showTab('top');
 
-  // Setup jumping Spotify effect
   if (typeof window !== 'undefined' && window.setupJumpingSpotifyOnScroll) {
     window.setupJumpingSpotifyOnScroll();
   }
 
-  // Handle window resize for filter system
   window.addEventListener('resize', () => {
     filterController.handleResize();
   });
 
-  // Cleanup on page unload
   window.addEventListener('beforeunload', () => {
     filterController.destroy();
     inlineAlert.destroy();
   });
 }
-

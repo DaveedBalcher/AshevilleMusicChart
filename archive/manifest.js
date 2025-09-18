@@ -1,0 +1,23 @@
+export const archiveManifest = [
+  { importPath: '../archive/data_2025-06-13T12-47-06-325Z.js', filename: 'data_2025-06-13T12-47-06-325Z.js' },
+  { importPath: '../archive/data_2025-05-17T02-47-36-597Z.js', filename: 'data_2025-05-17T02-47-36-597Z.js' },
+  { importPath: '../archive/data_2025-04-27T14-03-58-136Z.js', filename: 'data_2025-04-27T14-03-58-136Z.js' },
+  { importPath: '../archive/data_2025-04-18T19-12-48-062Z.js', filename: 'data_2025-04-18T19-12-48-062Z.js' },
+  { importPath: '../archive/data_2025-04-04T12-47-12-687Z.js', filename: 'data_2025-04-04T12-47-12-687Z.js' },
+  { importPath: '../archive/data_2025-03-28T22-39-06-959Z.js', filename: 'data_2025-03-28T22-39-06-959Z.js' },
+  { importPath: '../archive/data_2025-03-21T19-04-35-668Z.js', filename: 'data_2025-03-21T19-04-35-668Z.js' },
+  { importPath: '../archive/data_2025-03-16T23-29-57-684Z.js', filename: 'data_2025-03-16T23-29-57-684Z.js' },
+  { importPath: '../archive/data_2025-03-07T19-19-23-127Z.js', filename: 'data_2025-03-07T19-19-23-127Z.js' },
+  { importPath: '../archive/data_2025-02-21T19-27-05-657Z.js', filename: 'data_2025-02-21T19-27-05-657Z.js' },
+  { importPath: '../archive/data_2025-02-14T15-59-18-058Z.js', filename: 'data_2025-02-14T15-59-18-058Z.js' },
+  { importPath: '../archive/data_2025-02-07T21-42-28-791Z.js', filename: 'data_2025-02-07T21-42-28-791Z.js' },
+  { importPath: '../archive/data_2025-01-24T16-04-07-404Z.js', filename: 'data_2025-01-24T16-04-07-404Z.js' },
+  { importPath: '../archive/data_2025-01-17T21-28-20-857Z.js', filename: 'data_2025-01-17T21-28-20-857Z.js' },
+  { importPath: '../archive/data_2025-01-10T23-12-31-538Z.js', filename: 'data_2025-01-10T23-12-31-538Z.js' },
+  { importPath: '../archive/data_2025-01-03T20-54-17-052Z.js', filename: 'data_2025-01-03T20-54-17-052Z.js' },
+  { importPath: '../archive/data_2024-12-28T13-32-51-339Z.js', filename: 'data_2024-12-28T13-32-51-339Z.js' },
+  { importPath: '../archive/data_2024-12-20T22-13-51-300Z.js', filename: 'data_2024-12-20T22-13-51-300Z.js' },
+  { importPath: '../archive/data_2024-12-13T21-44-45-869Z.js', filename: 'data_2024-12-13T21-44-45-869Z.js' },
+  { importPath: '../archive/data_2024-12-06T18-14-52-096Z.js', filename: 'data_2024-12-06T18-14-52-096Z.js' },
+  { importPath: '../archive/data_2024-11-20T14-46-32-524Z.js', filename: 'data_2024-11-20T14-46-32-524Z.js' }
+];
