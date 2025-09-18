@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "moduleDetection": "force",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "declaration": true,
+    "rootDir": ".",
+    "baseUrl": ".",
+    "paths": {
+      "@asheville-music-chart/core": ["packages/core/src/index.ts"],
+      "@asheville-music-chart/application": ["packages/application/src/index.ts"],
+      "@asheville-music-chart/infrastructure": ["packages/infrastructure/src/index.ts"]
+    }
+  }
+}
