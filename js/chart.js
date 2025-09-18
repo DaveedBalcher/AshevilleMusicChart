@@ -3,7 +3,6 @@ import { formatDate, formatEndDate } from './dateFormatting.js';
 import { FilterService } from './filterService.js';
 import { FilterButton } from './filterButton.js';
 import { FilterController } from './filterController.js';
-import { FilterMenu } from './filterMenu.js';
 import { InlineAlert } from './inlineAlert.js';
 
 export function renderChart(container, data, options = {}) {
@@ -46,7 +45,6 @@ export function renderChart(container, data, options = {}) {
   chartItemsEl.appendChild(cellsContainer);
 
   const hasData = Array.isArray(data) && data.length > 0;
-  const missingDataMessage = 'Chart data is missing right now. Try rerunning the update or refresh later.';
   const currentMonth = new Date().toLocaleString('default', { month: 'long' });
 
   function addDays(isoDate, days) {
@@ -104,10 +102,10 @@ export function renderChart(container, data, options = {}) {
       }
     : {
         top: `<div class="content-wrapper">
-      <span class="ranking-text">${missingDataMessage}</span>
+      <span class="ranking-text">Chart data is missing right now. Try rerunning the update or refresh later.</span>
     </div>`,
         hottest: `<div class="content-wrapper">
-      <span class="ranking-text">${missingDataMessage}</span>
+      <span class="ranking-text">Chart data is missing right now. Try rerunning the update or refresh later.</span>
     </div>`,
         shows: `<div class="content-wrapper shows-tab">
       <span class="ranking-text">
@@ -116,7 +114,7 @@ export function renderChart(container, data, options = {}) {
     </div>`
       };
 
-  function renderEmptyState(message) {
+  function renderEmptyState(message = 'Chart data is missing right now. Try rerunning the update or refresh later.') {
     cellsContainer.innerHTML = `
       <div class="chart-empty-state">
         <p class="chart-empty-state__message">${message}</p>
@@ -162,7 +160,7 @@ export function renderChart(container, data, options = {}) {
     filterButton,
     (filteredData) => {
       if (!filteredData.length) {
-        renderEmptyState(hasData ? 'No artists match the current filters yet.' : missingDataMessage);
+        renderEmptyState(hasData ? 'No artists match the current filters yet.' : undefined);
         return;
       }
       cellsContainer.innerHTML = '';
@@ -241,12 +239,16 @@ export function renderChart(container, data, options = {}) {
       if (hasData) {
         cellsContainer.innerHTML = '';
         renderArtistCells(cellsContainer, sortByTop(artistsData));
+      } else {
+        renderEmptyState();
       }
     } else if (tabName === 'hottest') {
       cellsContainer.style.display = '';
       if (hasData) {
         cellsContainer.innerHTML = '';
         renderArtistCells(cellsContainer, sortByImprovement(artistsData));
+      } else {
+        renderEmptyState();
       }
     } else {
       cellsContainer.style.display = '';

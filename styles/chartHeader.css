@@ -134,42 +134,50 @@
   white-space: nowrap;
 }
 
+@media (max-width: 768px) {
+  .date-range-text {
+    margin-left: 0.7em;
+    margin-top: 0;
+    display: inline;
+  }
+}
+
 .chart-tabs {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2rem;
   background: rgba(255,255,255,0.7);
   border-radius: 16px 16px 0 0;
   box-shadow: 0 8px 32px rgba(0,0,0,0.1);
   border: 1px solid rgba(255,255,255,0.2);
   max-width: 1200px;
   margin: 4px auto 0 auto;
-  padding: 0.5rem 0;
+  padding: 0.4rem 0 0 0;
 }
 
 .chart-tab {
   background: none;
   border: none;
-  font-size: 1.1rem;
+  font-size: 1.18rem;
   font-weight: 600;
-  color: #4b3b5f;
-  padding: 0.7em 1.5em;
+  color: #5d4f72;
+  padding: 0.75em 1.8em;
   border-radius: 12px 12px 0 0;
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
 }
 
-.chart-tab.active,
-.chart-tab:focus {
-  background: #f8f9fa;
-  color: #2a7092;
-  box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+.chart-tab:hover:not(.active) {
+  background: rgba(69, 123, 157, 0.12);
+  color: #3a6f95;
 }
 
-.chart-tab:hover:not(.active) {
-  background: #e3f2fd;
-  color: #457b9d;
+.chart-tab.active,
+.chart-tab:focus {
+  background: #e4eef7;
+  color: #1f4b78;
+  box-shadow: 0 2px 8px rgba(33,150,243,0.12);
 }
 
 .coming-soon-banner {
@@ -208,7 +216,7 @@
   
   .content-wrapper {
     gap: 0.4em;
-    margin-top: 4px;
+    margin-top: 0px;
   }
   
   .info-icon {
