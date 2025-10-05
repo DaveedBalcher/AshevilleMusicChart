@@ -119,21 +119,98 @@
   
 /* Asheville Music Chart Logo and Title Styles */
 .amc-header {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(120px, 1fr);
   align-items: center;
-  gap: 1.2rem;
+  column-gap: clamp(0.4rem, 1.2vw, 0.9rem);
+  width: 100%;
   margin-bottom: 0.5rem;
   padding-top: 0.5rem;
 }
 
+.amc-header::before {
+  content: "";
+  display: block;
+  grid-column: 1;
+}
+
 .amc-logo {
+  grid-column: 2;
+  justify-self: center;
   height: 120px;
   width: auto;
 }
 
+.powered-by {
+  grid-column: 3;
+  justify-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.5rem;
+  font-weight: 500;
+  color: #4b3b5f;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.powered-by-text {
+  display: inline-block;
+}
+
+.powered-by-link {
+  display: inline-flex;
+  align-items: center;
+  color: inherit;
+  text-decoration: none;
+  line-height: 0;
+  padding: 2px;
+  margin: -2px 0;
+  border-radius: 4px;
+}
+
+.powered-by-link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.powered-by-logo {
+  display: inline-block;
+  height: calc(16px * 1.3);
+  aspect-ratio: 166 / 26;
+  min-width: calc(80px * 1.3);
+  background-color: currentColor;
+  -webkit-mask-image: url('../assets/soundcharts-logo.png');
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+  mask-image: url('../assets/soundcharts-logo.png');
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}
+
 @media (max-width: 768px) {
+  .amc-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+  }
+  .amc-header::before {
+    display: none;
+  }
   .amc-logo {
     height: 90px;
+  }
+  .powered-by-logo {
+    height: calc(16px * 0.7);
+    min-width: calc(80px * 0.7);
+  }
+  .powered-by {
+    padding-top: 0;
+    padding-bottom: 4px;
   }
 }
 
