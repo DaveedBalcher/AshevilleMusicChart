@@ -10,7 +10,7 @@ export function renderChart(container, data, options = {}) {
 
   const chartItemsEl = container.querySelector('#chart-items');
 
-  const { displayWeekStart = null, displayWeekEnd = null } = options;
+  const { displayWeekStart = null, displayWeekEnd = null, timestamp = null } = options;
 
   const stickyHeader = document.querySelector('.sticky-header');
   if (stickyHeader) {
@@ -162,7 +162,7 @@ export function renderChart(container, data, options = {}) {
         return;
       }
       cellsContainer.innerHTML = '';
-      renderArtistCells(cellsContainer, filteredData);
+      renderArtistCells(cellsContainer, filteredData, timestamp);
     }
   );
 
@@ -231,7 +231,7 @@ export function renderChart(container, data, options = {}) {
       cellsContainer.style.display = '';
       if (hasData) {
         cellsContainer.innerHTML = '';
-        renderArtistCells(cellsContainer, sortByTop(artistsData));
+        renderArtistCells(cellsContainer, sortByTop(artistsData), timestamp);
       } else {
         renderEmptyState();
       }
@@ -239,7 +239,7 @@ export function renderChart(container, data, options = {}) {
       cellsContainer.style.display = '';
       if (hasData) {
         cellsContainer.innerHTML = '';
-        renderArtistCells(cellsContainer, sortByImprovement(artistsData));
+        renderArtistCells(cellsContainer, sortByImprovement(artistsData), timestamp);
       } else {
         renderEmptyState();
       }
