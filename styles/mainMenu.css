@@ -85,7 +85,7 @@
         flex-direction: row;
         gap: 2px;
         overflow-x: auto;
-        justify-content: flex-end;
+        justify-content: center;
     }
     .menu-links a {
         width: auto;

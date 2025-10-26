@@ -193,11 +193,6 @@ export function renderChart(container, data, options = {}) {
     });
   }
 
-  if (hasData) {
-    setTimeout(() => {
-      inlineAlert.show();
-    }, 100);
-  }
 
   function sortByTop(artists) {
     return [...artists].sort((a, b) => {
