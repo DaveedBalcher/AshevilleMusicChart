@@ -37,9 +37,7 @@ export function renderChart(container, data, options = {}) {
   const cellsContainer = document.createElement('div');
   cellsContainer.classList.add('cells-container', 'artist-cells-container');
 
-  const inlineAlert = new InlineAlert(() => {
-    cellsContainer.classList.remove('alert-space');
-  });
+  const inlineAlert = new InlineAlert();
   const alertElement = inlineAlert.render();
   chartItemsEl.appendChild(alertElement);
   chartItemsEl.appendChild(cellsContainer);
