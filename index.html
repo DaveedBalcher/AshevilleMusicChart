@@ -40,12 +40,12 @@
       renderMainMenu(document.getElementById('main-action-menu'));
       renderMainHeader(document.getElementById('main-header'));
       try {
-        const { dataset, displayWeekStart, displayWeekEnd } = await loadChartData();
+        const { dataset, displayWeekStart, displayWeekEnd, timestamp } = await loadChartData();
         const chartData = Array.isArray(dataset?.data) ? dataset.data : [];
         renderChart(
           document.getElementById('chart-container'),
           chartData,
-          { displayWeekStart, displayWeekEnd }
+          { displayWeekStart, displayWeekEnd, timestamp }
         );
       } catch (error) {
         console.error('Failed to load chart data:', error);

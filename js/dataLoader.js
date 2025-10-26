@@ -27,6 +27,7 @@ export async function loadChartData() {
       dataset: rootData,
       displayWeekStart: rootRange.start,
       displayWeekEnd: rootRange.end,
+      timestamp: rootTimestamp,
     };
   }
 
@@ -35,11 +36,13 @@ export async function loadChartData() {
       const module = await import(entry.importPath);
       const archiveData = module?.data;
       if (hasChartData(archiveData)) {
-        const archiveRange = deriveWeekRangeFromTimestamp(rootTimestamp ?? archiveData.timestamp ?? null);
+        const archiveTimestamp = rootTimestamp ?? archiveData.timestamp ?? null;
+        const archiveRange = deriveWeekRangeFromTimestamp(archiveTimestamp);
         return {
           dataset: archiveData,
           displayWeekStart: archiveRange.start,
           displayWeekEnd: archiveRange.end,
+          timestamp: archiveTimestamp,
         };
       }
     } catch (error) {
@@ -51,5 +54,6 @@ export async function loadChartData() {
     dataset: rootData,
     displayWeekStart: rootRange.start,
     displayWeekEnd: rootRange.end,
+    timestamp: rootTimestamp,
   };
 }
