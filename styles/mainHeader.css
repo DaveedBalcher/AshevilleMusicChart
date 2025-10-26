@@ -90,7 +90,7 @@
   display: flex;
   align-items: center;
   gap: 0.25rem;
-  font-size: 0.5rem;
+  font-size: 0.4rem;
   font-weight: 500;
   color: #4b3b5f;
   text-transform: uppercase;
@@ -154,7 +154,7 @@
   .powered-by {
     padding-top: 0;
     padding-bottom: 4px;
-    font-size: 0.45rem;
+    font-size: 0.38rem;
   }
 }
 
