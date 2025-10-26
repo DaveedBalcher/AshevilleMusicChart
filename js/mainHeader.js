@@ -1,6 +1,6 @@
 /**
  * mainHeader.js
- * Renders the main header section (title + subtitle), matching original design.
+ * Renders the main header section with logo and branding.
  */
 function renderMainHeader(container) {
     const headerHTML = `
@@ -19,9 +19,6 @@ function renderMainHeader(container) {
               <span class="powered-by-logo" aria-hidden="true"></span>
             </a>
           </div>
-        </div>
-        <div class="subtitle">
-          <h2 class="main-subtitle">Where Community Creativity Rises to the Top</h2>
         </div>
       </header>
     `;
