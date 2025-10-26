@@ -32,40 +32,6 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
   }
   
-  /* Subtitle Container */
-  .main-header .subtitle {
-    margin-bottom: 0.5rem;
-    margin-top: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    color: #2a7092;
-  }
-  
-  /* The decorative line above the subtitles */
-  .main-header .subtitle:after {
-    content: none;
-  }
-  
-  /* Subtitle Headings */
-  .main-header .main-subtitle {
-    font-size: 1.2rem;
-    color: #4b3b5f;
-    font-weight: 500;
-    margin: 0;
-  }
-  
-  .main-header .subtitle strong {
-    color: #1b4332;
-    font-weight: 600;
-  }
-  
-  /* Mobile Break (by default, hidden on desktop) */
-  .main-header .mobile-break {
-    display: none;
-  }
-  
 /******************************************
  * MAIN MENU: MOBILE STYLES
  ******************************************/
@@ -82,20 +48,6 @@
       color: #1b4332;
       text-shadow: 0 2px 8px rgba(27,67,50,0.10);
     }
-    .main-header .subtitle {
-      font-size: 1rem;
-      margin-bottom: 0.3rem;
-      padding: 0 8px;
-    }
-    .main-header .main-subtitle {
-      font-size: 0.95rem;
-      margin: 0 0 2px 0;
-    }
-    .main-header .subtitle:after {
-      width: 28px;
-      height: 2px;
-      margin-top: 6px;
-    }
   }
   
   @media (max-width: 480px) {
@@ -105,15 +57,6 @@
     .main-header .page-title {
       font-size: 1.7rem;
       margin: 8px 0 2px 0;
-    }
-    .main-header .main-subtitle {
-      font-size: 0.8rem;
-      margin: 0 0 1px 0;
-    }
-    .main-header .subtitle:after {
-      width: 16px;
-      height: 2px;
-      margin-top: 3px;
     }
   }
   
