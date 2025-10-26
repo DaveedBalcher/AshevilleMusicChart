@@ -70,7 +70,7 @@ export class InlineAlert {
         // Remove active state from info icon when alert is closed
         const infoIcon = document.querySelector('.info-icon');
         if (infoIcon) infoIcon.classList.remove('active');
-        this.onClose();
+        if (this.onClose) this.onClose();
       }, 300); // Match CSS animation duration
     }
   }

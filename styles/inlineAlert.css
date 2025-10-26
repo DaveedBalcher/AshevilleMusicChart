@@ -210,16 +210,6 @@
   }
 }
 
-/* Animation for artist cells moving up */
-.artist-cells-container {
-  transition: margin-top 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  margin-top: 0;
-}
-
-.artist-cells-container.alert-space {
-  margin-top: 0 !important;
-} 
-
 .inline-alert-text p:last-child,
 .inline-alert-text ul:last-child,
 .inline-alert-text .fire-highlight:last-child {

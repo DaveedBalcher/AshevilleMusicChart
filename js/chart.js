@@ -37,9 +37,7 @@ export function renderChart(container, data, options = {}) {
   const cellsContainer = document.createElement('div');
   cellsContainer.classList.add('cells-container', 'artist-cells-container');
 
-  const inlineAlert = new InlineAlert(() => {
-    cellsContainer.classList.remove('alert-space');
-  });
+  const inlineAlert = new InlineAlert();
   const alertElement = inlineAlert.render();
   chartItemsEl.appendChild(alertElement);
   chartItemsEl.appendChild(cellsContainer);
@@ -71,7 +69,7 @@ export function renderChart(container, data, options = {}) {
   const formattedStartDate = startDateIso ? formatDate(startDateIso) : '';
   const formattedEndDate = hasDisplayRange ? formatEndDate(startDateIso, endDateIso) : '';
   const dateRangeMarkup = hasDisplayRange
-    ? `<span class="date-range-text">(${formattedStartDate} to ${formattedEndDate})</span>`
+    ? `<span class="date-range-text">(Since ${formattedStartDate})</span>`
     : '';
 
   const tabDescriptions = hasData
@@ -193,11 +191,6 @@ export function renderChart(container, data, options = {}) {
     });
   }
 
-  if (hasData) {
-    setTimeout(() => {
-      inlineAlert.show();
-    }, 100);
-  }
 
   function sortByTop(artists) {
     return [...artists].sort((a, b) => {
