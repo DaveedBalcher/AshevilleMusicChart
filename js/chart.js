@@ -193,11 +193,8 @@ export function renderChart(container, data, options = {}) {
     });
   }
 
-  if (hasData) {
-    setTimeout(() => {
-      inlineAlert.show();
-    }, 100);
-  }
+  // Inline alert is now closed on DOM launch
+  // Users can click the info icon to toggle it
 
   function sortByTop(artists) {
     return [...artists].sort((a, b) => {
