@@ -69,7 +69,7 @@ export function renderChart(container, data, options = {}) {
   const formattedStartDate = startDateIso ? formatDate(startDateIso) : '';
   const formattedEndDate = hasDisplayRange ? formatEndDate(startDateIso, endDateIso) : '';
   const dateRangeMarkup = hasDisplayRange
-    ? `<span class="date-range-text">(${formattedStartDate} to ${formattedEndDate})</span>`
+    ? `<span class="date-range-text">(Since ${formattedStartDate})</span>`
     : '';
 
   const tabDescriptions = hasData
