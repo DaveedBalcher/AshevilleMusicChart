@@ -1,4 +1,5 @@
 import { getAnimationStartTime, getAnimatedValue, createAnimationController } from './streamAnimation.js';
+import { RollingNumber } from './rollingNumber.js';
 
 export function renderArtistCells(container, artistsData, timestamp) {
   // Clean up any existing cells' animation controllers
@@ -37,6 +38,8 @@ class ArtistCell {
       this.animationStartTime = timestamp ? getAnimationStartTime(timestamp) : null;
       this.animationController = null;
       this.cellElement = null;
+      this.rollingStreamNumber = null;
+      this.rollingChangeNumber = null;
   }
 
   calculateImprovementRate() {
@@ -91,13 +94,29 @@ class ArtistCell {
                      aria-label="Listen to ${this.artistData.artist.name} on Spotify">
                       <i class="fab fa-spotify"></i>
                   </a>
-                  <span class="stat-value" id="${streamValueId}">
-                      ${initialStreamValue.toLocaleString()}
-                  </span>
-                  <span id="${changeIndicatorId}">${this.getChangeIndicatorHTML(initialChangeValue)}</span>
+                  <span class="stat-value" id="${streamValueId}"></span>
+                  <span id="${changeIndicatorId}"></span>
               </div>
           </div>
       `;
+
+      // Initialize rolling numbers
+      const streamElement = cell.querySelector(`#${streamValueId}`);
+      const changeElement = cell.querySelector(`#${changeIndicatorId}`);
+
+      if (streamElement) {
+          this.rollingStreamNumber = new RollingNumber(streamElement, initialStreamValue);
+      }
+
+      if (changeElement && this.previousWeek) {
+          changeElement.className = initialChangeValue > 0 ? 'up-arrow' : (initialChangeValue < 0 ? 'down-arrow' : '');
+          const sign = initialChangeValue > 0 ? '+' : '';
+          changeElement.innerHTML = `${sign}<span class="change-number"></span>`;
+          const changeNumberElement = changeElement.querySelector('.change-number');
+          if (changeNumberElement) {
+              this.rollingChangeNumber = new RollingNumber(changeNumberElement, Math.abs(initialChangeValue));
+          }
+      }
 
       // Start the animation
       this.startAnimation();
@@ -145,20 +164,35 @@ class ArtistCell {
   updateAnimatedValues() {
       if (!this.cellElement) return;
 
-      const streamValueId = `stream-value-${this.artistData.artist.uuid}`;
-      const changeIndicatorId = `change-indicator-${this.artistData.artist.uuid}`;
+      const animatedStreamValue = this.getAnimatedStreamValue();
+      const animatedChangeValue = this.getAnimatedChangeValue();
 
-      const streamElement = document.getElementById(streamValueId);
-      const changeElement = document.getElementById(changeIndicatorId);
-
-      if (streamElement) {
-          const animatedStreamValue = this.getAnimatedStreamValue();
-          streamElement.textContent = animatedStreamValue.toLocaleString();
+      // Update rolling stream number
+      if (this.rollingStreamNumber) {
+          this.rollingStreamNumber.setValue(animatedStreamValue, true);
       }
 
-      if (changeElement) {
-          const animatedChangeValue = this.getAnimatedChangeValue();
-          changeElement.innerHTML = this.getChangeIndicatorHTML(animatedChangeValue);
+      // Update rolling change number
+      if (this.rollingChangeNumber && this.previousWeek) {
+          const changeIndicatorId = `change-indicator-${this.artistData.artist.uuid}`;
+          const changeElement = document.getElementById(changeIndicatorId);
+
+          if (changeElement) {
+              // Update the class based on positive/negative change
+              const newClass = animatedChangeValue > 0 ? 'up-arrow' : (animatedChangeValue < 0 ? 'down-arrow' : '');
+              if (changeElement.className !== newClass) {
+                  changeElement.className = newClass;
+                  const sign = animatedChangeValue > 0 ? '+' : '';
+                  changeElement.innerHTML = `${sign}<span class="change-number"></span>`;
+                  const changeNumberElement = changeElement.querySelector('.change-number');
+                  if (changeNumberElement) {
+                      this.rollingChangeNumber.destroy();
+                      this.rollingChangeNumber = new RollingNumber(changeNumberElement, Math.abs(animatedChangeValue));
+                  }
+              } else {
+                  this.rollingChangeNumber.setValue(Math.abs(animatedChangeValue), true);
+              }
+          }
       }
   }
 
@@ -181,6 +215,14 @@ class ArtistCell {
 
   destroy() {
       this.stopAnimation();
+      if (this.rollingStreamNumber) {
+          this.rollingStreamNumber.destroy();
+          this.rollingStreamNumber = null;
+      }
+      if (this.rollingChangeNumber) {
+          this.rollingChangeNumber.destroy();
+          this.rollingChangeNumber = null;
+      }
       this.cellElement = null;
   }
 }
