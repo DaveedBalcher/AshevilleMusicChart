@@ -108,31 +108,6 @@
     box-shadow: 0 0 25px rgba(29, 185, 84, 0.4),
                 inset 0 0 20px rgba(29, 185, 84, 0.4);
     border-color: rgba(29, 185, 84, 0.6);
-    animation: spotify-pulse 2s ease-in-out infinite;
-}
-
-@keyframes spotify-pulse {
-    0% {
-        box-shadow: 0 0 25px rgba(29, 185, 84, 0.4),
-                    inset 0 0 20px rgba(29, 185, 84, 0.4);
-        transform: scale(1.1);
-    }
-    50% {
-        box-shadow: 0 0 45px rgba(29, 185, 84, 0.8),
-                    inset 0 0 30px rgba(29, 185, 84, 0.8);
-        transform: scale(1.2);
-    }
-    100% {
-        box-shadow: 0 0 25px rgba(29, 185, 84, 0.4),
-                    inset 0 0 20px rgba(29, 185, 84, 0.4);
-        transform: scale(1.1);
-    }
-}
-
-@keyframes spotify-glow {
-    0% { box-shadow: 0 0 15px rgba(29, 185, 84, 0.2); }
-    50% { box-shadow: 0 0 25px rgba(29, 185, 84, 0.4); }
-    100% { box-shadow: 0 0 15px rgba(29, 185, 84, 0.2); }
 }
   
   .stats {
@@ -332,20 +307,6 @@
     .on-fire-label {
       font-size: 1em;
       margin-left: 4px;
-    }
-    @keyframes spotify-jump {
-      0%, 100% { transform: translateY(0); }
-      20% { transform: translateY(-6px); }
-      40% { transform: translateY(0); }
-      60% { transform: translateY(-4px); }
-      80% { transform: translateY(0); }
-    }
-    .jumping-spotify {
-      animation: spotify-jump 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-    }
-    .jumping-spotify.fade-out {
-      animation: spotify-jump 1s cubic-bezier(0.4, 0, 0.2, 1) 1;
-      animation-fill-mode: forwards;
     }
   }
   

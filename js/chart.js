@@ -1,8 +1,5 @@
 import { renderArtistCells } from './artistCells.js';
 import { formatDate, formatEndDate } from './dateFormatting.js';
-import { FilterService } from './filterService.js';
-import { FilterButton } from './filterButton.js';
-import { FilterController } from './filterController.js';
 import { InlineAlert } from './inlineAlert.js';
 
 export function renderChart(container, data, options = {}) {
@@ -148,28 +145,6 @@ export function renderChart(container, data, options = {}) {
       }))
     : [];
 
-  const filterService = new FilterService();
-  const filterButton = new FilterButton(() => {
-    filterController.handleFilterButtonClick();
-  });
-
-  const filterController = new FilterController(
-    filterService,
-    filterButton,
-    (filteredData) => {
-      if (!filteredData.length) {
-        renderEmptyState(hasData ? 'No artists match the current filters yet.' : undefined);
-        return;
-      }
-      cellsContainer.innerHTML = '';
-      renderArtistCells(cellsContainer, filteredData, timestamp);
-    }
-  );
-
-  if (hasData) {
-    filterController.initialize(artistsData);
-  }
-
   function setupInfoIcon(icon) {
     if (!icon) return;
     const toggleAlert = (event) => {
@@ -263,16 +238,7 @@ export function renderChart(container, data, options = {}) {
 
   showTab('top');
 
-  if (typeof window !== 'undefined' && window.setupJumpingSpotifyOnScroll) {
-    window.setupJumpingSpotifyOnScroll();
-  }
-
-  window.addEventListener('resize', () => {
-    filterController.handleResize();
-  });
-
   window.addEventListener('beforeunload', () => {
-    filterController.destroy();
     inlineAlert.destroy();
   });
 }
