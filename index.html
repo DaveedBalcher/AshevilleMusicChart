@@ -31,14 +31,15 @@
   <script src="js/mainMenu.js"></script>
   <script src="js/mainHeader.js"></script>
   <script src="js/chart.js"></script>
+  <script src="js/statsRefresh.js"></script>
 
   <script type="module">
     import { renderChart } from './js/chart.js';
     import { loadChartData } from './js/dataLoader.js';
 
-    document.addEventListener('DOMContentLoaded', async () => {
-      renderMainMenu(document.getElementById('main-action-menu'));
-      renderMainHeader(document.getElementById('main-header'));
+    let statsRefreshManager;
+
+    async function updateChart() {
       try {
         const { dataset, displayWeekStart, displayWeekEnd, timestamp } = await loadChartData();
         const chartData = Array.isArray(dataset?.data) ? dataset.data : [];
@@ -48,8 +49,28 @@
           { displayWeekStart, displayWeekEnd, timestamp }
         );
       } catch (error) {
-        console.error('Failed to load chart data:', error);
-        renderChart(document.getElementById('chart-container'), []);
+        console.error('Failed to update chart:', error);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      renderMainMenu(document.getElementById('main-action-menu'));
+      renderMainHeader(document.getElementById('main-header'));
+
+      // Initial chart load
+      await updateChart();
+
+      // Start auto-refresh every 5 seconds
+      if (window.StatsRefreshManager) {
+        statsRefreshManager = new window.StatsRefreshManager(updateChart);
+        statsRefreshManager.start();
+      }
+    });
+
+    // Clean up on page unload
+    window.addEventListener('beforeunload', () => {
+      if (statsRefreshManager) {
+        statsRefreshManager.destroy();
       }
     });
   </script>
