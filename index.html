@@ -36,7 +36,9 @@
     import { renderChart } from './js/chart.js';
     import { loadChartData } from './js/dataLoader.js';
 
-    async function updateChart() {
+    document.addEventListener('DOMContentLoaded', async () => {
+      renderMainMenu(document.getElementById('main-action-menu'));
+      renderMainHeader(document.getElementById('main-header'));
       try {
         const { dataset, displayWeekStart, displayWeekEnd, timestamp } = await loadChartData();
         const chartData = Array.isArray(dataset?.data) ? dataset.data : [];
@@ -49,17 +51,6 @@
         console.error('Failed to load chart data:', error);
         renderChart(document.getElementById('chart-container'), []);
       }
-    }
-
-    document.addEventListener('DOMContentLoaded', async () => {
-      renderMainMenu(document.getElementById('main-action-menu'));
-      renderMainHeader(document.getElementById('main-header'));
-
-      // Initial chart load
-      await updateChart();
-
-      // Update chart every 5 seconds
-      setInterval(updateChart, 5000);
     });
   </script>
 
