@@ -64,8 +64,8 @@ export function createAnimationController(updateCallback) {
       // Update immediately
       updateCallback();
 
-      // Then update every second
-      intervalId = setInterval(updateCallback, 1000);
+      // Then update every 5 seconds
+      intervalId = setInterval(updateCallback, 5000);
     },
 
     stop() {
