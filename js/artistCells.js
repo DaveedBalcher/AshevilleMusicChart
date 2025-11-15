@@ -1,5 +1,8 @@
 import { getAnimationStartTime, getAnimatedValue, createAnimationController } from './streamAnimation.js';
 
+// Store previous stat values for rolling animation
+const previousStats = new Map();
+
 export function renderArtistCells(container, artistsData, timestamp) {
   // Clean up any existing cells' animation controllers
   if (container._activeCells) {
@@ -37,6 +40,19 @@ class ArtistCell {
       this.animationStartTime = timestamp ? getAnimationStartTime(timestamp) : null;
       this.animationController = null;
       this.cellElement = null;
+
+      // Get previous stat values for rolling animation
+      const artistId = artistData.artist.uuid;
+      this.previousStatValues = previousStats.get(artistId) || {
+        totalListens: this.currentWeek.totalListens,
+        change: this.previousWeek ? (this.currentWeek.totalListens - this.previousWeek.totalListens) : 0
+      };
+
+      // Store current values as previous for next update
+      previousStats.set(artistId, {
+        totalListens: this.currentWeek.totalListens,
+        change: this.previousWeek ? (this.currentWeek.totalListens - this.previousWeek.totalListens) : 0
+      });
   }
 
   calculateImprovementRate() {
@@ -153,7 +169,20 @@ class ArtistCell {
 
       if (streamElement) {
           const animatedStreamValue = this.getAnimatedStreamValue();
-          streamElement.textContent = animatedStreamValue.toLocaleString();
+
+          // Use rolling animation if value changed (and we're not in initial animation)
+          if (!this.animationStartTime && window.StatRollAnimation) {
+              const previousValue = this.previousStatValues.totalListens;
+              const rollAnimation = new window.StatRollAnimation(
+                  streamElement,
+                  previousValue,
+                  animatedStreamValue
+              );
+              rollAnimation.animate();
+          } else {
+              // Initial animation or fallback
+              streamElement.textContent = animatedStreamValue.toLocaleString();
+          }
       }
 
       if (changeElement) {
