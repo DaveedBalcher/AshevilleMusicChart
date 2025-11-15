@@ -231,7 +231,7 @@ export function renderChart(container, data, options = {}) {
       cellsContainer.style.display = '';
       if (hasData) {
         cellsContainer.innerHTML = '';
-        renderArtistCells(cellsContainer, sortByTop(artistsData), timestamp);
+        renderArtistCells(cellsContainer, sortByTop(artistsData).slice(0, 10), timestamp);
       } else {
         renderEmptyState();
       }
@@ -239,7 +239,7 @@ export function renderChart(container, data, options = {}) {
       cellsContainer.style.display = '';
       if (hasData) {
         cellsContainer.innerHTML = '';
-        renderArtistCells(cellsContainer, sortByImprovement(artistsData), timestamp);
+        renderArtistCells(cellsContainer, sortByImprovement(artistsData).slice(0, 10), timestamp);
       } else {
         renderEmptyState();
       }
