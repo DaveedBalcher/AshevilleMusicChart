@@ -1,5 +1,4 @@
 import { getAnimationStartTime, getAnimatedValue, createAnimationController } from './streamAnimation.js';
-import { RollingNumber } from './rollingNumber.js';
 
 export function renderArtistCells(container, artistsData, timestamp) {
   // Clean up any existing cells' animation controllers
@@ -38,8 +37,6 @@ class ArtistCell {
       this.animationStartTime = timestamp ? getAnimationStartTime(timestamp) : null;
       this.animationController = null;
       this.cellElement = null;
-      this.rollingNumber = null;
-      this.changeRollingNumber = null;
   }
 
   calculateImprovementRate() {
@@ -94,19 +91,13 @@ class ArtistCell {
                      aria-label="Listen to ${this.artistData.artist.name} on Spotify">
                       <i class="fab fa-spotify"></i>
                   </a>
-                  <span class="stat-value" id="${streamValueId}"></span>
-                  <span id="${changeIndicatorId}"></span>
+                  <span class="stat-value" id="${streamValueId}">
+                      ${initialStreamValue.toLocaleString()}
+                  </span>
+                  <span id="${changeIndicatorId}">${this.getChangeIndicatorHTML(initialChangeValue)}</span>
               </div>
           </div>
       `;
-
-      // Initialize rolling number component for stream value
-      const streamElement = cell.querySelector(`#${streamValueId}`);
-      this.rollingNumber = new RollingNumber(streamElement, initialStreamValue);
-
-      // Initialize change indicator with rolling number
-      const changeElement = cell.querySelector(`#${changeIndicatorId}`);
-      this.updateChangeIndicator(changeElement, initialChangeValue);
 
       // Start the animation
       this.startAnimation();
@@ -133,70 +124,41 @@ class ArtistCell {
       return getAnimatedValue(actualDiff, this.animationStartTime);
   }
 
-  updateChangeIndicator(changeElement, changeValue) {
-      if (!this.previousWeek) {
-          changeElement.innerHTML = '';
-          return;
-      }
-
-      // Determine the arrow class and sign
-      let arrowClass = '';
-      let sign = '';
+  getChangeIndicatorHTML(changeValue) {
+      if (!this.previousWeek) return '';
 
       if (changeValue > 0) {
-          arrowClass = 'up-arrow';
-          sign = '+';
-      } else if (changeValue < 0) {
-          arrowClass = 'down-arrow';
-          sign = ''; // The minus sign is part of the number
-      } else {
-          changeElement.innerHTML = '';
-          return;
-      }
-
-      // Create or update the arrow span
-      let arrowSpan = changeElement.querySelector('.up-arrow, .down-arrow');
-
-      if (!arrowSpan || !arrowSpan.classList.contains(arrowClass)) {
-          // Need to recreate the structure
-          changeElement.innerHTML = `<span class="${arrowClass}">
-              <span class="change-sign">${sign}</span>
-              <span class="change-value"></span>
+          return `<span class="up-arrow">
+              +${changeValue.toLocaleString()}
           </span>`;
-          arrowSpan = changeElement.querySelector(`.${arrowClass}`);
-
-          // Initialize rolling number for change value
-          const valueContainer = arrowSpan.querySelector('.change-value');
-          this.changeRollingNumber = new RollingNumber(valueContainer, Math.abs(changeValue));
-      } else {
-          // Update existing rolling number
-          if (this.changeRollingNumber) {
-              this.changeRollingNumber.update(Math.abs(changeValue));
-          }
-
-          // Update sign if needed
-          const signSpan = arrowSpan.querySelector('.change-sign');
-          if (signSpan && signSpan.textContent !== sign) {
-              signSpan.textContent = sign;
-          }
       }
+
+      if (changeValue < 0) {
+          return `<span class="down-arrow">
+              ${changeValue.toLocaleString()}
+          </span>`;
+      }
+
+      return '';
   }
 
   updateAnimatedValues() {
       if (!this.cellElement) return;
 
+      const streamValueId = `stream-value-${this.artistData.artist.uuid}`;
       const changeIndicatorId = `change-indicator-${this.artistData.artist.uuid}`;
+
+      const streamElement = document.getElementById(streamValueId);
       const changeElement = document.getElementById(changeIndicatorId);
 
-      // Update rolling number with new value
-      if (this.rollingNumber) {
+      if (streamElement) {
           const animatedStreamValue = this.getAnimatedStreamValue();
-          this.rollingNumber.update(animatedStreamValue);
+          streamElement.textContent = animatedStreamValue.toLocaleString();
       }
 
       if (changeElement) {
           const animatedChangeValue = this.getAnimatedChangeValue();
-          this.updateChangeIndicator(changeElement, animatedChangeValue);
+          changeElement.innerHTML = this.getChangeIndicatorHTML(animatedChangeValue);
       }
   }
 
@@ -219,14 +181,6 @@ class ArtistCell {
 
   destroy() {
       this.stopAnimation();
-      if (this.rollingNumber) {
-          this.rollingNumber.destroy();
-          this.rollingNumber = null;
-      }
-      if (this.changeRollingNumber) {
-          this.changeRollingNumber.destroy();
-          this.changeRollingNumber = null;
-      }
       this.cellElement = null;
   }
 }

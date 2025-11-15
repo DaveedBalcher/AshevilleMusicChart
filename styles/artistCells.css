@@ -135,47 +135,6 @@
     color: #1d3557;
     line-height: 1.4;
   }
-
-  /* Rolling Number Animation Styles */
-  .rolling-number-container {
-    display: inline-flex;
-    align-items: center;
-    font-size: inherit;
-    font-weight: inherit;
-    color: inherit;
-    line-height: 1;
-    font-variant-numeric: tabular-nums; /* Ensures consistent digit width */
-  }
-
-  .rolling-digit-wrapper {
-    display: inline-block;
-    overflow: hidden;
-    height: 1.2em;
-    position: relative;
-    vertical-align: top;
-  }
-
-  .rolling-digit-roller {
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    will-change: transform;
-  }
-
-  .rolling-digit {
-    display: block;
-    height: 1.2em;
-    line-height: 1.2em;
-    text-align: center;
-    font-variant-numeric: tabular-nums;
-  }
-
-  .rolling-comma {
-    display: inline-block;
-    height: 1.2em;
-    line-height: 1.2em;
-    margin: 0 1px;
-  }
   
   /* Up & Down Arrows */
   .up-arrow, .down-arrow {
@@ -340,17 +299,6 @@
       line-height: 1.2;
       margin-bottom: 0;
     }
-    .rolling-digit-wrapper {
-      height: 0.94em;
-    }
-    .rolling-digit {
-      height: 0.94em;
-      line-height: 0.94em;
-    }
-    .rolling-comma {
-      height: 0.94em;
-      line-height: 0.94em;
-    }
     .spotify-link {
       margin-bottom: 4px;
       display: inline-flex;
@@ -409,17 +357,6 @@
     .stat-value {
       font-size: 0.68em;
       margin-bottom: 0;
-    }
-    .rolling-digit-wrapper {
-      height: 0.82em;
-    }
-    .rolling-digit {
-      height: 0.82em;
-      line-height: 0.82em;
-    }
-    .rolling-comma {
-      height: 0.82em;
-      line-height: 0.82em;
     }
     .spotify-link {
       margin-bottom: 3px;
