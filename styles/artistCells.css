@@ -177,6 +177,42 @@
     color: #e63946;
   }
 
+  /******************************************
+   * ROLLING NUMBER ANIMATION STYLES
+   ******************************************/
+  .rolling-number-container {
+    display: inline-flex;
+    align-items: center;
+    overflow: hidden;
+    vertical-align: baseline;
+  }
+
+  .rolling-digit-column {
+    display: inline-block;
+    height: 1.4em;
+    overflow: hidden;
+    position: relative;
+    vertical-align: baseline;
+  }
+
+  .rolling-digit-column.comma {
+    height: auto;
+    overflow: visible;
+  }
+
+  .rolling-digit-roller {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+  }
+
+  .rolling-digit {
+    display: block;
+    height: 1.4em;
+    line-height: 1.4em;
+  }
+
     /******************************************
    * ON FIRE STYLES
    ******************************************/
