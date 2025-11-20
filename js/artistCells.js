@@ -83,6 +83,10 @@ class ArtistCell {
         </div>
           <div class="stats">
               <div class="stat-item">
+                  <span class="stat-value" id="${streamValueId}">
+                      ${initialStreamValue.toLocaleString()}
+                  </span>
+                  <span id="${changeIndicatorId}">${this.getChangeIndicatorHTML(initialChangeValue)}</span>
                   <a href="${this.artistData.artist.spotifyUrl}"
                      target="_blank"
                      rel="noopener noreferrer"
@@ -91,10 +95,6 @@ class ArtistCell {
                      aria-label="Listen to ${this.artistData.artist.name} on Spotify">
                       <i class="fab fa-spotify"></i>
                   </a>
-                  <span class="stat-value" id="${streamValueId}">
-                      ${initialStreamValue.toLocaleString()}
-                  </span>
-                  <span id="${changeIndicatorId}">${this.getChangeIndicatorHTML(initialChangeValue)}</span>
               </div>
           </div>
       `;

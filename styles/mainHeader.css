@@ -20,6 +20,12 @@
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* Hamburger button - hidden on desktop */
+.hamburger-button {
+    display: none;
 }
   
   /* Page Title */
@@ -40,7 +46,6 @@
       padding: 6px 0 2px 0;
       background-color: #f8f9fa;
       box-shadow: 0 2px 8px rgba(27,67,50,0.07);
-      top: 50px; /* Smaller offset for mobile */
     }
     .main-header .page-title {
       font-size: 2.2rem;
@@ -135,6 +140,49 @@
 }
 
 @media (max-width: 768px) {
+  /* Show hamburger button on mobile */
+  .hamburger-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 36px;
+    background: rgba(248, 249, 250, 0.9);
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 100;
+    position: absolute;
+    right: 20px;
+    top: 6px;
+    pointer-events: auto;
+    border-radius: 4px;
+  }
+
+  .hamburger-icon {
+    width: 30px;
+    height: 2px;
+    background-color: #000;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  /* Animate hamburger to X when menu is open */
+  .main-menu.menu-open ~ .main-header .hamburger-icon:nth-child(1),
+  .main-header .hamburger-button.active .hamburger-icon:nth-child(1) {
+    transform: rotate(45deg) translateY(10px);
+  }
+
+  .main-menu.menu-open ~ .main-header .hamburger-icon:nth-child(2),
+  .main-header .hamburger-button.active .hamburger-icon:nth-child(2) {
+    opacity: 0;
+  }
+
+  .main-menu.menu-open ~ .main-header .hamburger-icon:nth-child(3),
+  .main-header .hamburger-button.active .hamburger-icon:nth-child(3) {
+    transform: rotate(-45deg) translateY(-10px);
+  }
+
   .amc-header {
     display: flex;
     flex-direction: column;
