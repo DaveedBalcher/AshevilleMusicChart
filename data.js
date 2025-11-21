@@ -1,5 +1,5 @@
 export const data = {
-  "timestamp": "2025-11-21T05:05:35.633Z",
+  "timestamp": "2025-05-17T02:47:36.597Z",
   "data": [
     {
       "artist": {
@@ -12,15 +12,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-05",
-          "weekEndDate": "2025-11-12",
-          "totalListens": 0
+          "weekStartDate": "2025-04-30",
+          "weekEndDate": "2025-05-07",
+          "totalListens": 4809856
         },
         {
-          "weekStartDate": "2025-11-13",
-          "weekEndDate": "2025-11-20",
-          "totalListens": 0,
-          "listensDifference": 0
+          "weekStartDate": "2025-05-08",
+          "weekEndDate": "2025-05-15",
+          "totalListens": 6186212,
+          "listensDifference": 1376356
         }
       ]
     },
@@ -35,15 +35,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-05",
-          "weekEndDate": "2025-11-12",
-          "totalListens": 0
+          "weekStartDate": "2025-04-30",
+          "weekEndDate": "2025-05-07",
+          "totalListens": 4264090
         },
         {
-          "weekStartDate": "2025-11-13",
-          "weekEndDate": "2025-11-20",
-          "totalListens": 0,
-          "listensDifference": 0
+          "weekStartDate": "2025-05-08",
+          "weekEndDate": "2025-05-15",
+          "totalListens": 4042790,
+          "listensDifference": -221300
         }
       ]
     },
@@ -58,15 +58,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-05",
-          "weekEndDate": "2025-11-12",
-          "totalListens": 0
+          "weekStartDate": "2025-04-30",
+          "weekEndDate": "2025-05-07",
+          "totalListens": 7494901
         },
         {
-          "weekStartDate": "2025-11-13",
-          "weekEndDate": "2025-11-20",
-          "totalListens": 0,
-          "listensDifference": 0
+          "weekStartDate": "2025-05-08",
+          "weekEndDate": "2025-05-15",
+          "totalListens": 7386040,
+          "listensDifference": -108861
         }
       ]
     },
@@ -81,15 +81,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-05",
-          "weekEndDate": "2025-11-12",
-          "totalListens": 0
+          "weekStartDate": "2025-04-30",
+          "weekEndDate": "2025-05-07",
+          "totalListens": 1056322
         },
         {
-          "weekStartDate": "2025-11-13",
-          "weekEndDate": "2025-11-20",
-          "totalListens": 0,
-          "listensDifference": 0
+          "weekStartDate": "2025-05-08",
+          "weekEndDate": "2025-05-15",
+          "totalListens": 1062612,
+          "listensDifference": 6290
         }
       ]
     },
@@ -104,15 +104,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-05",
-          "weekEndDate": "2025-11-12",
-          "totalListens": 0
+          "weekStartDate": "2025-04-30",
+          "weekEndDate": "2025-05-07",
+          "totalListens": 2971590
         },
         {
-          "weekStartDate": "2025-11-13",
-          "weekEndDate": "2025-11-20",
-          "totalListens": 0,
-          "listensDifference": 0
+          "weekStartDate": "2025-05-08",
+          "weekEndDate": "2025-05-15",
+          "totalListens": 2924956,
+          "listensDifference": -46634
         }
       ]
     },
@@ -127,15 +127,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-05",
-          "weekEndDate": "2025-11-12",
-          "totalListens": 0
+          "weekStartDate": "2025-04-30",
+          "weekEndDate": "2025-05-07",
+          "totalListens": 1387897
         },
         {
-          "weekStartDate": "2025-11-13",
-          "weekEndDate": "2025-11-20",
-          "totalListens": 0,
-          "listensDifference": 0
+          "weekStartDate": "2025-05-08",
+          "weekEndDate": "2025-05-15",
+          "totalListens": 1393171,
+          "listensDifference": 5274
         }
       ]
     },
@@ -150,15 +150,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-05",
-          "weekEndDate": "2025-11-12",
-          "totalListens": 0
+          "weekStartDate": "2025-04-30",
+          "weekEndDate": "2025-05-07",
+          "totalListens": 26093
         },
         {
-          "weekStartDate": "2025-11-13",
-          "weekEndDate": "2025-11-20",
-          "totalListens": 0,
-          "listensDifference": 0
+          "weekStartDate": "2025-05-08",
+          "weekEndDate": "2025-05-15",
+          "totalListens": 26667,
+          "listensDifference": 574
         }
       ]
     },
@@ -173,15 +173,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-05",
-          "weekEndDate": "2025-11-12",
-          "totalListens": 0
+          "weekStartDate": "2025-04-30",
+          "weekEndDate": "2025-05-07",
+          "totalListens": 72329
         },
         {
-          "weekStartDate": "2025-11-13",
-          "weekEndDate": "2025-11-20",
-          "totalListens": 0,
-          "listensDifference": 0
+          "weekStartDate": "2025-05-08",
+          "weekEndDate": "2025-05-15",
+          "totalListens": 65387,
+          "listensDifference": -6942
         }
       ]
     },
@@ -196,15 +196,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-05",
-          "weekEndDate": "2025-11-12",
-          "totalListens": 0
+          "weekStartDate": "2025-04-30",
+          "weekEndDate": "2025-05-07",
+          "totalListens": 12338
         },
         {
-          "weekStartDate": "2025-11-13",
-          "weekEndDate": "2025-11-20",
-          "totalListens": 0,
-          "listensDifference": 0
+          "weekStartDate": "2025-05-08",
+          "weekEndDate": "2025-05-15",
+          "totalListens": 12285,
+          "listensDifference": -53
         }
       ]
     },
@@ -219,15 +219,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-05",
-          "weekEndDate": "2025-11-12",
-          "totalListens": 0
+          "weekStartDate": "2025-04-30",
+          "weekEndDate": "2025-05-07",
+          "totalListens": 5813
         },
         {
-          "weekStartDate": "2025-11-13",
-          "weekEndDate": "2025-11-20",
-          "totalListens": 0,
-          "listensDifference": 0
+          "weekStartDate": "2025-05-08",
+          "weekEndDate": "2025-05-15",
+          "totalListens": 5648,
+          "listensDifference": -165
         }
       ]
     },
@@ -242,15 +242,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-05",
-          "weekEndDate": "2025-11-12",
-          "totalListens": 0
+          "weekStartDate": "2025-04-30",
+          "weekEndDate": "2025-05-07",
+          "totalListens": 71895
         },
         {
-          "weekStartDate": "2025-11-13",
-          "weekEndDate": "2025-11-20",
-          "totalListens": 0,
-          "listensDifference": 0
+          "weekStartDate": "2025-05-08",
+          "weekEndDate": "2025-05-15",
+          "totalListens": 71657,
+          "listensDifference": -238
         }
       ]
     },
@@ -265,15 +265,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-05",
-          "weekEndDate": "2025-11-12",
-          "totalListens": 0
+          "weekStartDate": "2025-04-30",
+          "weekEndDate": "2025-05-07",
+          "totalListens": 2320
         },
         {
-          "weekStartDate": "2025-11-13",
-          "weekEndDate": "2025-11-20",
-          "totalListens": 0,
-          "listensDifference": 0
+          "weekStartDate": "2025-05-08",
+          "weekEndDate": "2025-05-15",
+          "totalListens": 2360,
+          "listensDifference": 40
         }
       ]
     },
@@ -288,15 +288,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-05",
-          "weekEndDate": "2025-11-12",
-          "totalListens": 0
+          "weekStartDate": "2025-04-30",
+          "weekEndDate": "2025-05-07",
+          "totalListens": 6980
         },
         {
-          "weekStartDate": "2025-11-13",
-          "weekEndDate": "2025-11-20",
-          "totalListens": 0,
-          "listensDifference": 0
+          "weekStartDate": "2025-05-08",
+          "weekEndDate": "2025-05-15",
+          "totalListens": 5890,
+          "listensDifference": -1090
         }
       ]
     },
@@ -311,15 +311,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-05",
-          "weekEndDate": "2025-11-12",
-          "totalListens": 0
+          "weekStartDate": "2025-04-30",
+          "weekEndDate": "2025-05-07",
+          "totalListens": 520
         },
         {
-          "weekStartDate": "2025-11-13",
-          "weekEndDate": "2025-11-20",
-          "totalListens": 0,
-          "listensDifference": 0
+          "weekStartDate": "2025-05-08",
+          "weekEndDate": "2025-05-15",
+          "totalListens": 519,
+          "listensDifference": -1
         }
       ]
     },
@@ -334,15 +334,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-05",
-          "weekEndDate": "2025-11-12",
-          "totalListens": 0
+          "weekStartDate": "2025-04-30",
+          "weekEndDate": "2025-05-07",
+          "totalListens": 453
         },
         {
-          "weekStartDate": "2025-11-13",
-          "weekEndDate": "2025-11-20",
-          "totalListens": 0,
-          "listensDifference": 0
+          "weekStartDate": "2025-05-08",
+          "weekEndDate": "2025-05-15",
+          "totalListens": 454,
+          "listensDifference": 1
         }
       ]
     },
@@ -357,15 +357,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-05",
-          "weekEndDate": "2025-11-12",
-          "totalListens": 0
+          "weekStartDate": "2025-04-30",
+          "weekEndDate": "2025-05-07",
+          "totalListens": 110513
         },
         {
-          "weekStartDate": "2025-11-13",
-          "weekEndDate": "2025-11-20",
-          "totalListens": 0,
-          "listensDifference": 0
+          "weekStartDate": "2025-05-08",
+          "weekEndDate": "2025-05-15",
+          "totalListens": 109423,
+          "listensDifference": -1090
         }
       ]
     },
@@ -380,15 +380,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-05",
-          "weekEndDate": "2025-11-12",
-          "totalListens": 0
+          "weekStartDate": "2025-04-30",
+          "weekEndDate": "2025-05-07",
+          "totalListens": 3251
         },
         {
-          "weekStartDate": "2025-11-13",
-          "weekEndDate": "2025-11-20",
-          "totalListens": 0,
-          "listensDifference": 0
+          "weekStartDate": "2025-05-08",
+          "weekEndDate": "2025-05-15",
+          "totalListens": 3291,
+          "listensDifference": 40
         }
       ]
     },
@@ -403,15 +403,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-05",
-          "weekEndDate": "2025-11-12",
-          "totalListens": 0
+          "weekStartDate": "2025-04-30",
+          "weekEndDate": "2025-05-07",
+          "totalListens": 11194
         },
         {
-          "weekStartDate": "2025-11-13",
-          "weekEndDate": "2025-11-20",
-          "totalListens": 0,
-          "listensDifference": 0
+          "weekStartDate": "2025-05-08",
+          "weekEndDate": "2025-05-15",
+          "totalListens": 12989,
+          "listensDifference": 1795
         }
       ]
     },
@@ -426,222 +426,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-05",
-          "weekEndDate": "2025-11-12",
-          "totalListens": 0
+          "weekStartDate": "2025-04-30",
+          "weekEndDate": "2025-05-07",
+          "totalListens": 203606
         },
         {
-          "weekStartDate": "2025-11-13",
-          "weekEndDate": "2025-11-20",
-          "totalListens": 0,
-          "listensDifference": 0
-        }
-      ]
-    },
-    {
-      "artist": {
-        "uuid": "11e83fec-3969-6898-80a3-a0369fe50396",
-        "name": "Jelly Ellington",
-        "imageUrl": "https://assets.soundcharts.com/artist/9/6/9/11e83fec-3969-6898-80a3-a0369fe50396.jpg",
-        "high_level_genre": "Roots/Americana",
-        "specific_genre": "Texas-Fired Appalachian Blues Rock",
-        "spotifyUrl": "https://open.spotify.com/artist/17HOOlZ5FgIqOsmQreMt2U"
-      },
-      "weeks": [
-        {
-          "weekStartDate": "2025-11-05",
-          "weekEndDate": "2025-11-12",
-          "totalListens": 0
-        },
-        {
-          "weekStartDate": "2025-11-13",
-          "weekEndDate": "2025-11-20",
-          "totalListens": 0,
-          "listensDifference": 0
-        }
-      ]
-    },
-    {
-      "artist": {
-        "uuid": "11e81bcb-8011-657e-85b5-a0369fe50396",
-        "name": "Floating Action",
-        "imageUrl": "https://assets.soundcharts.com/artist/1/1/0/11e81bcb-8011-657e-85b5-a0369fe50396.jpg",
-        "high_level_genre": "Rock/Alternative",
-        "specific_genre": "Indie Groove Pop with Global Flair",
-        "spotifyUrl": "https://open.spotify.com/artist/01Ru0hfWYNVxQHtFkvYY7r"
-      },
-      "weeks": [
-        {
-          "weekStartDate": "2025-11-05",
-          "weekEndDate": "2025-11-12",
-          "totalListens": 0
-        },
-        {
-          "weekStartDate": "2025-11-13",
-          "weekEndDate": "2025-11-20",
-          "totalListens": 0,
-          "listensDifference": 0
-        }
-      ]
-    },
-    {
-      "artist": {
-        "uuid": "11e81bd3-4eb3-ca5a-b641-a0369fe50396",
-        "name": "Tyler Ramsey",
-        "imageUrl": "https://assets.soundcharts.com/artist/3/b/e/11e81bd3-4eb3-ca5a-b641-a0369fe50396.jpg",
-        "high_level_genre": "Roots/Americana",
-        "specific_genre": "Atmospheric Indie Folk Rock",
-        "spotifyUrl": "https://open.spotify.com/artist/1Ga71MIHyTN9VVuEtW57GK"
-      },
-      "weeks": [
-        {
-          "weekStartDate": "2025-11-05",
-          "weekEndDate": "2025-11-12",
-          "totalListens": 0
-        },
-        {
-          "weekStartDate": "2025-11-13",
-          "weekEndDate": "2025-11-20",
-          "totalListens": 0,
-          "listensDifference": 0
-        }
-      ]
-    },
-    {
-      "artist": {
-        "uuid": "3fc65642-4c2f-11e9-976f-549f35161576",
-        "name": "Hustle Souls",
-        "imageUrl": "https://assets.soundcharts.com/artist/f/2/c/3fc65642-4c2f-11e9-976f-549f35161576.jpg",
-        "high_level_genre": "World/Fusion",
-        "specific_genre": "Retro-Soul Funk & Brass Groove",
-        "spotifyUrl": "https://open.spotify.com/artist/5vqpnnvsBBoy9CxbbxdMIJ"
-      },
-      "weeks": [
-        {
-          "weekStartDate": "2025-11-05",
-          "weekEndDate": "2025-11-12",
-          "totalListens": 0
-        },
-        {
-          "weekStartDate": "2025-11-13",
-          "weekEndDate": "2025-11-20",
-          "totalListens": 0,
-          "listensDifference": 0
-        }
-      ]
-    },
-    {
-      "artist": {
-        "uuid": "4a406de9-ed4f-4557-96aa-66c558d2fb1a",
-        "name": "Snake Oil Medicine Show",
-        "imageUrl": "https://assets.soundcharts.com/artist/f/4/d/4a406de9-ed4f-4557-96aa-66c558d2fb1a.jpg",
-        "high_level_genre": "World/Fusion",
-        "specific_genre": "Psychedelic Funk-Grass Carnival",
-        "spotifyUrl": "https://open.spotify.com/artist/6Rj5mhGnqAnMaALJn5Hzg5"
-      },
-      "weeks": [
-        {
-          "weekStartDate": "2025-11-05",
-          "weekEndDate": "2025-11-12",
-          "totalListens": 0
-        },
-        {
-          "weekStartDate": "2025-11-13",
-          "weekEndDate": "2025-11-20",
-          "totalListens": 0,
-          "listensDifference": 0
-        }
-      ]
-    },
-    {
-      "artist": {
-        "uuid": "4b084642-fe23-476e-850c-1bbe625637bf",
-        "name": "Caitlin Krisko & The Broadcast",
-        "imageUrl": "https://assets.soundcharts.com/artist/3/2/e/4b084642-fe23-476e-850c-1bbe625637bf.jpg",
-        "high_level_genre": "Rock/Alternative",
-        "specific_genre": "Powerhouse Psychedelic Soul Rock",
-        "spotifyUrl": "https://open.spotify.com/artist/7EUd5VylN6IFwj3hb8VxkY"
-      },
-      "weeks": [
-        {
-          "weekStartDate": "2025-11-05",
-          "weekEndDate": "2025-11-12",
-          "totalListens": 0
-        },
-        {
-          "weekStartDate": "2025-11-13",
-          "weekEndDate": "2025-11-20",
-          "totalListens": 0,
-          "listensDifference": 0
-        }
-      ]
-    },
-    {
-      "artist": {
-        "uuid": "f3915b15-46d0-4c41-8778-1453546e84f8",
-        "name": "The Dolltones",
-        "imageUrl": "https://assets.soundcharts.com/artist/0/d/6/f3915b15-46d0-4c41-8778-1453546e84f8.jpg",
-        "high_level_genre": "Rock/Alternative",
-        "specific_genre": "Bluegaze Emo Alt-Rock",
-        "spotifyUrl": "https://open.spotify.com/artist/67zxHuUZhxksIWzvGY4gdc"
-      },
-      "weeks": [
-        {
-          "weekStartDate": "2025-11-05",
-          "weekEndDate": "2025-11-12",
-          "totalListens": 23
-        },
-        {
-          "weekStartDate": "2025-11-13",
-          "weekEndDate": "2025-11-20",
-          "totalListens": 37,
-          "listensDifference": 14
-        }
-      ]
-    },
-    {
-      "artist": {
-        "uuid": "081f47c4-acb6-4e4c-a231-f641112c8d30",
-        "name": "Sugar Bomb",
-        "imageUrl": "https://assets.soundcharts.com/artist/6/b/c/081f47c4-acb6-4e4c-a231-f641112c8d30.jpg",
-        "high_level_genre": "World/Fusion",
-        "specific_genre": "Explosive Jazz-Fusion Groove",
-        "spotifyUrl": "https://open.spotify.com/artist/2yOcwLaI4u3mVolqglZV9T"
-      },
-      "weeks": [
-        {
-          "weekStartDate": "2025-11-05",
-          "weekEndDate": "2025-11-12",
-          "totalListens": 0
-        },
-        {
-          "weekStartDate": "2025-11-13",
-          "weekEndDate": "2025-11-20",
-          "totalListens": 0,
-          "listensDifference": 0
-        }
-      ]
-    },
-    {
-      "artist": {
-        "uuid": "6d90a5e3-2ee6-45fa-bc8c-b65e9cd7bb15",
-        "name": "The Welcoming",
-        "imageUrl": "https://assets.soundcharts.com/artist/6/e/e/6d90a5e3-2ee6-45fa-bc8c-b65e9cd7bb15.jpg",
-        "high_level_genre": "Rock/Alternative",
-        "specific_genre": "Melodic Prog-Metal Rock",
-        "spotifyUrl": "https://open.spotify.com/artist/78rZxY5ov2LunHaBHNDLxb"
-      },
-      "weeks": [
-        {
-          "weekStartDate": "2025-11-05",
-          "weekEndDate": "2025-11-12",
-          "totalListens": 0
-        },
-        {
-          "weekStartDate": "2025-11-13",
-          "weekEndDate": "2025-11-20",
-          "totalListens": 0,
-          "listensDifference": 0
+          "weekStartDate": "2025-05-08",
+          "weekEndDate": "2025-05-15",
+          "totalListens": 199219,
+          "listensDifference": -4387
         }
       ]
     }
