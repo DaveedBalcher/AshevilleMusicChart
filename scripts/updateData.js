@@ -19,8 +19,6 @@ if (!APP_ID || !API_KEY) {
 
 // Load the list of artists
 const artistsFilePath = path.join(__dirname, 'artists.json');
-const dataFilePath = path.join(__dirname, '..', 'data.js');
-const archiveDir = path.join(__dirname, '..', 'archive');
 let artists = [];
 try {
   const artistsData = fs.readFileSync(artistsFilePath, 'utf8');
@@ -56,53 +54,6 @@ function calculateDateRanges() {
   };
 
   return dateRanges;
-}
-
-function loadExistingData(filePath) {
-  if (!fs.existsSync(filePath)) {
-    console.warn('No existing data.js found; skipping UUID comparison.');
-    return null;
-  }
-
-  try {
-    const raw = fs.readFileSync(filePath, 'utf8');
-    const content = raw
-      .replace(/^export const data =/, '')
-      .trim()
-      .replace(/;$/, '');
-
-    return JSON.parse(content);
-  } catch (error) {
-    console.warn('Failed to read existing data.js for UUID comparison:', error.message);
-    return null;
-  }
-}
-
-function detectUuidMismatches(previousData, artistList) {
-  if (!previousData || !Array.isArray(previousData.data)) {
-    return { mismatches: [], newArtists: artistList.map(({ name }) => name) };
-  }
-
-  const previousUuidByName = new Map(
-    previousData.data.map((entry) => [entry.artist.name, entry.artist.uuid])
-  );
-
-  const mismatches = [];
-  const newArtists = [];
-
-  for (const artist of artistList) {
-    const previousUuid = previousUuidByName.get(artist.name);
-    if (!previousUuid) {
-      newArtists.push(artist.name);
-      continue;
-    }
-
-    if (previousUuid !== artist.uuid) {
-      mismatches.push({ name: artist.name, previousUuid, currentUuid: artist.uuid });
-    }
-  }
-
-  return { mismatches, newArtists };
 }
 
 // Function to write updated data.js
@@ -155,11 +106,6 @@ async function fetchDataForArtist(artist, dateRanges) {
     // Check if 'items' exists in the response
     if (!data.items || !Array.isArray(data.items)) {
       throw new Error(`Unexpected API response structure for ${name}: 'items' field is missing or not an array.`);
-    }
-
-    if (data.items.length === 0) {
-      console.warn(`No items returned for ${name}; skipping to avoid zeroed weeks.`);
-      return null;
     }
 
     // Process data and calculate weekly listens
@@ -224,34 +170,11 @@ function processData(artist, items, dateRanges) {
   return artistData;
 }
 
-function hasAnyListens(artistEntries) {
-  return artistEntries.some(({ weeks }) =>
-    weeks.some((week) => typeof week.totalListens === 'number' && week.totalListens > 0)
-  );
-}
-
 // Main function to orchestrate data fetching and updating
 async function fetchData() {
   console.log('Calculating date ranges...');
   const dateRanges = calculateDateRanges();
   console.log('Date ranges calculated:', dateRanges);
-
-  const previousData = loadExistingData(dataFilePath);
-  const { mismatches, newArtists } = detectUuidMismatches(previousData, artists);
-
-  if (mismatches.length > 0) {
-    mismatches.forEach(({ name, previousUuid, currentUuid }) => {
-      console.error(
-        `UUID mismatch for ${name}: artists.json has ${currentUuid}, but existing data.js has ${previousUuid}.`
-      );
-    });
-    console.error('Abort update to avoid writing data with inconsistent artist UUIDs.');
-    process.exit(1);
-  }
-
-  if (newArtists.length > 0) {
-    console.warn(`New artists without prior data: ${newArtists.join(', ')}`);
-  }
 
   console.log('Starting data fetch for all artists');
   const updatedData = [];
@@ -263,21 +186,15 @@ async function fetchData() {
     }
   }
 
-  if (updatedData.length === 0) {
-    console.error('No artist data fetched; aborting update to keep existing data.js.');
-    process.exit(1);
-  }
-
-  if (!hasAnyListens(updatedData)) {
-    console.error('All fetched artists have zero listens; aborting update to avoid overwriting data.js.');
-    process.exit(1);
-  }
-
   // Add a timestamp to the data
   const dataWithTimestamp = {
     timestamp: new Date().toISOString(),
     data: updatedData,
   };
+
+  // Archive the existing data.js file
+  const dataFilePath = path.join(__dirname, '..', 'data.js');
+  const archiveDir = path.join(__dirname, '..', 'archive');
 
   if (!fs.existsSync(archiveDir)) {
     fs.mkdirSync(archiveDir);
