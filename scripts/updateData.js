@@ -108,6 +108,36 @@ async function fetchDataForArtist(artist, dateRanges) {
       throw new Error(`Unexpected API response structure for ${name}: 'items' field is missing or not an array.`);
     }
 
+    const itemDates = data.items.map((item) => item.date).sort();
+    const earliestDate = itemDates[0];
+    const latestDate = itemDates[itemDates.length - 1];
+    const week1Window = `${dateRanges.week1Start} → ${dateRanges.week1End}`;
+    const week2Window = `${dateRanges.week2Start} → ${dateRanges.week2End}`;
+
+    const { week1Count, week2Count } = data.items.reduce(
+      (accumulator, item) => {
+        const itemDate = new Date(item.date);
+        const week1Start = new Date(dateRanges.week1Start);
+        const week1End = new Date(dateRanges.week1End);
+        const week2Start = new Date(dateRanges.week2Start);
+        const week2End = new Date(dateRanges.week2End);
+
+        if (itemDate >= week1Start && itemDate < week1End) {
+          accumulator.week1Count += 1;
+        } else if (itemDate >= week2Start && itemDate < week2End) {
+          accumulator.week2Count += 1;
+        }
+
+        return accumulator;
+      },
+      { week1Count: 0, week2Count: 0 }
+    );
+
+    console.log(
+      `[${name}] received ${data.items.length} items (earliest: ${earliestDate}, latest: ${latestDate}); ` +
+        `in-range counts — week1 (${week1Window}): ${week1Count}, week2 (${week2Window}): ${week2Count}`
+    );
+
     // Process data and calculate weekly listens
     const artistData = processData(artist, data.items, dateRanges);
     console.log(`Processed data for ${name}`);
@@ -166,6 +196,11 @@ function processData(artist, items, dateRanges) {
       },
     ],
   };
+
+  console.log(
+    `[${name}] weekly totals — week1: ${week1Total} (${week1Start.toISOString().slice(0, 10)} → ${week1End.toISOString().slice(0, 10)}), ` +
+      `week2: ${week2Total} (${week2Start.toISOString().slice(0, 10)} → ${week2End.toISOString().slice(0, 10)}), delta: ${listensDifference}`
+  );
 
   return artistData;
 }
