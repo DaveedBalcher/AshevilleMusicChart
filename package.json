@@ -4,7 +4,8 @@
   "description": "Asheville Music Chart data updater",
   "main": "scripts/updateData.js",
   "scripts": {
-    "update": "node scripts/updateData.js"
+    "update": "node scripts/updateData.js",
+    "test:endpoint": "node scripts/testSoundchartsEndpoint.js"
   },
   "dependencies": {
     "node-fetch": "^2.6.7",

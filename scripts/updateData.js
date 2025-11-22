@@ -90,7 +90,7 @@ async function fetchDataForArtist(artist, dateRanges) {
   console.log(`Fetching data for artist: ${name} (UUID: ${uuid})`);
 
   // Construct API endpoint with date parameters
-  const API_ENDPOINT = `https://customer.api.soundcharts.com/api/v2/artist/${uuid}/streaming/spotify/listening?from=${dateRanges.week1Start}&to=${dateRanges.week2End}`;
+  const API_ENDPOINT = `https://customer.api.soundcharts.com/api/v2/artist/${uuid}/streaming/spotify/listening?startDate=${dateRanges.week1Start}&endDate=${dateRanges.week2End}`;
   const API_HEADERS = {
     'x-app-id': APP_ID,
     'x-api-key': API_KEY,

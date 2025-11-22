@@ -1,0 +1,27 @@
+name: Soundcharts Endpoint Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-first-artist-endpoint:
+    name: Test first artist endpoint
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Test Soundcharts endpoint (first artist only)
+      run: npm run test:endpoint
+      env:
+        APP_ID: ${{ secrets.APP_ID }}
+        API_KEY: ${{ secrets.API_KEY }}
