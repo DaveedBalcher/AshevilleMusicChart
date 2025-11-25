@@ -340,6 +340,13 @@
   /* Add padding for fixed header on mobile */
   body {
     padding-top: 125px;
+    /* Hide scrollbar on mobile */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  body::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari, Opera */
   }
 
   .chart-title-section {

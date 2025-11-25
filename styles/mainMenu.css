@@ -87,7 +87,7 @@
     /* Hide menu links by default on mobile */
     .menu-links {
         position: fixed;
-        top: 112px;
+        top: 144px;
         right: 6px;
         background-color: #fff;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -148,5 +148,12 @@
     .recommend-button:active,
     .feedback-button:active {
         background-color: #d17802;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Reset menu position for standard mobile */
+    .menu-links {
+        top: 112px;
     }
 }
