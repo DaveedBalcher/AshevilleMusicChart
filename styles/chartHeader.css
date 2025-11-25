@@ -191,13 +191,143 @@
   margin: 0 auto;
   padding: 20px;
   letter-spacing: 0.04em;
-  min-height: calc(100vh - 430px);
+  min-height: calc(100vh - 510px);
 }
 
-/* Hide mobile banners and bottom nav on desktop */
+/* Desktop Banner Styles */
 .avl-top-banner,
 .avl-hottest-banner,
-.avl-shows-banner,
+.avl-shows-banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 182px;
+  border-radius: 16px;
+  margin: 20px auto 0 auto;
+  padding: 14px 4px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  color: #fff;
+  position: relative;
+  max-width: 1200px;
+}
+
+/* Top Banner - Blue Theme */
+.avl-top-banner {
+  background: linear-gradient(135deg, #457b9d 0%, #a8dadc 100%);
+}
+
+/* Hottest Banner - Orange/Red Theme */
+.avl-hottest-banner {
+  background: linear-gradient(135deg, #f8961e 0%, #e63946 100%);
+}
+
+/* Shows Banner - Purple/Violet Theme */
+.avl-shows-banner {
+  background: linear-gradient(135deg, #6a4c93 0%, #b185db 100%);
+}
+
+.banner-icon {
+  font-size: 2.5rem;
+  margin-bottom: 4px;
+  opacity: 0.9;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.avl-banner-title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0.03em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.avl-banner-subtitle {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 4px 0 0 0;
+  padding: 0;
+  opacity: 0.95;
+}
+
+/* Add bottom margin for banners with buttons */
+.avl-top-banner .avl-banner-subtitle,
+.avl-hottest-banner .avl-banner-subtitle {
+  margin-bottom: 8px;
+}
+
+.avl-banner-buttons {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Share Button */
+.share-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.8em;
+  height: 1.8em;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+  font-size: 1.05em;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  outline: none;
+}
+
+.share-button:hover,
+.share-button:focus {
+  background: rgba(255, 255, 255, 0.35);
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.share-button:active {
+  transform: scale(0.95);
+}
+
+.share-button.share-success {
+  background: rgba(40, 167, 69, 0.9);
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Banner Info Icon */
+.avl-top-banner .info-icon,
+.avl-hottest-banner .info-icon {
+  width: 1.8em;
+  height: 1.8em;
+  font-size: 1.05em;
+  background: rgba(255, 255, 255, 0.25);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.avl-top-banner .info-icon:hover,
+.avl-top-banner .info-icon:focus,
+.avl-hottest-banner .info-icon:hover,
+.avl-hottest-banner .info-icon:focus {
+  background: rgba(255, 255, 255, 0.35);
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.avl-top-banner .info-icon.active,
+.avl-hottest-banner .info-icon.active {
+  background: rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.8);
+  color: #fff;
+}
+
+/* Hide bottom nav on desktop */
 .bottom-nav {
   display: none;
 }
@@ -207,6 +337,11 @@
  ******************************************/
 
 @media (max-width: 768px) {
+  /* Add padding for fixed header on mobile */
+  body {
+    padding-top: 125px;
+  }
+
   .chart-title-section {
     padding: 12px 16px 8px 16px;
   }
@@ -258,7 +393,7 @@
     font-size: 2.2rem;
     margin: 0 auto;
     padding: 16px;
-    min-height: calc(100vh - 380px);
+    min-height: calc(100vh - 460px);
   }
 
   /* Mobile Banners - Base Styles */
@@ -269,10 +404,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 138px;
+    min-height: 156px;
     border-radius: 12px;
-    margin: 8px 0 0 0;
-    padding: 14px 16px;
+    margin: 16px 6px 0 6px;
+    padding: 10px 16px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
     color: #fff;
     position: relative;
@@ -280,8 +415,8 @@
 
   /* Banner Icon Styles */
   .banner-icon {
-    font-size: 2.5rem;
-    margin-bottom: 4px;
+    font-size: 2rem;
+    margin-bottom: 2px;
     opacity: 0.9;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
   }
@@ -302,7 +437,7 @@
   }
 
   .avl-banner-title {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 800;
     margin: 0;
     padding: 0;
@@ -311,7 +446,7 @@
   }
 
   .avl-banner-subtitle {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 500;
     margin: 2px 0 0 0;
     padding: 0;
@@ -321,12 +456,12 @@
   /* Add bottom margin for banners with buttons */
   .avl-top-banner .avl-banner-subtitle,
   .avl-hottest-banner .avl-banner-subtitle {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
 
   .avl-banner-buttons {
     display: flex;
-    gap: 16px;
+    gap: 12px;
     align-items: center;
     justify-content: center;
   }
@@ -336,12 +471,12 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 1.8em;
-    height: 1.8em;
+    width: 1.6em;
+    height: 1.6em;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.25);
     color: #fff;
-    font-size: 1.05em;
+    font-size: 1em;
     border: 2px solid rgba(255, 255, 255, 0.4);
     cursor: pointer;
     transition: all 0.3s ease;
@@ -368,6 +503,9 @@
   /* Banner Info Icon Override */
   .avl-top-banner .info-icon,
   .avl-hottest-banner .info-icon {
+    width: 1.6em;
+    height: 1.6em;
+    font-size: 1em;
     background: rgba(255, 255, 255, 0.25);
     border: 2px solid rgba(255, 255, 255, 0.4);
     color: #fff;
@@ -389,13 +527,6 @@
     background: rgba(255, 255, 255, 0.5);
     border-color: rgba(255, 255, 255, 0.8);
     color: #fff;
-  }
-
-  /* Hide desktop content-wrapper on mobile when banner is shown */
-  .avl-top-banner ~ .content-wrapper,
-  .avl-hottest-banner ~ .content-wrapper,
-  .avl-shows-banner ~ .content-wrapper {
-    display: none;
   }
 
   /* Bottom Navigation Bar (Mobile Only) */
@@ -456,10 +587,15 @@
 }
 
 @media (max-width: 480px) {
+  /* Adjust padding for smaller mobile screens */
+  body {
+    padding-top: 90px;
+  }
+
   .chart-title-section {
     padding: 10px 12px 6px 12px;
   }
-  
+
   .chart-title {
     font-size: 1.2rem;
   }
@@ -507,32 +643,45 @@
     font-size: 1.9rem;
     margin: 0 auto;
     padding: 12px;
-    min-height: calc(100vh - 330px);
+    min-height: calc(100vh - 410px);
   }
 
-  /* Adjust banner text sizes for smaller screens */
+  /* Adjust banner sizes for smaller screens */
+  .avl-top-banner,
+  .avl-hottest-banner,
+  .avl-shows-banner {
+    min-height: 130px;
+    padding: 10px 12px;
+  }
+
   .avl-banner-title {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   .avl-banner-subtitle {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+  }
+
+  /* Reduce bottom margin for banners with buttons on small screens */
+  .avl-top-banner .avl-banner-subtitle,
+  .avl-hottest-banner .avl-banner-subtitle {
+    margin-bottom: 4px;
   }
 
   .avl-banner-buttons {
-    gap: 12px;
+    gap: 10px;
   }
 
   .banner-icon {
-    font-size: 2rem;
-    margin-bottom: 3px;
+    font-size: 1.6rem;
+    margin-bottom: 2px;
   }
 
   .share-button,
   .avl-top-banner .info-icon,
   .avl-hottest-banner .info-icon {
-    width: 1.6em;
-    height: 1.6em;
-    font-size: 0.95em;
+    width: 1.5em;
+    height: 1.5em;
+    font-size: 0.9em;
   }
 }

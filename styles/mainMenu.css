@@ -100,7 +100,7 @@
         opacity: 0;
         transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
         z-index: 50;
-        width: 200px;
+        width: 216px;
     }
 
     /* Show menu links when hamburger is clicked */

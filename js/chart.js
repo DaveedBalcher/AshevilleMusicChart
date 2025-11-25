@@ -1,5 +1,5 @@
 import { renderArtistCells } from './artistCells.js';
-import { formatDate, formatEndDate } from './dateFormatting.js';
+import { formatDate } from './dateFormatting.js';
 import { InlineAlert } from './inlineAlert.js';
 
 export function renderChart(container, data, options = {}) {
@@ -83,16 +83,9 @@ export function renderChart(container, data, options = {}) {
 
   const hasDisplayRange = Boolean(startDateIso && endDateIso);
   const formattedStartDate = startDateIso ? formatDate(startDateIso) : '';
-  const formattedEndDate = hasDisplayRange ? formatEndDate(startDateIso, endDateIso) : '';
-  const dateRangeMarkup = hasDisplayRange
-    ? `<span class="date-range-text">(Since ${formattedStartDate})</span>`
-    : '';
 
-  // Helper function to check if we're on mobile
-  const isMobile = () => window.innerWidth <= 768;
-
-  // Mobile banner for Top tab
-  const topBannerMobile = hasDisplayRange
+  // Banner for Top tab (same for desktop and mobile)
+  const topBanner = hasDisplayRange
     ? `<div class="avl-top-banner">
       <i class="fas fa-trophy banner-icon"></i>
       <h2 class="avl-banner-title">AVL Top 10</h2>
@@ -104,12 +97,14 @@ export function renderChart(container, data, options = {}) {
         </button>
       </div>
     </div>`
-    : `<div class="content-wrapper">
-      <span class="ranking-text">Chart data is missing right now. Try rerunning the update or refresh later.</span>
+    : `<div class="avl-top-banner">
+      <i class="fas fa-trophy banner-icon"></i>
+      <h2 class="avl-banner-title">AVL Top 10</h2>
+      <p class="avl-banner-subtitle">Chart data is missing right now</p>
     </div>`;
 
-  // Mobile banner for Hottest tab
-  const hottestBannerMobile = hasDisplayRange
+  // Banner for Hottest tab (same for desktop and mobile)
+  const hottestBanner = hasDisplayRange
     ? `<div class="avl-hottest-banner">
       <i class="fas fa-fire banner-icon"></i>
       <h2 class="avl-banner-title">AVL Hottest</h2>
@@ -121,56 +116,23 @@ export function renderChart(container, data, options = {}) {
         </button>
       </div>
     </div>`
-    : `<div class="content-wrapper">
-      <span class="ranking-text">Chart data is missing right now. Try rerunning the update or refresh later.</span>
+    : `<div class="avl-hottest-banner">
+      <i class="fas fa-fire banner-icon"></i>
+      <h2 class="avl-banner-title">AVL Hottest</h2>
+      <p class="avl-banner-subtitle">Chart data is missing right now</p>
     </div>`;
 
-  // Desktop versions (original)
-  const topDesktop = hasData
-    ? `<div class="content-wrapper">
-      <span class="icon-wrapper">
-        <i class="fas fa-info-circle info-icon" role="button" tabindex="0" aria-label="Show ranking information"></i>
-      </span>
-      <span class="ranking-text">
-        Ranked by Weekly <strong>Spotify</strong> Streams
-      </span>
-      ${dateRangeMarkup}
-    </div>`
-    : `<div class="content-wrapper">
-      <span class="ranking-text">Chart data is missing right now. Try rerunning the update or refresh later.</span>
-    </div>`;
-
-  const hottestDesktop = hasData
-    ? `<div class="content-wrapper">
-      <span class="icon-wrapper">
-        <i class="fas fa-info-circle info-icon" role="button" tabindex="0" aria-label="Show ranking information"></i>
-      </span>
-      <span class="ranking-text">
-        Artists with the Biggest Weekly Growth
-      </span>
-      ${dateRangeMarkup}
-    </div>`
-    : `<div class="content-wrapper">
-      <span class="ranking-text">Chart data is missing right now. Try rerunning the update or refresh later.</span>
-    </div>`;
-
-  // Mobile banner for Shows tab
-  const showsBannerMobile = `<div class="avl-shows-banner">
+  // Banner for Shows tab (same for desktop and mobile)
+  const showsBanner = `<div class="avl-shows-banner">
       <i class="fas fa-calendar-alt banner-icon"></i>
       <h2 class="avl-banner-title">AVL Shows</h2>
       <p class="avl-banner-subtitle">${currentMonth}</p>
     </div>`;
 
-  const showsDesktop = `<div class="content-wrapper shows-tab">
-      <span class="ranking-text">
-        Local Shows for <span class="date-range-text">(${currentMonth})</span>
-      </span>
-    </div>`;
-
   const tabDescriptions = {
-    top: isMobile() ? topBannerMobile : topDesktop,
-    hottest: isMobile() ? hottestBannerMobile : hottestDesktop,
-    shows: isMobile() ? showsBannerMobile : showsDesktop
+    top: topBanner,
+    hottest: hottestBanner,
+    shows: showsBanner
   };
 
   function renderEmptyState(message = 'Chart data is missing right now. Try rerunning the update or refresh later.') {
