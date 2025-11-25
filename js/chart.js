@@ -27,6 +27,25 @@ export function renderChart(container, data, options = {}) {
     stickyHeader.appendChild(chartTabsSection);
   }
 
+  // Create bottom navigation for mobile
+  const existingBottomNav = document.querySelector('.bottom-nav');
+  if (existingBottomNav) existingBottomNav.remove();
+
+  const bottomNav = document.createElement('div');
+  bottomNav.className = 'bottom-nav';
+  bottomNav.innerHTML = `
+    <button class="bottom-nav-item active" data-tab="top" aria-label="Top Charts">
+      <i class="fas fa-trophy"></i>
+    </button>
+    <button class="bottom-nav-item" data-tab="hottest" aria-label="Hottest Artists">
+      <i class="fas fa-fire"></i>
+    </button>
+    <button class="bottom-nav-item" data-tab="shows" aria-label="Local Shows">
+      <i class="fas fa-calendar-alt"></i>
+    </button>
+  `;
+  document.body.appendChild(bottomNav);
+
   const tabDescription = document.createElement('div');
   tabDescription.className = 'tab-description';
   chartItemsEl.appendChild(tabDescription);
@@ -69,9 +88,46 @@ export function renderChart(container, data, options = {}) {
     ? `<span class="date-range-text">(Since ${formattedStartDate})</span>`
     : '';
 
-  const tabDescriptions = hasData
-    ? {
-        top: `<div class="content-wrapper">
+  // Helper function to check if we're on mobile
+  const isMobile = () => window.innerWidth <= 768;
+
+  // Mobile banner for Top tab
+  const topBannerMobile = hasDisplayRange
+    ? `<div class="avl-top-banner">
+      <i class="fas fa-trophy banner-icon"></i>
+      <h2 class="avl-banner-title">AVL Top 10</h2>
+      <p class="avl-banner-subtitle">Week of ${formattedStartDate}</p>
+      <div class="avl-banner-buttons">
+        <i class="fas fa-info-circle info-icon" role="button" tabindex="0" aria-label="Show ranking information"></i>
+        <button class="share-button" aria-label="Share this chart">
+          <i class="fas fa-share-alt"></i>
+        </button>
+      </div>
+    </div>`
+    : `<div class="content-wrapper">
+      <span class="ranking-text">Chart data is missing right now. Try rerunning the update or refresh later.</span>
+    </div>`;
+
+  // Mobile banner for Hottest tab
+  const hottestBannerMobile = hasDisplayRange
+    ? `<div class="avl-hottest-banner">
+      <i class="fas fa-fire banner-icon"></i>
+      <h2 class="avl-banner-title">AVL Hottest</h2>
+      <p class="avl-banner-subtitle">Week of ${formattedStartDate}</p>
+      <div class="avl-banner-buttons">
+        <i class="fas fa-info-circle info-icon" role="button" tabindex="0" aria-label="Show ranking information"></i>
+        <button class="share-button" aria-label="Share this chart">
+          <i class="fas fa-share-alt"></i>
+        </button>
+      </div>
+    </div>`
+    : `<div class="content-wrapper">
+      <span class="ranking-text">Chart data is missing right now. Try rerunning the update or refresh later.</span>
+    </div>`;
+
+  // Desktop versions (original)
+  const topDesktop = hasData
+    ? `<div class="content-wrapper">
       <span class="icon-wrapper">
         <i class="fas fa-info-circle info-icon" role="button" tabindex="0" aria-label="Show ranking information"></i>
       </span>
@@ -79,8 +135,13 @@ export function renderChart(container, data, options = {}) {
         Ranked by Weekly <strong>Spotify</strong> Streams
       </span>
       ${dateRangeMarkup}
-    </div>`,
-        hottest: `<div class="content-wrapper">
+    </div>`
+    : `<div class="content-wrapper">
+      <span class="ranking-text">Chart data is missing right now. Try rerunning the update or refresh later.</span>
+    </div>`;
+
+  const hottestDesktop = hasData
+    ? `<div class="content-wrapper">
       <span class="icon-wrapper">
         <i class="fas fa-info-circle info-icon" role="button" tabindex="0" aria-label="Show ranking information"></i>
       </span>
@@ -88,26 +149,29 @@ export function renderChart(container, data, options = {}) {
         Artists with the Biggest Weekly Growth
       </span>
       ${dateRangeMarkup}
-    </div>`,
-        shows: `<div class="content-wrapper shows-tab">
+    </div>`
+    : `<div class="content-wrapper">
+      <span class="ranking-text">Chart data is missing right now. Try rerunning the update or refresh later.</span>
+    </div>`;
+
+  // Mobile banner for Shows tab
+  const showsBannerMobile = `<div class="avl-shows-banner">
+      <i class="fas fa-calendar-alt banner-icon"></i>
+      <h2 class="avl-banner-title">AVL Shows</h2>
+      <p class="avl-banner-subtitle">${currentMonth}</p>
+    </div>`;
+
+  const showsDesktop = `<div class="content-wrapper shows-tab">
       <span class="ranking-text">
         Local Shows for <span class="date-range-text">(${currentMonth})</span>
       </span>
-    </div>`
-      }
-    : {
-        top: `<div class="content-wrapper">
-      <span class="ranking-text">Chart data is missing right now. Try rerunning the update or refresh later.</span>
-    </div>`,
-        hottest: `<div class="content-wrapper">
-      <span class="ranking-text">Chart data is missing right now. Try rerunning the update or refresh later.</span>
-    </div>`,
-        shows: `<div class="content-wrapper shows-tab">
-      <span class="ranking-text">
-        Local Shows for <span class="date-range-text">(${currentMonth})</span>
-      </span>
-    </div>`
-      };
+    </div>`;
+
+  const tabDescriptions = {
+    top: isMobile() ? topBannerMobile : topDesktop,
+    hottest: isMobile() ? hottestBannerMobile : hottestDesktop,
+    shows: isMobile() ? showsBannerMobile : showsDesktop
+  };
 
   function renderEmptyState(message = 'Chart data is missing right now. Try rerunning the update or refresh later.') {
     cellsContainer.innerHTML = `
@@ -166,6 +230,49 @@ export function renderChart(container, data, options = {}) {
     });
   }
 
+  function setupShareButton(button) {
+    if (!button) return;
+    const handleShare = async (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+
+      const shareData = {
+        title: 'Asheville Music Chart',
+        text: 'Check out the Asheville Music Chart!',
+        url: window.location.href
+      };
+
+      // Try Web Share API first (mobile devices)
+      if (navigator.share) {
+        try {
+          await navigator.share(shareData);
+        } catch (err) {
+          // User cancelled or error occurred
+          if (err.name !== 'AbortError') {
+            console.log('Share failed:', err);
+          }
+        }
+      } else {
+        // Fallback: copy to clipboard
+        try {
+          await navigator.clipboard.writeText(window.location.href);
+          // Show brief success feedback
+          const originalHTML = button.innerHTML;
+          button.innerHTML = '<i class="fas fa-check"></i>';
+          button.classList.add('share-success');
+          setTimeout(() => {
+            button.innerHTML = originalHTML;
+            button.classList.remove('share-success');
+          }, 1500);
+        } catch (err) {
+          console.log('Copy to clipboard failed:', err);
+        }
+      }
+    };
+
+    button.addEventListener('click', handleShare);
+  }
+
 
   function sortByTop(artists) {
     return [...artists].sort((a, b) => {
@@ -194,11 +301,18 @@ export function renderChart(container, data, options = {}) {
   }
 
   const tabs = chartTabsSection.querySelectorAll('.chart-tab');
+  const bottomNavItems = bottomNav.querySelectorAll('.bottom-nav-item');
 
   function showTab(tabName) {
+    // Update desktop tabs
     tabs.forEach(tab => tab.classList.remove('active'));
     const selectedTab = chartTabsSection.querySelector(`[data-tab="${tabName}"]`);
     if (selectedTab) selectedTab.classList.add('active');
+
+    // Update bottom nav items
+    bottomNavItems.forEach(item => item.classList.remove('active'));
+    const selectedBottomNavItem = bottomNav.querySelector(`[data-tab="${tabName}"]`);
+    if (selectedBottomNavItem) selectedBottomNavItem.classList.add('active');
 
     tabDescription.innerHTML = tabDescriptions[tabName] || '';
 
@@ -225,6 +339,7 @@ export function renderChart(container, data, options = {}) {
     }
 
     setupInfoIcon(tabDescription.querySelector('.info-icon'));
+    setupShareButton(tabDescription.querySelector('.share-button'));
     if (tabName !== 'top' && tabName !== 'hottest') {
       inlineAlert.hide();
     }
@@ -233,6 +348,12 @@ export function renderChart(container, data, options = {}) {
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
       showTab(tab.getAttribute('data-tab'));
+    });
+  });
+
+  bottomNavItems.forEach(item => {
+    item.addEventListener('click', () => {
+      showTab(item.getAttribute('data-tab'));
     });
   });
 

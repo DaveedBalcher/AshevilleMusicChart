@@ -152,7 +152,7 @@
 @media (max-width: 768px) {
   .inline-alert {
     margin: 12px 0;
-    border-radius: 10px;
+    border-radius: 12px;
   }
 
   .inline-alert.visible {

@@ -182,18 +182,24 @@
 
 .coming-soon-banner {
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 120px;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #fff;
-  background: linear-gradient(90deg, #457b9d 0%, #a8dadc 100%);
-  border-radius: 12px;
-  margin: 32px auto 0 auto;
-  max-width: 600px;
-  box-shadow: 0 2px 12px rgba(69,123,157,0.13);
+  justify-content: center;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 300;
+  color: #5d4f72;
+  margin: 0 auto;
+  padding: 20px;
   letter-spacing: 0.04em;
+  min-height: calc(100vh - 430px);
+}
+
+/* Hide mobile banners and bottom nav on desktop */
+.avl-top-banner,
+.avl-hottest-banner,
+.avl-shows-banner,
+.bottom-nav {
+  display: none;
 }
 
 /******************************************
@@ -204,21 +210,21 @@
   .chart-title-section {
     padding: 12px 16px 8px 16px;
   }
-  
+
   .chart-title {
     font-size: 1.4rem;
   }
-  
+
   .tab-description {
     font-size: 0.85rem;
     padding: 8px 8px 0 8px;
   }
-  
+
   .content-wrapper {
     gap: 0.4em;
     margin-top: 0px;
   }
-  
+
   .info-icon {
     width: 1.35em;
     height: 1.35em;
@@ -243,18 +249,209 @@
     font-size: 0.83rem;
     margin-left: 0.4em;
   }
+
+  /* Hide desktop tabs on mobile */
   .chart-tabs {
-    gap: 0.7rem;
-    padding: 0.3rem 0;
-  }
-  .chart-tab {
-    font-size: 0.98rem;
-    padding: 0.5em 0.9em;
+    display: none;
   }
   .coming-soon-banner {
-    font-size: 1.1rem;
-    height: 80px;
-    margin: 18px auto 0 auto;
+    font-size: 2.2rem;
+    margin: 0 auto;
+    padding: 16px;
+    min-height: calc(100vh - 380px);
+  }
+
+  /* Mobile Banners - Base Styles */
+  .avl-top-banner,
+  .avl-hottest-banner,
+  .avl-shows-banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 138px;
+    border-radius: 12px;
+    margin: 8px 0 0 0;
+    padding: 14px 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    color: #fff;
+    position: relative;
+  }
+
+  /* Banner Icon Styles */
+  .banner-icon {
+    font-size: 2.5rem;
+    margin-bottom: 4px;
+    opacity: 0.9;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  }
+
+  /* Top Banner - Blue Theme */
+  .avl-top-banner {
+    background: linear-gradient(135deg, #457b9d 0%, #a8dadc 100%);
+  }
+
+  /* Hottest Banner - Orange/Red Theme */
+  .avl-hottest-banner {
+    background: linear-gradient(135deg, #f8961e 0%, #e63946 100%);
+  }
+
+  /* Shows Banner - Purple/Violet Theme */
+  .avl-shows-banner {
+    background: linear-gradient(135deg, #6a4c93 0%, #b185db 100%);
+  }
+
+  .avl-banner-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0.03em;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .avl-banner-subtitle {
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 2px 0 0 0;
+    padding: 0;
+    opacity: 0.95;
+  }
+
+  /* Add bottom margin for banners with buttons */
+  .avl-top-banner .avl-banner-subtitle,
+  .avl-hottest-banner .avl-banner-subtitle {
+    margin-bottom: 8px;
+  }
+
+  .avl-banner-buttons {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Share Button - Match Info Icon Style */
+  .share-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.8em;
+    height: 1.8em;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+    color: #fff;
+    font-size: 1.05em;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    outline: none;
+  }
+
+  .share-button:hover,
+  .share-button:focus {
+    background: rgba(255, 255, 255, 0.35);
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  }
+
+  .share-button:active {
+    transform: scale(0.95);
+  }
+
+  .share-button.share-success {
+    background: rgba(40, 167, 69, 0.9);
+    border-color: rgba(255, 255, 255, 0.8);
+  }
+
+  /* Banner Info Icon Override */
+  .avl-top-banner .info-icon,
+  .avl-hottest-banner .info-icon {
+    background: rgba(255, 255, 255, 0.25);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .avl-top-banner .info-icon:hover,
+  .avl-top-banner .info-icon:focus,
+  .avl-hottest-banner .info-icon:hover,
+  .avl-hottest-banner .info-icon:focus {
+    background: rgba(255, 255, 255, 0.35);
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  }
+
+  .avl-top-banner .info-icon.active,
+  .avl-hottest-banner .info-icon.active {
+    background: rgba(255, 255, 255, 0.5);
+    border-color: rgba(255, 255, 255, 0.8);
+    color: #fff;
+  }
+
+  /* Hide desktop content-wrapper on mobile when banner is shown */
+  .avl-top-banner ~ .content-wrapper,
+  .avl-hottest-banner ~ .content-wrapper,
+  .avl-shows-banner ~ .content-wrapper {
+    display: none;
+  }
+
+  /* Bottom Navigation Bar (Mobile Only) */
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px 0 12px 0;
+    z-index: 1000;
+  }
+
+  .bottom-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: #6c757d;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 8px 24px;
+    border-radius: 12px;
+    min-width: 80px;
+  }
+
+  .bottom-nav-item i {
+    font-size: 1.5rem;
+    margin-bottom: 4px;
+    transition: all 0.3s ease;
+  }
+
+  .bottom-nav-item.active {
+    color: #457b9d;
+  }
+
+  .bottom-nav-item.active i {
+    color: #457b9d;
+    transform: scale(1.15);
+  }
+
+  .bottom-nav-item:active {
+    transform: scale(0.95);
+  }
+
+  /* Add padding to body to account for fixed bottom nav */
+  body {
+    padding-bottom: 70px;
   }
 }
 
@@ -291,17 +488,51 @@
     font-size: 0.75rem;
     margin-left: 0.2em;
   }
+
+  /* Hide desktop tabs on mobile */
   .chart-tabs {
-    gap: 0.3rem;
-    padding: 0.15rem 0;
+    display: none;
   }
-  .chart-tab {
-    font-size: 0.85rem;
-    padding: 0.35em 0.5em;
+
+  /* Adjust bottom nav for smaller screens */
+  .bottom-nav-item {
+    padding: 6px 16px;
+    min-width: 70px;
+  }
+
+  .bottom-nav-item i {
+    font-size: 1.3rem;
   }
   .coming-soon-banner {
-    font-size: 0.95rem;
-    height: 60px;
-    margin: 10px auto 0 auto;
+    font-size: 1.9rem;
+    margin: 0 auto;
+    padding: 12px;
+    min-height: calc(100vh - 330px);
+  }
+
+  /* Adjust banner text sizes for smaller screens */
+  .avl-banner-title {
+    font-size: 1.5rem;
+  }
+
+  .avl-banner-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .avl-banner-buttons {
+    gap: 12px;
+  }
+
+  .banner-icon {
+    font-size: 2rem;
+    margin-bottom: 3px;
+  }
+
+  .share-button,
+  .avl-top-banner .info-icon,
+  .avl-hottest-banner .info-icon {
+    width: 1.6em;
+    height: 1.6em;
+    font-size: 0.95em;
   }
 }

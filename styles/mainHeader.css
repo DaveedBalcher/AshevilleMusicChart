@@ -154,7 +154,7 @@
     z-index: 100;
     position: absolute;
     right: 20px;
-    top: 6px;
+    top: -12px;
     pointer-events: auto;
     border-radius: 4px;
   }
@@ -163,7 +163,7 @@
     width: 30px;
     height: 2px;
     background-color: #000;
-    border-radius: 2px;
+    border-radius: 4px;
     transition: all 0.3s ease;
   }
 

@@ -87,15 +87,15 @@ class ArtistCell {
                       ${initialStreamValue.toLocaleString()}
                   </span>
                   <span id="${changeIndicatorId}">${this.getChangeIndicatorHTML(initialChangeValue)}</span>
-                  <a href="${this.artistData.artist.spotifyUrl}"
-                     target="_blank"
-                     rel="noopener noreferrer"
-                     class="spotify-link"
-                     title="Listen on Spotify"
-                     aria-label="Listen to ${this.artistData.artist.name} on Spotify">
-                      <i class="fab fa-spotify"></i>
-                  </a>
               </div>
+              <a href="${this.artistData.artist.spotifyUrl}"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="spotify-link"
+                 title="Listen on Spotify"
+                 aria-label="Listen to ${this.artistData.artist.name} on Spotify">
+                  <i class="fab fa-spotify"></i>
+              </a>
           </div>
       `;
 
