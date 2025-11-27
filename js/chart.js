@@ -1,6 +1,7 @@
 import { renderArtistCells } from './artistCells.js';
 import { formatDate } from './dateFormatting.js';
 import { InlineAlert } from './inlineAlert.js';
+import { initRouter, navigateToTab } from './router.js';
 
 export function renderChart(container, data, options = {}) {
   container.innerHTML = `<div id="chart-items"></div>`;
@@ -265,7 +266,7 @@ export function renderChart(container, data, options = {}) {
   const tabs = chartTabsSection.querySelectorAll('.chart-tab');
   const bottomNavItems = bottomNav.querySelectorAll('.bottom-nav-item');
 
-  function showTab(tabName) {
+  function showTab(tabName, updateHash = true) {
     // Update desktop tabs
     tabs.forEach(tab => tab.classList.remove('active'));
     const selectedTab = chartTabsSection.querySelector(`[data-tab="${tabName}"]`);
@@ -305,21 +306,29 @@ export function renderChart(container, data, options = {}) {
     if (tabName !== 'top' && tabName !== 'hottest') {
       inlineAlert.hide();
     }
+
+    // Update URL hash if requested (prevents infinite loops)
+    if (updateHash) {
+      navigateToTab(tabName);
+    }
   }
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      showTab(tab.getAttribute('data-tab'));
+      navigateToTab(tab.getAttribute('data-tab'));
     });
   });
 
   bottomNavItems.forEach(item => {
     item.addEventListener('click', () => {
-      showTab(item.getAttribute('data-tab'));
+      navigateToTab(item.getAttribute('data-tab'));
     });
   });
 
-  showTab('top');
+  // Initialize router - it will read URL hash and show appropriate tab
+  initRouter((tabName, updateHash) => {
+    showTab(tabName, updateHash);
+  });
 
   window.addEventListener('beforeunload', () => {
     inlineAlert.destroy();
