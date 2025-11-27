@@ -68,41 +68,94 @@ class ArtistCell {
     const initialStreamValue = this.getAnimatedStreamValue();
     const initialChangeValue = this.getAnimatedChangeValue();
 
-    cell.innerHTML = `
-        <div class="artist-info">
-            <div class="artist-rank">${this.index + 1}</div>
-            <img src="${this.artistData.artist.imageUrl}" alt="${this.artistData.artist.name}" class="${imgClass}" />
-            <div class="artist-details">
-                <h2 class="artist-name">
-                    ${this.artistData.artist.name}
-                    ${!this.previousWeek ? '<span class="accent">NEW!</span>' : ''}
-                    ${onFireLabel}
-                </h2>
-                <p class="genres">${this.artistData.artist.specific_genre}</p>
-            </div>
-        </div>
-          <div class="stats">
-              <div class="stat-item">
-                  <span class="stat-value" id="${streamValueId}">
-                      ${initialStreamValue.toLocaleString()}
-                  </span>
-                  <span id="${changeIndicatorId}">${this.getChangeIndicatorHTML(initialChangeValue)}</span>
-              </div>
-              <a href="${this.artistData.artist.spotifyUrl}"
-                 target="_blank"
-                 rel="noopener noreferrer"
-                 class="spotify-link"
-                 title="Listen on Spotify"
-                 aria-label="Listen to ${this.artistData.artist.name} on Spotify">
-                  <i class="fab fa-spotify"></i>
-              </a>
-          </div>
-      `;
+    const hasBio = Boolean(this.artistData.artist.concise_bio);
 
-      // Start the animation
-      this.startAnimation();
+    cell.innerHTML = `
+      <div class="artist-cell-main">
+        <div class="artist-info">
+          <div class="artist-rank">${this.index + 1}</div>
+          <img src="${this.artistData.artist.imageUrl}" alt="${this.artistData.artist.name}" class="${imgClass}" />
+          <div class="artist-details">
+            <h2 class="artist-name">
+              ${this.artistData.artist.name}
+              ${!this.previousWeek ? '<span class="accent">NEW!</span>' : ''}
+              ${onFireLabel}
+            </h2>
+            <p class="genres">${this.artistData.artist.specific_genre}</p>
+          </div>
+        </div>
+        <div class="stats">
+          <div class="stat-item">
+            <span class="stat-value" id="${streamValueId}">
+              ${initialStreamValue.toLocaleString()}
+            </span>
+            <span id="${changeIndicatorId}">${this.getChangeIndicatorHTML(initialChangeValue)}</span>
+          </div>
+          <a href="${this.artistData.artist.spotifyUrl}"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="spotify-link"
+             title="Listen on Spotify"
+             aria-label="Listen to ${this.artistData.artist.name} on Spotify">
+            <i class="fab fa-spotify"></i>
+          </a>
+        </div>
+      </div>
+      ${hasBio ? `
+        <button class="bio-toggle-btn"
+                aria-label="Show artist bio"
+                aria-expanded="false">
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="bio-section">
+          <div class="bio-content">
+            <p class="bio-text">${this.artistData.artist.concise_bio}</p>
+          </div>
+        </div>
+      ` : ''}
+    `;
+
+    // Start the animation
+    this.startAnimation();
+
+    // Setup bio toggle if bio exists
+    if (hasBio) {
+      this.setupBioToggle();
+    }
 
       return cell;
+  }
+
+  setupBioToggle() {
+    const toggleBtn = this.cellElement.querySelector('.bio-toggle-btn');
+    if (!toggleBtn) return;
+
+    toggleBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const isExpanded = this.cellElement.classList.contains('bio-expanded');
+
+      if (isExpanded) {
+        // Collapse
+        this.cellElement.classList.add('bio-collapsing');
+        this.cellElement.classList.remove('bio-expanded');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        toggleBtn.setAttribute('aria-label', 'Show artist bio');
+        toggleBtn.querySelector('i').className = 'fas fa-plus';
+
+        setTimeout(() => {
+          this.cellElement.classList.remove('bio-collapsing');
+        }, 300);
+
+      } else {
+        // Expand
+        this.cellElement.classList.add('bio-expanded');
+        toggleBtn.setAttribute('aria-expanded', 'true');
+        toggleBtn.setAttribute('aria-label', 'Hide artist bio');
+        toggleBtn.querySelector('i').className = 'fas fa-minus';
+      }
+    });
   }
 
   getAnimatedStreamValue() {

@@ -14,13 +14,14 @@
 }
  
  .artist-cell {
+    position: relative;
     background-color: #fff;
     margin-bottom: 20px;
     border-radius: 8px;
     overflow: hidden;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: stretch;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
     color: #4b3b5f;
@@ -31,7 +32,16 @@
     transform: translateY(-2px);
     background-color: #f8f9fa;
   }
-  
+
+  .artist-cell-main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
   /* Artist Info Section */
   .artist-info {
     display: flex;
@@ -111,26 +121,104 @@
     box-shadow: 0 4px 12px rgba(29, 185, 84, 0.35);
     border-color: rgba(29, 185, 84, 0.6);
 }
-  
+
+.bio-toggle-btn {
+  position: absolute;
+  bottom: 12px;
+  right: 16px;
+  color: #fff;
+  font-size: 1.05em;
+  background: linear-gradient(135deg, #6a4c93 70%, #b185db 100%);
+  width: 1.99em;
+  height: 1.99em;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(106, 76, 147, 0.25);
+  border: 1px solid rgba(106, 76, 147, 0.4);
+  cursor: pointer;
+  opacity: 0.88;
+  z-index: 10;
+}
+
+.artist-cell.bio-expanded .bio-toggle-btn {
+  opacity: 1;
+}
+
+.bio-toggle-btn:hover {
+  background: linear-gradient(135deg, #4a2c73 80%, #9165bb 100%);
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(106, 76, 147, 0.4);
+  opacity: 1;
+}
+
+.bio-toggle-btn:active {
+  transform: scale(0.95);
+  transition: transform 0.1s;
+}
+
+.bio-toggle-btn:focus-visible {
+  outline: 2px solid #6a4c93;
+  outline-offset: 2px;
+}
+
+.bio-section {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+  margin-top: 0;
+}
+
+.artist-cell.bio-expanded .bio-section {
+  max-height: 200px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  opacity: 1;
+  transform: translateY(0);
+  margin-top: 12px;
+  margin-bottom: 8px;
+  padding-bottom: 50px;
+}
+
+.bio-content {
+  padding: 16px 20px;
+  background: linear-gradient(135deg, #f8f5fc 0%, #faf6ff 100%);
+  border-radius: 8px;
+  border-left: 4px solid #6a4c93;
+  box-shadow: inset 0 1px 3px rgba(106, 76, 147, 0.1);
+}
+
+.bio-text {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #4b3b5f;
+}
+
   .stats {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     margin-right: 16px;
-    gap: 8px;
+    gap: 16px;
   }
-  
+
   .stat-item {
     display: flex;
     flex-direction: column;
     min-width: 120px;
     align-items: center;
-    background: #e9ecef;
-    padding: 12px;
+    background: rgba(233, 236, 239, 0.35);
+    padding: 10px 14px;
     border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    margin: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+    margin: 4px 0;
   }
   
   .stat-value {
@@ -283,16 +371,16 @@
       padding: 2px 6px 2px 0;
       margin-right: 0;
       margin-left: 16px;
-      gap: 8px;
+      gap: 12px;
       align-items: center;
       text-align: right;
     }
     .stat-item {
       min-width: 0;
-      padding: 2px 0;
+      padding: 6px 10px;
       margin: 2px 0;
-      border-radius: 0;
-      background: none;
+      border-radius: 8px;
+      background: rgba(233, 236, 239, 0.2);
       box-shadow: none;
       align-items: flex-end;
       text-align: right;
@@ -314,6 +402,29 @@
     .on-fire-label {
       font-size: 1em;
       margin-left: 4px;
+    }
+    .bio-toggle-btn {
+      width: 1.53em;
+      height: 1.53em;
+      font-size: 1em;
+      right:16px;
+      bottom: 8px;
+    }
+    .artist-cell.bio-expanded .bio-section {
+      max-height: 250px;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 36px;
+    }
+    .bio-text {
+      font-size: 0.9rem;
+    }
+    /* Consistency fix: match 480px margins */
+    .artist-rank {
+      padding: 10px;
+    }
+    .stats {
+      margin-right: 10px;
     }
   }
 
@@ -348,16 +459,16 @@
       padding: 1px 6px 1px 0;
       margin-right: 0;
       margin-left: 16px;
-      gap: 8px;
+      gap: 12px;
       align-items: center;
       text-align: right;
     }
     .stat-item {
       min-width: 0;
-      padding: 1px 0;
+      padding: 5px 8px;
       margin: 1px 0;
-      border-radius: 0;
-      background: none;
+      border-radius: 6px;
+      background: rgba(233, 236, 239, 0.15);
       box-shadow: none;
       align-items: flex-end;
       text-align: right;
@@ -373,5 +484,31 @@
       display: inline-flex;
       align-self: center;
     }
+    .bio-toggle-btn {
+      font-size: 0.95em;
+      right: 17px;
+      bottom: 8px;
+    }
+    .artist-cell.bio-expanded .bio-section {
+      max-height: 300px;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 20px;
+    }
+    .bio-text {
+      font-size: 0.875rem;
+    }
   }
-  
+
+  /* Reduced Motion Support */
+  @media (prefers-reduced-motion: reduce) {
+    .bio-section,
+    .bio-toggle-btn {
+      transition: none;
+    }
+
+    .bio-toggle-btn:hover,
+    .bio-toggle-btn:active {
+      transform: none;
+    }
+  }
