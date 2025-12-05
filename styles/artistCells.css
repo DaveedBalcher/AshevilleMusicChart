@@ -122,6 +122,105 @@
     border-color: rgba(29, 185, 84, 0.6);
 }
 
+.music-service-links {
+  position: absolute;
+  bottom: 12px;
+  left: 16px;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.music-service-links.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.music-service-link {
+  text-decoration: none;
+  font-size: 1.05em;
+  width: 1.99em;
+  height: 1.99em;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+.music-service-link:hover {
+  opacity: 1;
+}
+
+.spotify-link-bio {
+  color: #1DB954;
+  background: rgba(29, 185, 84, 0.08);
+  box-shadow: 0 1px 4px rgba(29, 185, 84, 0.15);
+  border: 1px solid rgba(29, 185, 84, 0.2);
+}
+
+.spotify-link-bio:hover {
+  background: rgba(29, 185, 84, 0.15);
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(29, 185, 84, 0.2);
+  border-color: rgba(29, 185, 84, 0.35);
+}
+
+.apple-link-bio {
+  color: #FA243C;
+  background: rgba(250, 36, 60, 0.08);
+  box-shadow: 0 1px 4px rgba(250, 36, 60, 0.15);
+  border: 1px solid rgba(250, 36, 60, 0.2);
+}
+
+.apple-link-bio:hover {
+  background: rgba(250, 36, 60, 0.15);
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(250, 36, 60, 0.2);
+  border-color: rgba(250, 36, 60, 0.35);
+}
+
+.youtube-link-bio {
+  color: #FF0000;
+  background: rgba(255, 0, 0, 0.08);
+  box-shadow: 0 1px 4px rgba(255, 0, 0, 0.15);
+  border: 1px solid rgba(255, 0, 0, 0.2);
+}
+
+.youtube-link-bio:hover {
+  background: rgba(255, 0, 0, 0.15);
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(255, 0, 0, 0.2);
+  border-color: rgba(255, 0, 0, 0.35);
+}
+
+.tidal-link-bio {
+  color: #4a5a4f;
+  background: rgba(74, 90, 79, 0.08);
+  box-shadow: 0 1px 4px rgba(74, 90, 79, 0.15);
+  border: 1px solid rgba(74, 90, 79, 0.2);
+}
+
+.tidal-link-bio:hover {
+  background: rgba(74, 90, 79, 0.15);
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(74, 90, 79, 0.2);
+  border-color: rgba(74, 90, 79, 0.35);
+}
+
+.tidal-text {
+  font-weight: 700;
+  font-size: 1.1em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
 .bio-toggle-btn {
   position: absolute;
   bottom: 12px;
@@ -206,6 +305,7 @@
     align-items: center;
     justify-content: center;
     margin-right: 16px;
+    margin-top: -29px;
     gap: 16px;
   }
 
@@ -214,7 +314,7 @@
     flex-direction: column;
     min-width: 120px;
     align-items: center;
-    background: rgba(233, 236, 239, 0.35);
+    background: rgba(233, 236, 239, 0.5);
     padding: 10px 14px;
     border-radius: 12px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
@@ -371,6 +471,7 @@
       padding: 2px 6px 2px 0;
       margin-right: 0;
       margin-left: 16px;
+      margin-top: -22px;
       gap: 12px;
       align-items: center;
       text-align: right;
@@ -380,7 +481,7 @@
       padding: 6px 10px;
       margin: 2px 0;
       border-radius: 8px;
-      background: rgba(233, 236, 239, 0.2);
+      background: rgba(233, 236, 239, 0.35);
       box-shadow: none;
       align-items: flex-end;
       text-align: right;
@@ -409,6 +510,16 @@
       font-size: 1em;
       right:16px;
       bottom: 8px;
+    }
+    .music-service-links {
+      bottom: 8px;
+      left: 16px;
+      gap: 6px;
+    }
+    .music-service-link {
+      width: 1.53em;
+      height: 1.53em;
+      font-size: 1em;
     }
     .artist-cell.bio-expanded .bio-section {
       max-height: 250px;
@@ -450,6 +561,7 @@
     .artist-rank {
       font-size: 1em;
       padding: 5px;
+      margin-left: -2px;
     }
     .artist-name {
       font-size: 1em;
@@ -457,8 +569,9 @@
     .stats {
       flex-direction: row;
       padding: 1px 6px 1px 0;
-      margin-right: 0;
+      margin-right: -5px;
       margin-left: 16px;
+      margin-top: -13px;
       gap: 12px;
       align-items: center;
       text-align: right;
@@ -468,7 +581,7 @@
       padding: 5px 8px;
       margin: 1px 0;
       border-radius: 6px;
-      background: rgba(233, 236, 239, 0.15);
+      background: rgba(233, 236, 239, 0.3);
       box-shadow: none;
       align-items: flex-end;
       text-align: right;
@@ -489,6 +602,14 @@
       right: 17px;
       bottom: 8px;
     }
+    .music-service-links {
+      bottom: 8px;
+      left: 16px;
+      gap: 6px;
+    }
+    .music-service-link {
+      font-size: 0.95em;
+    }
     .artist-cell.bio-expanded .bio-section {
       max-height: 300px;
       overflow-y: auto;
@@ -503,12 +624,15 @@
   /* Reduced Motion Support */
   @media (prefers-reduced-motion: reduce) {
     .bio-section,
-    .bio-toggle-btn {
+    .bio-toggle-btn,
+    .music-service-links,
+    .music-service-link {
       transition: none;
     }
 
     .bio-toggle-btn:hover,
-    .bio-toggle-btn:active {
+    .bio-toggle-btn:active,
+    .music-service-link:hover {
       transform: none;
     }
   }

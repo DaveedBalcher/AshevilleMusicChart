@@ -91,14 +91,6 @@ class ArtistCell {
             </span>
             <span id="${changeIndicatorId}">${this.getChangeIndicatorHTML(initialChangeValue)}</span>
           </div>
-          <a href="${this.artistData.artist.spotifyUrl}"
-             target="_blank"
-             rel="noopener noreferrer"
-             class="spotify-link"
-             title="Listen on Spotify"
-             aria-label="Listen to ${this.artistData.artist.name} on Spotify">
-            <i class="fab fa-spotify"></i>
-          </a>
         </div>
       </div>
       ${hasBio ? `
@@ -107,6 +99,48 @@ class ArtistCell {
                 aria-expanded="false">
           <i class="fas fa-plus"></i>
         </button>
+        <div class="music-service-links">
+          ${this.artistData.artist.spotifyUrl ? `
+            <a href="${this.artistData.artist.spotifyUrl}"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="music-service-link spotify-link-bio"
+               title="Listen on Spotify"
+               aria-label="Listen to ${this.artistData.artist.name} on Spotify">
+              <i class="fab fa-spotify"></i>
+            </a>
+          ` : ''}
+          ${this.artistData.artist.appleMusicUrl ? `
+            <a href="${this.artistData.artist.appleMusicUrl}"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="music-service-link apple-link-bio"
+               title="Listen on Apple Music"
+               aria-label="Listen to ${this.artistData.artist.name} on Apple Music">
+              <i class="fab fa-apple"></i>
+            </a>
+          ` : ''}
+          ${this.artistData.artist.youtubeUrl ? `
+            <a href="${this.artistData.artist.youtubeUrl}"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="music-service-link youtube-link-bio"
+               title="Watch on YouTube"
+               aria-label="Watch ${this.artistData.artist.name} on YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+          ` : ''}
+          ${this.artistData.artist.tidalUrl ? `
+            <a href="${this.artistData.artist.tidalUrl}"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="music-service-link tidal-link-bio"
+               title="Listen on Tidal"
+               aria-label="Listen to ${this.artistData.artist.name} on Tidal">
+              <span class="tidal-text">T</span>
+            </a>
+          ` : ''}
+        </div>
         <div class="bio-section">
           <div class="bio-content">
             <p class="bio-text">${this.artistData.artist.concise_bio}</p>
@@ -128,6 +162,7 @@ class ArtistCell {
 
   setupBioToggle() {
     const toggleBtn = this.cellElement.querySelector('.bio-toggle-btn');
+    const musicServiceLinks = this.cellElement.querySelector('.music-service-links');
     if (!toggleBtn) return;
 
     toggleBtn.addEventListener('click', (e) => {
@@ -137,6 +172,11 @@ class ArtistCell {
       const isExpanded = this.cellElement.classList.contains('bio-expanded');
 
       if (isExpanded) {
+        // Hide music service buttons immediately before collapse
+        if (musicServiceLinks) {
+          musicServiceLinks.classList.remove('visible');
+        }
+
         // Collapse
         this.cellElement.classList.add('bio-collapsing');
         this.cellElement.classList.remove('bio-expanded');
@@ -154,6 +194,11 @@ class ArtistCell {
         toggleBtn.setAttribute('aria-expanded', 'true');
         toggleBtn.setAttribute('aria-label', 'Hide artist bio');
         toggleBtn.querySelector('i').className = 'fas fa-minus';
+
+        // Show music service buttons after expand starts
+        if (musicServiceLinks) {
+          musicServiceLinks.classList.add('visible');
+        }
       }
     });
   }
