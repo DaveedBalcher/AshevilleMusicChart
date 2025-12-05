@@ -1,12 +1,12 @@
 export const data = {
-  "timestamp": "2025-11-22T15:25:23.572Z",
+  "timestamp": "2025-11-28T05:05:48.856Z",
   "data": [
     {
       "artist": {
         "uuid": "11e83fe6-babe-ddde-a7ff-aa1c026db3d8",
         "name": "Indigo De Souza",
         "imageUrl": "https://assets.soundcharts.com/artist/e/b/a/11e83fe6-babe-ddde-a7ff-aa1c026db3d8.jpg",
-        "high_level_genre": "Rock/Alternative",
+        "high_level_genre": "Indie & Alternative",
         "specific_genre": "Psychedelic Indie",
         "spotifyUrl": "https://open.spotify.com/artist/3ir2pF2mkiEWqyPenKTh5e",
         "concise_bio": "An indie force shaped by Asheville's mountain-edge DIY scene, channeling raw emotion through a blend of grunge, pop, and psychedelic vulnerability.",
@@ -16,15 +16,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-06",
-          "weekEndDate": "2025-11-13",
-          "totalListens": 8059123
+          "weekStartDate": "2025-11-12",
+          "weekEndDate": "2025-11-19",
+          "totalListens": 7990595
         },
         {
-          "weekStartDate": "2025-11-14",
-          "weekEndDate": "2025-11-21",
-          "totalListens": 7952766,
-          "listensDifference": -106357
+          "weekStartDate": "2025-11-20",
+          "weekEndDate": "2025-11-27",
+          "totalListens": 7720837,
+          "listensDifference": -269758
         }
       ]
     },
@@ -33,7 +33,7 @@ export const data = {
         "uuid": "30e2b88a-c34c-11e8-afbf-525400009efb",
         "name": "MJ Lenderman",
         "imageUrl": "https://assets.soundcharts.com/artist/c/4/3/30e2b88a-c34c-11e8-afbf-525400009efb.jpg",
-        "high_level_genre": "Roots/Americana",
+        "high_level_genre": "Indie & Alternative",
         "specific_genre": "Slacker Americana",
         "spotifyUrl": "https://open.spotify.com/artist/4tK6Z8fK7Sc9133byjPGIT",
         "concise_bio": "A slacker-country storyteller rooted in Western North Carolina's laid-back indie culture, mixing wry humor with fuzzy, Appalachian-born grit.",
@@ -43,15 +43,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-06",
-          "weekEndDate": "2025-11-13",
-          "totalListens": 3995650
+          "weekStartDate": "2025-11-12",
+          "weekEndDate": "2025-11-19",
+          "totalListens": 3907535
         },
         {
-          "weekStartDate": "2025-11-14",
-          "weekEndDate": "2025-11-21",
-          "totalListens": 3879167,
-          "listensDifference": -116483
+          "weekStartDate": "2025-11-20",
+          "weekEndDate": "2025-11-27",
+          "totalListens": 3837997,
+          "listensDifference": -69538
         }
       ]
     },
@@ -60,7 +60,7 @@ export const data = {
         "uuid": "11e81bca-54aa-ac48-bfab-a0369fe50396",
         "name": "River Whyless",
         "imageUrl": "https://assets.soundcharts.com/artist/a/a/4/11e81bca-54aa-ac48-bfab-a0369fe50396.jpg",
-        "high_level_genre": "Roots/Americana",
+        "high_level_genre": "Indie & Alternative",
         "specific_genre": "Modern Appalachian Folk",
         "spotifyUrl": "https://open.spotify.com/artist/7gRGh8w4G9zaFJSaIYp8HH",
         "concise_bio": "An indie-folk ensemble weaving Appalachian textures and Asheville-grown artistry into spacious, globally-inspired modern folk.",
@@ -70,15 +70,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-06",
-          "weekEndDate": "2025-11-13",
-          "totalListens": 9710714
+          "weekStartDate": "2025-11-12",
+          "weekEndDate": "2025-11-19",
+          "totalListens": 9471986
         },
         {
-          "weekStartDate": "2025-11-14",
-          "weekEndDate": "2025-11-21",
-          "totalListens": 9388780,
-          "listensDifference": -321934
+          "weekStartDate": "2025-11-20",
+          "weekEndDate": "2025-11-27",
+          "totalListens": 9063704,
+          "listensDifference": -408282
         }
       ]
     },
@@ -87,8 +87,8 @@ export const data = {
         "uuid": "11e81bc6-bdeb-374e-b271-a0369fe50396",
         "name": "Steep Canyon Rangers",
         "imageUrl": "https://assets.soundcharts.com/artist/b/e/d/11e81bc6-bdeb-374e-b271-a0369fe50396.jpg",
-        "high_level_genre": "Roots/Americana",
-        "specific_genre": "Progressive Bluegrass",
+        "high_level_genre": "Mountain Roots & Bluegrass",
+        "specific_genre": "Progressive Mountain Bluegrass",
         "spotifyUrl": "https://open.spotify.com/artist/1a6tqLJPUs4DBAnNUZkr2O",
         "concise_bio": "A Grammy-winning bluegrass powerhouse carrying the tradition of the North Carolina mountains into polished, progressive territory.",
         "detailed_bio": "What began as a college bluegrass project grew into one of Western North Carolina's most decorated musical exports. Drawing heavily from the traditions of the Blue Ridge and the Smokies, this band sharpened its chops in small mountain venues and regional festivals before stepping onto international stages. Their sound remains rooted in banjo, fiddle, and tight harmony singing, but they've never been afraid to stretch the boundaries of straight-ahead bluegrass.\n\nOver the years, they've released a string of acclaimed albums, earned top industry awards, and built a reputation as consummate live performers. Collaborations with high-profile artists and orchestras brought new audiences into the world of acoustic mountain music, while still honoring the old songs and picking styles that shaped them. Songwriting has become an ever more important part of the band's identity, blending storytelling with modern themes.\n\nThough their reach is now global, the group has stayed loyal to Western North Carolina, with Asheville and nearby mountain towns serving as a home base and creative well. The region's long-standing picking culture, weekly jams, and sense of musical community continue to feed into their work, making their take on progressive bluegrass feel both forward-looking and inseparable from the hills that raised them.",
@@ -97,15 +97,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-06",
-          "weekEndDate": "2025-11-13",
-          "totalListens": 1249455
+          "weekStartDate": "2025-11-12",
+          "weekEndDate": "2025-11-19",
+          "totalListens": 1242060
         },
         {
-          "weekStartDate": "2025-11-14",
-          "weekEndDate": "2025-11-21",
-          "totalListens": 1235938,
-          "listensDifference": -13517
+          "weekStartDate": "2025-11-20",
+          "weekEndDate": "2025-11-27",
+          "totalListens": 1190667,
+          "listensDifference": -51393
         }
       ]
     },
@@ -114,8 +114,8 @@ export const data = {
         "uuid": "11e81bd0-bb77-dc06-90e1-a0369fe50396",
         "name": "Town Mountain",
         "imageUrl": "https://assets.soundcharts.com/artist/7/7/b/11e81bd0-bb77-dc06-90e1-a0369fe50396.jpg",
-        "high_level_genre": "Roots/Americana",
-        "specific_genre": "Traditional Bluegrass",
+        "high_level_genre": "Mountain Roots & Bluegrass",
+        "specific_genre": "Outlaw Appalachian Bluegrass",
         "spotifyUrl": "https://open.spotify.com/artist/5cudslRGWg0GsXaN79Wifs",
         "concise_bio": "A hard-driving bluegrass outfit steeped in Appalachian honky-tonk energy, blending old-mountain tradition with rugged modern edge.",
         "detailed_bio": "This band took shape on a ridge above Asheville, channelling the spirit of roadside honky-tonks and late-night picking sessions into a no-nonsense bluegrass sound. They came up playing beer-soaked bar gigs, regional festivals, and long drives through the Southern mountains, absorbing everything from traditional fiddle tunes to outlaw country and early rock and roll. From the beginning, the goal was to treat bluegrass like a living, breathing bar band language rather than a museum piece.\n\nTheir albums and live shows lean heavily on original songs that talk about wandering, working, heartbreak, and hard-earned joy. Banjo, mandolin, and fiddle work in tight formation, but there's always a bit of rough edge in the mix—a reminder that these songs are meant for real people, not just purists. Vocals carry a twangy, soulful bite, often backed by choruses that feel built for shouting along in a crowded mountain club.\n\nEven as they tour nationally and pick up accolades, they remain closely tied to Western North Carolina's bluegrass and Americana ecosystem. Asheville, with its blend of old-time players, jam bands, and country songwriters, continues to be both a home and an endless source of inspiration. The result is a style of outlaw Appalachian bluegrass that couldn't really have come from anywhere else.",
@@ -124,15 +124,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-06",
-          "weekEndDate": "2025-11-13",
-          "totalListens": 2641486
+          "weekStartDate": "2025-11-12",
+          "weekEndDate": "2025-11-19",
+          "totalListens": 2589928
         },
         {
-          "weekStartDate": "2025-11-14",
-          "weekEndDate": "2025-11-21",
-          "totalListens": 2567260,
-          "listensDifference": -74226
+          "weekStartDate": "2025-11-20",
+          "weekEndDate": "2025-11-27",
+          "totalListens": 2488707,
+          "listensDifference": -101221
         }
       ]
     },
@@ -141,8 +141,8 @@ export const data = {
         "uuid": "11e83fee-9219-7d1e-96a1-aa1c026db3d8",
         "name": "Wednesday",
         "imageUrl": "https://assets.soundcharts.com/artist/9/1/2/11e83fee-9219-7d1e-96a1-aa1c026db3d8.jpg",
-        "high_level_genre": "Rock/Alternative",
-        "specific_genre": "Raw Indie Rock",
+        "high_level_genre": "Indie & Alternative",
+        "specific_genre": "Southern Shoegaze Rock",
         "spotifyUrl": "https://open.spotify.com/artist/4j7DrazfBZLLD0OrVoAtEe",
         "concise_bio": "A Southern indie-rock storm forged in Asheville's creative hills, fusing shoegaze noise with alt-country storytelling and raw emotional punch.",
         "detailed_bio": "Built out of the Asheville DIY scene, this band started as a home-recorded project and grew into one of the most talked-about rock acts of its era. Songs first took shape in small mountain houses and local studios, where noisy guitars, lap steel, and vivid storytelling collided. The result is a uniquely Southern take on shoegaze: twang and distortion sharing the same hazy, emotionally charged space.\n\nLyrically, the focus is on the strange beauty and darkness of life in and around the rural South—car lots, back roads, dead-end jobs, complicated families, and flashes of joy in the middle of it all. Vocals sit right in the middle of a storm of feedback and swirling melodies, delivering lines that feel like short stories told from the passenger seat. The band's records have steadily grown more confident and expansive, while live shows lean into catharsis and volume.\n\nThough they've taken their music far from home, the gravitational pull of Western North Carolina remains strong. Asheville's blend of punk basements, alt-country pickers, and experimental noise acts helped shape their sound and attitude. That sense of place keeps their Southern shoegaze rock grounded, even as they tour rooms and festivals across the world.",
@@ -151,15 +151,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-06",
-          "weekEndDate": "2025-11-13",
-          "totalListens": 5061742
+          "weekStartDate": "2025-11-12",
+          "weekEndDate": "2025-11-19",
+          "totalListens": 4845174
         },
         {
-          "weekStartDate": "2025-11-14",
-          "weekEndDate": "2025-11-21",
-          "totalListens": 4772038,
-          "listensDifference": -289704
+          "weekStartDate": "2025-11-20",
+          "weekEndDate": "2025-11-27",
+          "totalListens": 4593438,
+          "listensDifference": -251736
         }
       ]
     },
@@ -168,8 +168,8 @@ export const data = {
         "uuid": "4e415566-c39d-11e8-bc7d-525400009efb",
         "name": "Secret Shame",
         "imageUrl": "https://assets.soundcharts.com/artist/d/9/3/4e415566-c39d-11e8-bc7d-525400009efb.jpg",
-        "high_level_genre": "Rock/Alternative",
-        "specific_genre": "Moody Post-Punk",
+        "high_level_genre": "Indie & Alternative",
+        "specific_genre": "Goth-Infused Post-Punk",
         "spotifyUrl": "https://open.spotify.com/artist/0QFIowD5P1Ej1Pb0gsZPzN",
         "concise_bio": "A post-punk force rising from Asheville's underground, delivering brooding Appalachian shadow-tones with urgent, cathartic intensity.",
         "detailed_bio": "Formed in the crucible of Asheville's house shows and small, art-forward venues, this band built its sound on the tension between vulnerability and ferocity. Early performances were sweaty, cathartic affairs where sharp post-punk basslines and chiming, chorus-heavy guitars wrapped around a voice that could turn from fragile to feral in seconds. The aesthetic drew from goth, darkwave, and classic post-punk, but filtered through the lived experience of young people coming of age in the Appalachian foothills.\n\nTheir debut recordings showcased songs about identity, trauma, and survival, delivered with theatrical intensity and unflinching honesty. Reverb-drenched guitars and driving drums created a dark, shimmering bed for lyrics that spoke to the shadowed corners of both inner life and the broader culture. Visual art, photography, and carefully crafted imagery became part of the project, turning each release into a world of its own.\n\nAt the center of it all is the unique energy of Asheville's underground—supportive, weird, and unafraid of the dark. Local studios and collaborators helped shape the band's evolving sound, while frequent touring carried their goth-infused post-punk to stages far from the mountains. Even so, the sense of being an Appalachian band, informed by the landscape and the community that raised them, continues to permeate everything they do.",
@@ -178,15 +178,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-06",
-          "weekEndDate": "2025-11-13",
-          "totalListens": 27513
+          "weekStartDate": "2025-11-12",
+          "weekEndDate": "2025-11-19",
+          "totalListens": 27008
         },
         {
-          "weekStartDate": "2025-11-14",
-          "weekEndDate": "2025-11-21",
-          "totalListens": 26835,
-          "listensDifference": -678
+          "weekStartDate": "2025-11-20",
+          "weekEndDate": "2025-11-27",
+          "totalListens": 25846,
+          "listensDifference": -1162
         }
       ]
     },
@@ -195,8 +195,8 @@ export const data = {
         "uuid": "11e83fe3-93c3-f3ac-8914-aa1c026db3d8",
         "name": "King Garbage",
         "imageUrl": "https://assets.soundcharts.com/artist/3/c/3/11e83fe3-93c3-f3ac-8914-aa1c026db3d8.jpg",
-        "high_level_genre": "World/Fusion",
-        "specific_genre": "Soulful Cinematic Funk",
+        "high_level_genre": "Asheville Funk & Soul",
+        "specific_genre": "Cinematic Junkyard Soul",
         "spotifyUrl": "https://open.spotify.com/artist/2ziuYXYq2WG6cZpa43fWpX",
         "concise_bio": "A gritty soul-funk duo shaped by Asheville's artsy mountain vibe, crafting cinematic grooves with vintage flavor and modern edge.",
         "detailed_bio": "This production-minded duo operates at the intersection of gritty soul, oddball funk, and left-field R&B, all filtered through the creative chaos of Asheville. Working as multi-instrumentalists, vocalists, and producers, they treat songs like short films—each track a carefully built scene full of texture, character, and unexpected detail. Old organs, tape hiss, warped guitars, and dusty drums meet lush harmonies and sharp hooks.\n\nOutside of their own records, they've contributed to projects for major artists, bringing their off-kilter sensibility into the wider pop and R&B universe. But their own releases lean into a junkyard aesthetic: glamorous and grimy at once, like a soul band playing on a back porch full of broken electronics and beautiful, mismatched furniture. It feels both timeless and distinctly modern, a strange radio station broadcasting from the mountains.\n\nAsheville's mix of funk bands, experimental producers, and independent studios provides the perfect backdrop for this kind of sonic world-building. The city's willingness to embrace art that doesn't fit neatly into a single category allows their cinematic junkyard soul to thrive, growing from a local curiosity into an internationally recognized sound without losing its weird, mountain-born edge.",
@@ -206,15 +206,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-06",
-          "weekEndDate": "2025-11-13",
-          "totalListens": 55464
+          "weekStartDate": "2025-11-12",
+          "weekEndDate": "2025-11-19",
+          "totalListens": 55778
         },
         {
-          "weekStartDate": "2025-11-14",
-          "weekEndDate": "2025-11-21",
-          "totalListens": 55467,
-          "listensDifference": 3
+          "weekStartDate": "2025-11-20",
+          "weekEndDate": "2025-11-27",
+          "totalListens": 53106,
+          "listensDifference": -2672
         }
       ]
     },
@@ -223,8 +223,8 @@ export const data = {
         "uuid": "11e83fe6-36a0-9e16-8d54-a0369fe50396",
         "name": "Jon Stickley Trio",
         "imageUrl": "https://assets.soundcharts.com/artist/0/a/6/11e83fe6-36a0-9e16-8d54-a0369fe50396.jpg",
-        "high_level_genre": "Roots/Americana",
-        "specific_genre": "High-Energy Bluegrass Fusion",
+        "high_level_genre": "Jazz, Jam & Instrumental Fusion",
+        "specific_genre": "Bluegrass-Driven Instrumental Fusion",
         "spotifyUrl": "https://open.spotify.com/artist/72Swt388IKfP1jAgkiE17L",
         "concise_bio": "An instrumental trio born of Asheville's adventurous acoustic scene, blending bluegrass roots with genre-bending, Appalachian-fueled fire.",
         "detailed_bio": "At the core of this trio is the idea that acoustic instruments can be as explosive and adventurous as any rock band. Emerging from Asheville's fertile mix of pickers, jazz heads, and jam musicians, they started with a foundation of flatpicked guitar and fiddle but quickly pushed into rhythmic and harmonic territory that defies easy labeling. Their early shows around town became word-of-mouth events, known for jaw-dropping musicianship and playful risk-taking.\n\nThe music draws from bluegrass, gypsy jazz, prog rock, and even punk energy, all delivered through tight ensemble playing rather than studio tricks. Tunes can sprint forward like a runaway train, then pivot into spacious, melodic passages before building back into a frenzy. There are no vocals, but the songs feel narrative, full of twists, turns, and emotional peaks that keep listeners locked in.\n\nAs they toured across the country and landed on major festival stages, Asheville remained the gravitational center. Local venues and regional festivals provided early testing grounds, while the city's open-minded audiences and deep bench of collaborators helped the band refine its voice. The result is a bluegrass-driven instrumental fusion that reflects both the virtuosity and the boundary-pushing spirit of the modern mountain music scene.",
@@ -234,15 +234,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-06",
-          "weekEndDate": "2025-11-13",
-          "totalListens": 9687
+          "weekStartDate": "2025-11-12",
+          "weekEndDate": "2025-11-19",
+          "totalListens": 9582
         },
         {
-          "weekStartDate": "2025-11-14",
-          "weekEndDate": "2025-11-21",
-          "totalListens": 9536,
-          "listensDifference": -151
+          "weekStartDate": "2025-11-20",
+          "weekEndDate": "2025-11-27",
+          "totalListens": 9520,
+          "listensDifference": -62
         }
       ]
     },
@@ -251,8 +251,8 @@ export const data = {
         "uuid": "11e83fe9-5a8f-01ac-9eaa-a0369fe50396",
         "name": "The Get Right Band",
         "imageUrl": "https://assets.soundcharts.com/artist/f/8/a/11e83fe9-5a8f-01ac-9eaa-a0369fe50396.jpg",
-        "high_level_genre": "Rock/Alternative",
-        "specific_genre": "Funky Psychedelic Rock",
+        "high_level_genre": "Indie & Alternative",
+        "specific_genre": "Psychedelic Groove Rock",
         "spotifyUrl": "https://open.spotify.com/artist/2n9NilZcDzen7IXYBFgMi3",
         "concise_bio": "A psychedelic-indie groove outfit shaped by Asheville's eclectic mountain culture, delivering dance-ready rhythms and feel-good energy.",
         "detailed_bio": "Born out of the barrooms and club stages of Asheville, this band built its reputation on sheer live energy. Early sets mixed jam-band looseness with tightly written hooks, driven by a rhythm section that always kept the room moving. Over time, psychedelic textures and indie-rock sensibilities seeped deeper into the sound, giving the songs both dance-floor appeal and replay value in headphones.\n\nTheir records reveal an ear for melody and structure that goes beyond party music, even as the vibe stays upbeat. Lyrics explore everything from personal growth to social commentary, but the delivery stays light on its feet, inviting listeners in rather than preaching. Swirls of guitar, vocal harmonies, and spaced-out effects illuminate grooves that feel equally at home on a festival lawn or a packed mountain club.\n\nOperating in a city where funk bands, psych-rock outfits, and singer-songwriters all share stages, the group has fully absorbed Asheville's genre-fluid attitude. That environment encourages experimentation without losing sight of what they do best: psychedelic groove rock built to make people move, laugh, and feel a little more connected by the end of the night.",
@@ -262,15 +262,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-06",
-          "weekEndDate": "2025-11-13",
-          "totalListens": 6239
+          "weekStartDate": "2025-11-12",
+          "weekEndDate": "2025-11-19",
+          "totalListens": 6027
         },
         {
-          "weekStartDate": "2025-11-14",
-          "weekEndDate": "2025-11-21",
-          "totalListens": 5981,
-          "listensDifference": -258
+          "weekStartDate": "2025-11-20",
+          "weekEndDate": "2025-11-27",
+          "totalListens": 5738,
+          "listensDifference": -289
         }
       ]
     },
@@ -279,7 +279,7 @@ export const data = {
         "uuid": "11e81bc0-5bdc-79ce-9589-a0369fe50396",
         "name": "The Honeycutters",
         "imageUrl": "https://assets.soundcharts.com/artist/c/d/b/11e81bc0-5bdc-79ce-9589-a0369fe50396.jpg",
-        "high_level_genre": "Roots/Americana",
+        "high_level_genre": "Mountain Roots & Bluegrass",
         "specific_genre": "Roots Country",
         "spotifyUrl": "https://open.spotify.com/artist/2LloZ5av9chx06YQi2Spuj",
         "concise_bio": "An Americana songwriting outfit grounded in Western North Carolina's storytelling tradition, offering warm, roots-rich songs shaped by Appalachian life.",
@@ -287,15 +287,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-06",
-          "weekEndDate": "2025-11-13",
-          "totalListens": 84568
+          "weekStartDate": "2025-11-12",
+          "weekEndDate": "2025-11-19",
+          "totalListens": 84728
         },
         {
-          "weekStartDate": "2025-11-14",
-          "weekEndDate": "2025-11-21",
-          "totalListens": 84734,
-          "listensDifference": 166
+          "weekStartDate": "2025-11-20",
+          "weekEndDate": "2025-11-27",
+          "totalListens": 81434,
+          "listensDifference": -3294
         }
       ]
     },
@@ -304,8 +304,8 @@ export const data = {
         "uuid": "11e81bd0-6236-470e-b1a3-a0369fe50396",
         "name": "Empire Strikes Brass",
         "imageUrl": "https://assets.soundcharts.com/artist/6/3/2/11e81bd0-6236-470e-b1a3-a0369fe50396.jpg",
-        "high_level_genre": "World/Fusion",
-        "specific_genre": "Brass-Funk-Rock",
+        "high_level_genre": "Asheville Funk & Soul",
+        "specific_genre": "New Orleans-Style Brass Funk Rock",
         "spotifyUrl": "https://open.spotify.com/artist/6puUKWNePi9oAm5jcnYpCl",
         "concise_bio": "A horn-driven funk collective fueled by Asheville's lively mountain nightlife, bringing New Orleans swagger to Appalachian-grown horn power.",
         "detailed_bio": "This horn-heavy outfit formed when a group of Asheville players decided to bring the spirit of a New Orleans street parade to the Blue Ridge. Early shows quickly became local legend: a wall of brass blasting funk, rock, and second-line rhythms into packed clubs and outdoor stages. With multiple horn players, a locked-in rhythm section, and charismatic singers, they built a sound as big and joyful as their name implies.\n\nTheir songs draw from funk, rock, soul, and marching-band tradition, often flipping from tight arrangements into freewheeling jam sections. Originals sit comfortably alongside reimagined covers, but the unifying thread is groove—thick, danceable, and impossible to ignore. The band's recordings capture some of that energy, but they remain especially known as a live force, the kind of group that can turn a quiet festival afternoon into a street-party.\n\nOperating out of Asheville means collaborating with a broad network of funk, soul, and jam musicians, and the band fully embraces that ecosystem. They are fixtures at local events and regional festivals, often serving as both performers and community-builders. In blending New Orleans-style brass tradition with Appalachian rock-country grit, they've carved out a sound that feels perfectly at home in the mountains while pointing straight to the broader funk universe.",
@@ -315,15 +315,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-06",
-          "weekEndDate": "2025-11-13",
-          "totalListens": 929
+          "weekStartDate": "2025-11-12",
+          "weekEndDate": "2025-11-19",
+          "totalListens": 900
         },
         {
-          "weekStartDate": "2025-11-14",
-          "weekEndDate": "2025-11-21",
-          "totalListens": 900,
-          "listensDifference": -29
+          "weekStartDate": "2025-11-20",
+          "weekEndDate": "2025-11-27",
+          "totalListens": 797,
+          "listensDifference": -103
         }
       ]
     },
@@ -332,8 +332,8 @@ export const data = {
         "uuid": "11e83fe7-6b66-7fc0-bd02-a0369fe50396",
         "name": "C.Shreve the Professor",
         "imageUrl": "https://assets.soundcharts.com/artist/6/6/b/11e83fe7-6b66-7fc0-bd02-a0369fe50396.jpg",
-        "high_level_genre": "Urban/Electronic",
-        "specific_genre": "Boom-Bap Hip-Hop",
+        "high_level_genre": "Hip-Hop & Spoken Word",
+        "specific_genre": "Boom-Bap Mountain Hip-Hop",
         "spotifyUrl": "https://open.spotify.com/artist/0dz8m7I16TtxL7TAuFDu8Z",
         "concise_bio": "A boom-bap lyricist carving out mindful hip-hop from the Appalachian foothills, grounded in Asheville's community-driven creative spirit.",
         "detailed_bio": "As one of the central figures in Western North Carolina hip-hop, this MC built a career on the belief that lyric-driven rap can thrive in the mountains. Organizing shows, founding a collective, and mentoring younger artists, he helped carve out space for hip-hop in a region better known for banjos and jam bands. From early mixtapes to polished albums, his work combines classic boom-bap production with thoughtful, often philosophical bars.\n\nThe songs often wrestle with personal growth, social issues, and the everyday hustle of trying to build something meaningful far from major industry centers. Beats lean on dusty drums, soulful samples, and modern touches, but always leave room for wordplay and breath. Live, the shows feel more like gatherings than spectacles, bringing together rappers, poets, and fans from across the region's diverse scenes.\n\nAsheville's mix of activism, art, and underground music provides a natural backdrop for this kind of mountain-state hip-hop. Collaborations with local producers and musicians keep the sound anchored to place, while touring and digital releases push it outward. The result is boom-bap mountain hip-hop that feels as intellectually engaged as it is rooted in the real-life rhythms of the Blue Ridge.",
@@ -343,15 +343,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-06",
-          "weekEndDate": "2025-11-13",
-          "totalListens": 3437
+          "weekStartDate": "2025-11-12",
+          "weekEndDate": "2025-11-19",
+          "totalListens": 3827
         },
         {
-          "weekStartDate": "2025-11-14",
-          "weekEndDate": "2025-11-21",
-          "totalListens": 3902,
-          "listensDifference": 465
+          "weekStartDate": "2025-11-20",
+          "weekEndDate": "2025-11-27",
+          "totalListens": 3958,
+          "listensDifference": 131
         }
       ]
     },
@@ -360,8 +360,8 @@ export const data = {
         "uuid": "76e19c8a-8fd7-4b0a-9ca6-c4b2d9d3c09f",
         "name": "Kennedy OneSelf",
         "imageUrl": "https://assets.soundcharts.com/artist/7/d/f/76e19c8a-8fd7-4b0a-9ca6-c4b2d9d3c09f.jpg",
-        "high_level_genre": "World/Fusion",
-        "specific_genre": "Sound Healing",
+        "high_level_genre": "Healing, Ambient & Meditative",
+        "specific_genre": "Ambient Sound Healing Journey",
         "spotifyUrl": "https://open.spotify.com/artist/14Ci0JdkZTpZ8ZKTuUY6Yl",
         "concise_bio": "A sound-healing artist channeling the serenity of the Blue Ridge, creating immersive meditative journeys rooted in Asheville's wellness culture.",
         "detailed_bio": "Within Asheville's thriving wellness and spiritual community, this sound-healer has become a trusted guide for deep listening and inner work. Using crystal singing bowls, gongs, flutes, drums, and layered ambient textures, sessions are designed less like concerts and more like journeys. Participants lie down, close their eyes, and let waves of sound wash through the body, often in candlelit rooms or retreat spaces nestled in the mountains.\n\nRecorded offerings mirror that experience, with long-form pieces built around slowly evolving tones and harmonics. The focus is on spaciousness and subtle movement rather than melody and rhythm in the traditional sense. Many listeners use these recordings for meditation, sleep, trauma recovery, or simply to create a calmer atmosphere at home, bringing a sense of the Blue Ridge's peace into daily life.\n\nAsheville provides a natural home for this kind of work, with yoga studios, healing arts centers, and conscious events forming a built-in audience. Collaborations with other practitioners and musicians further deepen the practice, turning each ambient sound healing journey into a communal act. It's a strand of the local music ecosystem that might not show up on traditional stages, but quietly shapes the city's identity as a place where art and healing are closely intertwined.",
@@ -370,15 +370,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-06",
-          "weekEndDate": "2025-11-13",
-          "totalListens": 7318
+          "weekStartDate": "2025-11-12",
+          "weekEndDate": "2025-11-19",
+          "totalListens": 7517
         },
         {
-          "weekStartDate": "2025-11-14",
-          "weekEndDate": "2025-11-21",
-          "totalListens": 4713,
-          "listensDifference": -2605
+          "weekStartDate": "2025-11-20",
+          "weekEndDate": "2025-11-27",
+          "totalListens": 4398,
+          "listensDifference": -3119
         }
       ]
     },
@@ -387,8 +387,8 @@ export const data = {
         "uuid": "3cb76266-32f7-11ea-b53e-801844ee83a6",
         "name": "Life Like Water",
         "imageUrl": "https://assets.soundcharts.com/artist/7/f/2/3cb76266-32f7-11ea-b53e-801844ee83a6.jpg",
-        "high_level_genre": "World/Fusion",
-        "specific_genre": "Indie World Fusion Folk",
+        "high_level_genre": "Global Fusion & World Groove",
+        "specific_genre": "Meditative World-Folk Fusion",
         "spotifyUrl": "https://open.spotify.com/artist/0kxvbBOhNqVRJgpyDyWGX0",
         "concise_bio": "A world-folk trio weaving global rhythms with the reflective calm of the Southern Appalachians, offering meditative, intimate acoustic soundscapes.",
         "detailed_bio": "This project emerged after a period of deep personal searching, when its primary songwriter relocated to the Asheville area and began blending global influences with introspective folk. Instruments like violin, hand percussion, guitar, and harmonium combine with gently sung lyrics that explore themes of presence, healing, and inner change. The overall feeling is both grounded and otherworldly, like a long walk through the woods punctuated by memories of faraway places.\n\nRhythms and modes hint at West African, Indian, and Middle Eastern traditions without trying to imitate any one style directly. Instead, those colors are woven into an acoustic framework that would feel at home in an Appalachian listening room, a yoga studio, or a small festival stage at sunset. The pacing is unhurried, inviting listeners to lean in, breathe, and let the songs unfold at their own pace.\n\nAsheville's unique combination of world-music enthusiasts, spiritual seekers, and folk audiences has provided a welcoming ecosystem for this meditative world-folk fusion. Performances often blur the line between concert and ceremony, and collaborations with other local musicians keep the sound evolving. The music reflects both the global curiosity and the quiet mountain introspection that define much of Western North Carolina's creative life.",
@@ -397,15 +397,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-06",
-          "weekEndDate": "2025-11-13",
-          "totalListens": 416
+          "weekStartDate": "2025-11-12",
+          "weekEndDate": "2025-11-19",
+          "totalListens": 200
         },
         {
-          "weekStartDate": "2025-11-14",
-          "weekEndDate": "2025-11-21",
-          "totalListens": 426,
-          "listensDifference": 10
+          "weekStartDate": "2025-11-20",
+          "weekEndDate": "2025-11-27",
+          "totalListens": 232,
+          "listensDifference": 32
         }
       ]
     },
@@ -414,8 +414,8 @@ export const data = {
         "uuid": "11e81bcd-5c2c-e4ec-bd13-a0369fe50396",
         "name": "Toubab Krewe",
         "imageUrl": "https://assets.soundcharts.com/artist/c/2/c/11e81bcd-5c2c-e4ec-bd13-a0369fe50396.jpg",
-        "high_level_genre": "Rock/Alternative",
-        "specific_genre": "Afro-Psychedelic Rock",
+        "high_level_genre": "Global Fusion & World Groove",
+        "specific_genre": "Afro-Appalachian Rock Fusion",
         "spotifyUrl": "https://open.spotify.com/artist/1jeEITLt57dM6g3JjToUmN",
         "concise_bio": "A cross-continental fusion group born in Asheville's experimental mountain scene, blending West African traditions with Appalachian improvisational fire.",
         "detailed_bio": "From the moment this band appeared, it was clear they were doing something rare: treating West African musical traditions and Appalachian jam culture as equal partners. Members spent time studying in Mali and other parts of West Africa, learning directly from master musicians, then returned to Asheville to filter those rhythms and melodies through electric guitars, drum kits, and mountain-bred improvisation. The result is an instrumental sound that feels simultaneously ancient and futuristic.\n\nKora, n'goni, and hand drums converse with psychedelic guitar tones and driving bass lines, creating polyrhythmic landscapes built for dancing and deep listening. Songs can stretch and morph onstage, leaning into the improvisational logic of jam bands while always keeping one ear tuned to the circular, trance-like structures of West African music. Albums capture carefully crafted versions of those ideas, but live shows reveal the full range of their Afro-Appalachian rock fusion.\n\nAsheville's open-minded arts scene and its longstanding global festival culture, anchored by events like LEAF, provided fertile ground for the band's growth. They became ambassadors for the city's globally curious spirit, taking their sound to major festivals and international stages while staying committed to the mountain community that helped them form. It's a project that proves cross-cultural collaboration can feel both respectful and wildly inventive.",
@@ -425,15 +425,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-06",
-          "weekEndDate": "2025-11-13",
-          "totalListens": 103770
+          "weekStartDate": "2025-11-12",
+          "weekEndDate": "2025-11-19",
+          "totalListens": 103000
         },
         {
-          "weekStartDate": "2025-11-14",
-          "weekEndDate": "2025-11-21",
-          "totalListens": 103229,
-          "listensDifference": -541
+          "weekStartDate": "2025-11-20",
+          "weekEndDate": "2025-11-27",
+          "totalListens": 104915,
+          "listensDifference": 1915
         }
       ]
     },
@@ -442,8 +442,8 @@ export const data = {
         "uuid": "11e81bd2-d8b6-a070-972f-a0369fe50396",
         "name": "Yo Mama's Big Fat Booty Band",
         "imageUrl": "https://assets.soundcharts.com/artist/6/b/8/11e81bd2-d8b6-a070-972f-a0369fe50396.jpg",
-        "high_level_genre": "Rock/Alternative",
-        "specific_genre": "Funkabilly Groove",
+        "high_level_genre": "Asheville Funk & Soul",
+        "specific_genre": "High-Energy Mountain Funk",
         "spotifyUrl": "https://open.spotify.com/artist/17yG70sNJCecYiTGc0LIj3",
         "concise_bio": "A funk-driven party staple shaped by Asheville's vibrant mountain nightlife, exploding with brass, groove, and joyful high-energy swagger.",
         "detailed_bio": "For more than two decades, this band has been synonymous with wild nights and sweaty dance floors in Asheville and beyond. What started as a loose collective of funk-loving players grew into a tightly honed unit, complete with big horns, big personalities, and a deep-pocket rhythm section. Early on, they became the go-to soundtrack for late-night parties, club residencies, and festival throwdowns across Western North Carolina.\n\nMusically, they draw from classic funk, P-Funk psychedelia, soul, and modern jam culture, wrapping it all in a theatrical stage show full of costumes, crowd interaction, and joyful chaos. Original tunes celebrate everything from self-love to cosmic weirdness, carried by powerful vocals and horn lines that feel like a celebration all by themselves. Studio albums capture the songwriting and arrangements, but it's onstage where their high-energy mountain funk truly explodes.\n\nOperating out of Asheville means constantly crossing paths with other funk, soul, and jam outfits, and they've become central figures in that ecosystem—mentoring younger players, collaborating on side projects, and representing the city on national tours. They embody a particular slice of the Asheville sound: unapologetically fun, deeply musical, and always ready to turn a quiet evening into a full-on party.",
@@ -453,15 +453,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-06",
-          "weekEndDate": "2025-11-13",
-          "totalListens": 2583
+          "weekStartDate": "2025-11-12",
+          "weekEndDate": "2025-11-19",
+          "totalListens": 2460
         },
         {
-          "weekStartDate": "2025-11-14",
-          "weekEndDate": "2025-11-21",
-          "totalListens": 2446,
-          "listensDifference": -137
+          "weekStartDate": "2025-11-20",
+          "weekEndDate": "2025-11-27",
+          "totalListens": 2465,
+          "listensDifference": 5
         }
       ]
     },
@@ -470,8 +470,8 @@ export const data = {
         "uuid": "11e83fe6-1e8f-aa42-bd29-aa1c026db3d8",
         "name": "The Fritz",
         "imageUrl": "https://assets.soundcharts.com/artist/f/8/e/11e83fe6-1e8f-aa42-bd29-aa1c026db3d8.jpg",
-        "high_level_genre": "Rock/Alternative",
-        "specific_genre": "Psychedelic Soul Funk",
+        "high_level_genre": "Asheville Funk & Soul",
+        "specific_genre": "Psychedelic Soul-Funk Fusion",
         "spotifyUrl": "https://open.spotify.com/artist/792UqbFMNV10U1J1onyAq8",
         "concise_bio": "A psychedelic soul-funk force molded by Asheville's jam-friendly hills, delivering explosive musicianship and dance-ready mountain grooves.",
         "detailed_bio": "Relocating to Asheville gave this band exactly what it needed: a community that loves long-form improvisation as much as deep-pocket groove. From the outset, they blended soulful vocals, thick keyboard textures, and sharp guitar work with the exploratory instincts of a jam band. Shows around town quickly became must-see events, known for virtuosic playing and a willingness to take songs in unexpected directions without losing the dancers.\n\nIn the studio, they lean into the songwriting side of things, crafting tracks that draw on funk, soul, rock, and psychedelia. Hooks are strong, arrangements are detailed, and there's always a sense that these songs are built to stretch and transform when performed live. The band's rhythm section forms the anchor, allowing keys and guitar to move from tight riffs into soaring, cosmic territory.\n\nBeing part of Asheville's overlapping funk, soul, and festival scenes has kept their sound evolving. Shared bills and rotating side projects connect them to brass bands, DJs, and electronic producers, all feeding into their psychedelic soul-funk fusion. Whether headlining a club, lighting up a festival stage, or sitting in with other local acts, they represent the adventurous, groove-obsessed side of the mountain city's musical identity.",
@@ -480,15 +480,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-06",
-          "weekEndDate": "2025-11-13",
-          "totalListens": 8723
+          "weekStartDate": "2025-11-12",
+          "weekEndDate": "2025-11-19",
+          "totalListens": 8553
         },
         {
-          "weekStartDate": "2025-11-14",
-          "weekEndDate": "2025-11-21",
-          "totalListens": 8505,
-          "listensDifference": -218
+          "weekStartDate": "2025-11-20",
+          "weekEndDate": "2025-11-27",
+          "totalListens": 8448,
+          "listensDifference": -105
         }
       ]
     },
@@ -497,8 +497,8 @@ export const data = {
         "uuid": "11e81bbc-1bad-93f0-a75c-a0369fe50396",
         "name": "Balsam Range",
         "imageUrl": "https://assets.soundcharts.com/artist/d/a/b/11e81bbc-1bad-93f0-a75c-a0369fe50396.jpg",
-        "high_level_genre": "Rock/Alternative",
-        "specific_genre": "Neo-Traditional Appalachian Bluegrass",
+        "high_level_genre": "Mountain Roots & Bluegrass",
+        "specific_genre": "Smoky Mountain Bluegrass",
         "spotifyUrl": "https://open.spotify.com/artist/18iUQdDfdsusFp9Qtt2NPU",
         "concise_bio": "A Western North Carolina bluegrass group pairing lush harmonies, virtuosic picking, and modern mountain authenticity.",
         "detailed_bio": "Formed by musicians who grew up in the shadow of the Great Smoky Mountains, this band has become one of the clearest musical voices for Western North Carolina. Drawing from gospel, classic country, and traditional bluegrass, they built a sound marked by rich vocal harmonies and precise instrumental work. Early releases quickly caught the attention of bluegrass fans and industry insiders, leading to awards and chart-topping records.\n\nSongs often paint pictures of mountain life—its hardships, resilience, faith, and beauty—without feeling stuck in nostalgia. Fiddle, banjo, mandolin, and guitar all take their turns in the spotlight, but it's the blend of voices that often leaves the deepest impression. Over time, they've experimented with more progressive arrangements and original material while keeping one foot firmly planted in the traditions that shaped them.\n\nThough they tour widely, hosting their own festival and playing major events, the group remains closely tied to their home region. Venues, churches, and community gatherings across Western North Carolina still form the backbone of their story. In carrying Smoky Mountain bluegrass far beyond its geographical roots, they've helped ensure that the sound of the hills continues to evolve and resonate with new generations of listeners.",
@@ -508,15 +508,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-06",
-          "weekEndDate": "2025-11-13",
-          "totalListens": 198867
+          "weekStartDate": "2025-11-12",
+          "weekEndDate": "2025-11-19",
+          "totalListens": 197212
         },
         {
-          "weekStartDate": "2025-11-14",
-          "weekEndDate": "2025-11-21",
-          "totalListens": 196078,
-          "listensDifference": -2789
+          "weekStartDate": "2025-11-20",
+          "weekEndDate": "2025-11-27",
+          "totalListens": 190861,
+          "listensDifference": -6351
         }
       ]
     },
@@ -535,15 +535,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-06",
-          "weekEndDate": "2025-11-13",
-          "totalListens": 20605
+          "weekStartDate": "2025-11-12",
+          "weekEndDate": "2025-11-19",
+          "totalListens": 15165
         },
         {
-          "weekStartDate": "2025-11-14",
-          "weekEndDate": "2025-11-21",
-          "totalListens": 15353,
-          "listensDifference": -5252
+          "weekStartDate": "2025-11-20",
+          "weekEndDate": "2025-11-27",
+          "totalListens": 15312,
+          "listensDifference": 147
         }
       ]
     },
@@ -552,7 +552,7 @@ export const data = {
         "uuid": "11e81bcb-8011-657e-85b5-a0369fe50396",
         "name": "Floating Action",
         "imageUrl": "https://assets.soundcharts.com/artist/1/1/0/11e81bcb-8011-657e-85b5-a0369fe50396.jpg",
-        "high_level_genre": "Rock/Alternative",
+        "high_level_genre": "Indie & Alternative",
         "specific_genre": "Indie Groove Pop with Global Flair",
         "spotifyUrl": "https://open.spotify.com/artist/01Ru0hfWYNVxQHtFkvYY7r",
         "concise_bio": "Floating Action is Seth Kauffman's shape-shifting project blending indie pop, R&B, dub, and world rhythms into warm, hypnotic soundscapes.",
@@ -560,15 +560,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-06",
-          "weekEndDate": "2025-11-13",
-          "totalListens": 913581
+          "weekStartDate": "2025-11-12",
+          "weekEndDate": "2025-11-19",
+          "totalListens": 876199
         },
         {
-          "weekStartDate": "2025-11-14",
-          "weekEndDate": "2025-11-21",
-          "totalListens": 857017,
-          "listensDifference": -56564
+          "weekStartDate": "2025-11-20",
+          "weekEndDate": "2025-11-27",
+          "totalListens": 804518,
+          "listensDifference": -71681
         }
       ]
     },
@@ -577,7 +577,7 @@ export const data = {
         "uuid": "11e81bd3-4eb3-ca5a-b641-a0369fe50396",
         "name": "Tyler Ramsey",
         "imageUrl": "https://assets.soundcharts.com/artist/3/b/e/11e81bd3-4eb3-ca5a-b641-a0369fe50396.jpg",
-        "high_level_genre": "Roots/Americana",
+        "high_level_genre": "Indie & Alternative",
         "specific_genre": "Atmospheric Indie Folk Rock",
         "spotifyUrl": "https://open.spotify.com/artist/1Ga71MIHyTN9VVuEtW57GK",
         "concise_bio": "Former Band of Horses guitarist Tyler Ramsey creates cinematic indie folk-rock built on fingerpicked guitar, warm textures, and deeply emotional songwriting.",
@@ -585,15 +585,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-06",
-          "weekEndDate": "2025-11-13",
-          "totalListens": 123028
+          "weekStartDate": "2025-11-12",
+          "weekEndDate": "2025-11-19",
+          "totalListens": 144024
         },
         {
-          "weekStartDate": "2025-11-14",
-          "weekEndDate": "2025-11-21",
-          "totalListens": 150862,
-          "listensDifference": 27834
+          "weekStartDate": "2025-11-20",
+          "weekEndDate": "2025-11-27",
+          "totalListens": 171124,
+          "listensDifference": 27100
         }
       ]
     },
@@ -602,23 +602,23 @@ export const data = {
         "uuid": "3fc65642-4c2f-11e9-976f-549f35161576",
         "name": "Hustle Souls",
         "imageUrl": "https://assets.soundcharts.com/artist/f/2/c/3fc65642-4c2f-11e9-976f-549f35161576.jpg",
-        "high_level_genre": "World/Fusion",
-        "specific_genre": "Retro-Soul Funk & Brass Groove",
+        "high_level_genre": "Asheville Funk & Soul",
+        "specific_genre": "Retro-Soul Brass Funk",
         "spotifyUrl": "https://open.spotify.com/artist/5vqpnnvsBBoy9CxbbxdMIJ",
         "concise_bio": "Hustle Souls blend retro-soul warmth, brass-band funk, and modern Americana into high-energy, harmony-drenched performances.",
         "detailed_bio": "Hustle Souls is an Asheville-based band merging retro-soul, brass-band funk, and Americana songwriting into a vibrant, dynamic sound. Anchored by roaring Hammond B3 organ, jubilant horn lines, and rich vocal harmonies, they've earned praise for bridging generations of soul—from vintage warmth to modern groove. American Blues Scene lauds them as a mix of new-school second-line funk and old-school soul.\n\nNamed to Music Connection Magazine's Hot 100 Unsigned Artists, Hustle Souls have graced major festival stages and shared bills with Dumpstaphunk and Kofi Burbridge. Their 2024 vinyl debut and NAMM Show appearance solidified their ascent, blending mountain craftsmanship with high-octane soul energy that feels unmistakably Asheville."
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-06",
-          "weekEndDate": "2025-11-13",
-          "totalListens": 5936
+          "weekStartDate": "2025-11-12",
+          "weekEndDate": "2025-11-19",
+          "totalListens": 6298
         },
         {
-          "weekStartDate": "2025-11-14",
-          "weekEndDate": "2025-11-21",
-          "totalListens": 6516,
-          "listensDifference": 580
+          "weekStartDate": "2025-11-20",
+          "weekEndDate": "2025-11-27",
+          "totalListens": 7654,
+          "listensDifference": 1356
         }
       ]
     },
@@ -635,15 +635,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-06",
-          "weekEndDate": "2025-11-13",
-          "totalListens": 97
+          "weekStartDate": "2025-11-12",
+          "weekEndDate": "2025-11-19",
+          "totalListens": 76
         },
         {
-          "weekStartDate": "2025-11-14",
-          "weekEndDate": "2025-11-21",
-          "totalListens": 76,
-          "listensDifference": -21
+          "weekStartDate": "2025-11-20",
+          "weekEndDate": "2025-11-27",
+          "totalListens": 64,
+          "listensDifference": -12
         }
       ]
     },
@@ -652,23 +652,23 @@ export const data = {
         "uuid": "4b084642-fe23-476e-850c-1bbe625637bf",
         "name": "Caitlin Krisko & The Broadcast",
         "imageUrl": "https://assets.soundcharts.com/artist/3/2/e/4b084642-fe23-476e-850c-1bbe625637bf.jpg",
-        "high_level_genre": "Rock/Alternative",
-        "specific_genre": "Powerhouse Psychedelic Soul Rock",
+        "high_level_genre": "Rock & Soul",
+        "specific_genre": "Powerhouse Soul Rock",
         "spotifyUrl": "https://open.spotify.com/artist/7EUd5VylN6IFwj3hb8VxkY",
         "concise_bio": "A thunderous soul-rock band led by powerhouse vocalist Caitlin Krisko, blending blues grit, psychedelic edges, and soaring emotional drama.",
         "detailed_bio": "Caitlin Krisko & The Broadcast is a soul-rock powerhouse rooted in Asheville, North Carolina. Built around Krisko's electrifying, emotionally charged vocals, the band fuses blues-rock grit, retro-soul warmth, and psychedelic rock edges into bold, high-impact performances. Their studio work—including the acclaimed \"Lost My Sight\"—features collaborations with members of Tedeschi Trucks Band and David Bowie's Blackstar band.\n\nOnstage, Krisko commands attention with her dynamic presence and vocal firepower, backed by a group capable of shifting from tender soul balladry to explosive rock climaxes. They have shared bills with legends such as Mavis Staples, St. Paul & The Broken Bones, Marcus King, and Charles Bradley. Their sound reflects Asheville's eclectic spirit—steeped in soul, driven by rock, and powered by a vocalist who leaves a mark on every room she sings in."
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-06",
-          "weekEndDate": "2025-11-13",
-          "totalListens": 137201
+          "weekStartDate": "2025-11-12",
+          "weekEndDate": "2025-11-19",
+          "totalListens": 145628
         },
         {
-          "weekStartDate": "2025-11-14",
-          "weekEndDate": "2025-11-21",
-          "totalListens": 145330,
-          "listensDifference": 8129
+          "weekStartDate": "2025-11-20",
+          "weekEndDate": "2025-11-27",
+          "totalListens": 156082,
+          "listensDifference": 10454
         }
       ]
     },
@@ -677,7 +677,7 @@ export const data = {
         "uuid": "f3915b15-46d0-4c41-8778-1453546e84f8",
         "name": "The Dolltones",
         "imageUrl": "https://assets.soundcharts.com/artist/0/d/6/f3915b15-46d0-4c41-8778-1453546e84f8.jpg",
-        "high_level_genre": "Rock/Alternative",
+        "high_level_genre": "Indie & Alternative",
         "specific_genre": "Bluegaze Emo Alt-Rock",
         "spotifyUrl": "https://open.spotify.com/artist/67zxHuUZhxksIWzvGY4gdc",
         "concise_bio": "The Dolltones smash together emo heart, alt-rock grit, shoegaze haze, and psychedelic horns into Asheville's signature \"bluegaze\" storm.",
@@ -685,15 +685,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-06",
-          "weekEndDate": "2025-11-13",
-          "totalListens": 23
+          "weekStartDate": "2025-11-12",
+          "weekEndDate": "2025-11-19",
+          "totalListens": 17
         },
         {
-          "weekStartDate": "2025-11-14",
-          "weekEndDate": "2025-11-21",
-          "totalListens": 37,
-          "listensDifference": 14
+          "weekStartDate": "2025-11-20",
+          "weekEndDate": "2025-11-27",
+          "totalListens": 22,
+          "listensDifference": 5
         }
       ]
     },
@@ -702,7 +702,7 @@ export const data = {
         "uuid": "081f47c4-acb6-4e4c-a231-f641112c8d30",
         "name": "Sugar Bomb",
         "imageUrl": "https://assets.soundcharts.com/artist/6/b/c/081f47c4-acb6-4e4c-a231-f641112c8d30.jpg",
-        "high_level_genre": "World/Fusion",
+        "high_level_genre": "Jazz, Jam & Instrumental Fusion",
         "specific_genre": "Explosive Jazz-Fusion Groove",
         "spotifyUrl": "https://open.spotify.com/artist/2yOcwLaI4u3mVolqglZV9T",
         "concise_bio": "Sugar Bomb is an Asheville jazz-fusion trio erupting with deep-pocket grooves, cinematic harmonies, and fearless improvisation.",
@@ -710,15 +710,15 @@ export const data = {
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-06",
-          "weekEndDate": "2025-11-13",
-          "totalListens": 4844
+          "weekStartDate": "2025-11-12",
+          "weekEndDate": "2025-11-19",
+          "totalListens": 3297
         },
         {
-          "weekStartDate": "2025-11-14",
-          "weekEndDate": "2025-11-21",
-          "totalListens": 4985,
-          "listensDifference": 141
+          "weekStartDate": "2025-11-20",
+          "weekEndDate": "2025-11-27",
+          "totalListens": 5135,
+          "listensDifference": 1838
         }
       ]
     },
@@ -727,23 +727,23 @@ export const data = {
         "uuid": "6d90a5e3-2ee6-45fa-bc8c-b65e9cd7bb15",
         "name": "The Welcoming",
         "imageUrl": "https://assets.soundcharts.com/artist/6/e/e/6d90a5e3-2ee6-45fa-bc8c-b65e9cd7bb15.jpg",
-        "high_level_genre": "Rock/Alternative",
-        "specific_genre": "Melodic Prog-Metal Rock",
+        "high_level_genre": "Indie & Alternative",
+        "specific_genre": "Melodic Prog Rock/Metal",
         "spotifyUrl": "https://open.spotify.com/artist/78rZxY5ov2LunHaBHNDLxb",
         "concise_bio": "The Welcoming blends big riffs, soaring vocals, and progressive-metal edge to create melodic, high-impact modern rock.",
         "detailed_bio": "The Welcoming is an Asheville rock/metal hybrid project exploring the space between melodic rock, progressive metal, and atmospheric alternative music. Originally the solo vision of James Ferrell, the project has evolved into a full band known for its technical precision, dynamic songwriting, and emotionally charged vocal performances.\n\nTheir releases—including \"Decayed | Remade\" and the \"Neptune\" EP—showcase cinematic arrangements that shift between ethereal ambience and crushing riff-driven power. Pulling from influences like Thrice, Cave In, and A Perfect Circle, The Welcoming delivers a refined blend of melody and heaviness that stands out in Western North Carolina's vibrant heavy music scene."
       },
       "weeks": [
         {
-          "weekStartDate": "2025-11-06",
-          "weekEndDate": "2025-11-13",
-          "totalListens": 102
+          "weekStartDate": "2025-11-12",
+          "weekEndDate": "2025-11-19",
+          "totalListens": 179
         },
         {
-          "weekStartDate": "2025-11-14",
-          "weekEndDate": "2025-11-21",
-          "totalListens": 179,
-          "listensDifference": 77
+          "weekStartDate": "2025-11-20",
+          "weekEndDate": "2025-11-27",
+          "totalListens": 84,
+          "listensDifference": -95
         }
       ]
     }
