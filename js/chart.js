@@ -2,6 +2,7 @@ import { renderArtistCells } from './artistCells.js';
 import { formatDate } from './dateFormatting.js';
 import { InlineAlert } from './inlineAlert.js';
 import { initRouter, navigateToTab } from './router.js';
+import { trackShare, trackInfoToggle, trackTabView } from './analytics.js';
 
 export function renderChart(container, data, options = {}) {
   container.innerHTML = `<div id="chart-items"></div>`;
@@ -174,15 +175,19 @@ export function renderChart(container, data, options = {}) {
 
   function setupInfoIcon(icon) {
     if (!icon) return;
+    const currentTab = getCurrentTabName();
+
     const toggleAlert = (event) => {
       event.preventDefault();
       event.stopPropagation();
       if (inlineAlert.isCurrentlyVisible()) {
         inlineAlert.hide();
         icon.classList.remove('active');
+        trackInfoToggle('hide', currentTab);
       } else {
         inlineAlert.show();
         icon.classList.add('active');
+        trackInfoToggle('show', currentTab);
       }
     };
     icon.addEventListener('click', toggleAlert);
@@ -199,6 +204,8 @@ export function renderChart(container, data, options = {}) {
       event.preventDefault();
       event.stopPropagation();
 
+      const currentTab = getCurrentTabName();
+
       const shareData = {
         title: 'Asheville Music Chart',
         text: 'Check out the Asheville Music Chart!',
@@ -209,6 +216,7 @@ export function renderChart(container, data, options = {}) {
       if (navigator.share) {
         try {
           await navigator.share(shareData);
+          trackShare('web_share_api', currentTab);
         } catch (err) {
           // User cancelled or error occurred
           if (err.name !== 'AbortError') {
@@ -219,6 +227,7 @@ export function renderChart(container, data, options = {}) {
         // Fallback: copy to clipboard
         try {
           await navigator.clipboard.writeText(window.location.href);
+          trackShare('clipboard', currentTab);
           // Show brief success feedback
           const originalHTML = button.innerHTML;
           button.innerHTML = '<i class="fas fa-check"></i>';
@@ -236,6 +245,12 @@ export function renderChart(container, data, options = {}) {
     button.addEventListener('click', handleShare);
   }
 
+
+  function getCurrentTabName() {
+    const hash = window.location.hash.replace(/^#\/?/, '').toLowerCase();
+    const validTabs = ['top', 'hottest', 'shows'];
+    return validTabs.includes(hash) ? hash : 'top';
+  }
 
   function sortByTop(artists) {
     return [...artists].sort((a, b) => {

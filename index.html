@@ -5,8 +5,19 @@
   <title>Asheville Music Chart</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link 
-  rel="stylesheet" 
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2CMRZC02S5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2CMRZC02S5', {
+      'send_page_view': false
+    });
+  </script>
+
+  <link
+  rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
   crossorigin="anonymous"
 >
@@ -35,8 +46,10 @@
   <script type="module">
     import { renderChart } from './js/chart.js';
     import { loadChartData } from './js/dataLoader.js';
+    import { initAnalytics } from './js/analytics.js';
 
     document.addEventListener('DOMContentLoaded', async () => {
+      initAnalytics();
       renderMainMenu(document.getElementById('main-action-menu'));
       renderMainHeader(document.getElementById('main-header'));
       try {
