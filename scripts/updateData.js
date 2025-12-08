@@ -86,7 +86,17 @@ function writeArchiveManifest(archiveDir) {
 
 // Function to fetch data for an artist
 async function fetchDataForArtist(artist, dateRanges) {
-  const { uuid, name, imageUrl, high_level_genre, specific_genre, spotifyUrl } = artist;
+  const {
+    uuid,
+    name,
+    imageUrl,
+    high_level_genre,
+    specific_genre,
+    spotifyUrl,
+    appleMusicUrl,
+    youtubeUrl,
+    tidalUrl,
+  } = artist;
   console.log(`Fetching data for artist: ${name} (UUID: ${uuid})`);
 
   // Construct API endpoint with date parameters
@@ -151,7 +161,19 @@ async function fetchDataForArtist(artist, dateRanges) {
 
 // Function to process API data
 function processData(artist, items, dateRanges) {
-  const { uuid, name, imageUrl, high_level_genre, specific_genre, spotifyUrl, concise_bio, detailed_bio } = artist;
+  const {
+    uuid,
+    name,
+    imageUrl,
+    high_level_genre,
+    specific_genre,
+    spotifyUrl,
+    appleMusicUrl,
+    youtubeUrl,
+    tidalUrl,
+    concise_bio,
+    detailed_bio,
+  } = artist;
 
   // Define week boundaries
   const week1Start = new Date(dateRanges.week1Start);
@@ -181,6 +203,9 @@ function processData(artist, items, dateRanges) {
       high_level_genre,
       specific_genre,
       spotifyUrl,
+      appleMusicUrl,
+      youtubeUrl,
+      tidalUrl,
       concise_bio,
       detailed_bio,
     },
