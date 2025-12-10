@@ -3,30 +3,26 @@
  * Handles all custom event tracking with environment detection
  */
 
-const GA4_CONFIG = {
-  production: 'G-2CMRZC02S5',  // Asheville Music Chart - Production
-  development: null  // Set to dev Measurement ID or null to disable locally
-};
-
-function getEnvironment() {
-  const hostname = window.location.hostname;
-  if (hostname === 'localhost' || hostname === '127.0.0.1' ||
-      hostname.startsWith('192.168.') || hostname.endsWith('.local')) {
-    return 'development';
-  }
-  if (hostname === 'www.ashevillemusicchart.com' ||
-      hostname === 'ashevillemusicchart.com') {
-    return 'production';
-  }
-  return 'development';
-}
+const MEASUREMENT_ID = 'G-2CMRZC02S5';
 
 function getMeasurementId() {
-  return GA4_CONFIG[getEnvironment()];
+  return MEASUREMENT_ID;
 }
 
 function isAnalyticsEnabled() {
-  return typeof window.gtag === 'function' && getMeasurementId() !== null;
+  return typeof window.gtag === 'function' && Boolean(getMeasurementId());
+}
+
+export function getAnalyticsStatus() {
+  const measurementId = getMeasurementId();
+  const hasGtag = typeof window.gtag === 'function';
+
+  return {
+    measurementId,
+    hasGtag,
+    dataLayerReady: Array.isArray(window.dataLayer),
+    enabled: hasGtag && Boolean(measurementId)
+  };
 }
 
 function sendEvent(eventName, eventParams = {}) {
@@ -43,12 +39,15 @@ function sendEvent(eventName, eventParams = {}) {
 }
 
 export function initAnalytics() {
-  const env = getEnvironment();
-  console.log(`[Analytics] Initializing in ${env} mode`);
+  console.log('[Analytics] Initializing');
 
   if (!getMeasurementId()) {
-    console.log('[Analytics] Disabled in development');
+    console.warn('[Analytics] Measurement ID missing, analytics disabled');
     return;
+  }
+
+  if (!window.dataLayer) {
+    console.warn('[Analytics] dataLayer not initialized—gtag may not be ready yet');
   }
 
   sendPageView(window.location.pathname + window.location.hash);
