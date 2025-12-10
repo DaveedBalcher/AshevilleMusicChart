@@ -59,9 +59,20 @@ export function initAnalytics() {
 
 function sendPageView(page) {
   const tab = getCurrentTab();
+
+  // Set page title based on tab
+  const tabTitles = {
+    'top': 'Asheville Music Chart - Top 10',
+    'hottest': 'Asheville Music Chart - Hottest',
+    'shows': 'Asheville Music Chart - Shows'
+  };
+
+  document.title = tabTitles[tab] || 'Asheville Music Chart';
+
   sendEvent('page_view', {
     page_location: window.location.href,
     page_path: page,
+    page_title: document.title,
     tab_name: tab,
     device_type: getDeviceType()
   });
