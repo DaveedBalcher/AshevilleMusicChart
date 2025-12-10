@@ -91,29 +91,27 @@ function getDeviceType() {
   return 'desktop';
 }
 
-// Priority Event 4: Tab View
-export function trackTabView(tabName, source = 'unknown') {
-  sendEvent('tab_view', {
+// Priority Event 4: Tab navigation
+export function trackTabNavigation(tabName, source = 'unknown') {
+  sendEvent('click_tab', {
     tab_name: tabName,
     navigation_source: source,
     device_type: getDeviceType()
   });
 }
 
-// Priority 1: Artist Click
-export function trackArtistClick(artistName, platform, rank, tab) {
-  sendEvent('artist_click', {
-    artist_name: artistName,
-    platform: platform,
-    artist_rank: rank,
+// Priority 2: Share
+export function trackShareVisibility(action, tab) {
+  const eventName = action === 'show' ? 'click_show_share' : 'click_hide_share';
+
+  sendEvent(eventName, {
     tab_name: tab,
     device_type: getDeviceType()
   });
 }
 
-// Priority 2: Share
-export function trackShare(method, tab) {
-  sendEvent('share', {
+export function trackShareCompletion(method, tab) {
+  sendEvent('click_shared', {
     method: method,
     content_type: 'chart',
     tab_name: tab,
@@ -123,7 +121,11 @@ export function trackShare(method, tab) {
 
 // Priority 5: Bio Toggle
 export function trackBioToggle(artistName, action, rank) {
-  sendEvent('bio_toggle', {
+  const eventName = action === 'expand'
+    ? 'click_show_artist_detail'
+    : 'click_hide_artist_detail';
+
+  sendEvent(eventName, {
     artist_name: artistName,
     action: action,
     artist_rank: rank,
@@ -133,7 +135,9 @@ export function trackBioToggle(artistName, action, rank) {
 
 // Priority 7: Info Toggle
 export function trackInfoToggle(action, tab) {
-  sendEvent('info_toggle', {
+  const eventName = action === 'show' ? 'click_show_info' : 'click_hide_info';
+
+  sendEvent(eventName, {
     action: action,
     tab_name: tab,
     device_type: getDeviceType()
@@ -142,9 +146,20 @@ export function trackInfoToggle(action, tab) {
 
 // Priority 6: External Navigation
 export function trackExternalNav(destination, url) {
-  sendEvent('external_navigation', {
+  sendEvent('click_external_navigation', {
     destination: destination,
     url: url,
+    device_type: getDeviceType()
+  });
+}
+
+// Music service links
+export function trackMusicServiceLink(artistName, platform, rank, tab) {
+  sendEvent('click_music_service', {
+    artist_name: artistName,
+    platform: platform,
+    artist_rank: rank,
+    tab_name: tab,
     device_type: getDeviceType()
   });
 }

@@ -2,7 +2,7 @@ import { renderArtistCells } from './artistCells.js';
 import { formatDate } from './dateFormatting.js';
 import { InlineAlert } from './inlineAlert.js';
 import { initRouter, navigateToTab } from './router.js';
-import { trackShare, trackInfoToggle, trackTabView } from './analytics.js';
+import { trackShareCompletion, trackShareVisibility, trackInfoToggle, trackTabNavigation } from './analytics.js';
 
 export function renderChart(container, data, options = {}) {
   container.innerHTML = `<div id="chart-items"></div>`;
@@ -211,6 +211,7 @@ export function renderChart(container, data, options = {}) {
       isSharing = true;
 
       const currentTab = getCurrentTabName();
+      trackShareVisibility('show', currentTab);
 
       const shareData = {
         title: 'Asheville Music Chart',
@@ -222,7 +223,7 @@ export function renderChart(container, data, options = {}) {
       if (navigator.share) {
         try {
           await navigator.share(shareData);
-          trackShare('web_share_api', currentTab);
+          trackShareCompletion('web_share_api', currentTab);
         } catch (err) {
           // User cancelled or error occurred
           if (err.name !== 'AbortError') {
@@ -230,12 +231,13 @@ export function renderChart(container, data, options = {}) {
           }
         } finally {
           isSharing = false;
+          trackShareVisibility('hide', currentTab);
         }
       } else {
         // Fallback: copy to clipboard
         try {
           await navigator.clipboard.writeText(window.location.href);
-          trackShare('clipboard', currentTab);
+          trackShareCompletion('clipboard', currentTab);
           // Show brief success feedback
           const originalHTML = button.innerHTML;
           button.innerHTML = '<i class="fas fa-check"></i>';
@@ -244,10 +246,12 @@ export function renderChart(container, data, options = {}) {
             button.innerHTML = originalHTML;
             button.classList.remove('share-success');
             isSharing = false;
+            trackShareVisibility('hide', currentTab);
           }, 1500);
         } catch (err) {
           console.log('Copy to clipboard failed:', err);
           isSharing = false;
+          trackShareVisibility('hide', currentTab);
         }
       }
     };
@@ -341,7 +345,7 @@ export function renderChart(container, data, options = {}) {
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
       const tabName = tab.getAttribute('data-tab');
-      trackTabView(tabName, 'desktop_tab');
+      trackTabNavigation(tabName, 'desktop_tab');
       navigateToTab(tabName);
     });
   });
@@ -349,7 +353,7 @@ export function renderChart(container, data, options = {}) {
   bottomNavItems.forEach(item => {
     item.addEventListener('click', () => {
       const tabName = item.getAttribute('data-tab');
-      trackTabView(tabName, 'bottom_nav');
+      trackTabNavigation(tabName, 'bottom_nav');
       navigateToTab(tabName);
     });
   });
