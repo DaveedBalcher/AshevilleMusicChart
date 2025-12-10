@@ -61,7 +61,7 @@ function renderMainMenu(container) {
                            link.classList.contains('feedback-button') ? 'give_feedback' : 'unknown';
 
         if (typeof window.gtag === 'function') {
-          window.gtag('event', 'external_navigation', {
+          window.gtag('event', 'click_external_navigation', {
             destination: destination,
             url: link.href,
             device_type: window.innerWidth <= 768 ? 'mobile' :

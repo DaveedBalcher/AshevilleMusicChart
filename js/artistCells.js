@@ -1,5 +1,5 @@
 import { getAnimationStartTime, getAnimatedValue, createAnimationController } from './streamAnimation.js';
-import { trackArtistClick, trackBioToggle } from './analytics.js';
+import { trackMusicServiceLink, trackBioToggle } from './analytics.js';
 
 export function renderArtistCells(container, artistsData, timestamp) {
   // Clean up any existing cells' animation controllers
@@ -229,7 +229,7 @@ class ArtistCell {
                         link.classList.contains('youtube-link-bio') ? 'youtube' :
                         link.classList.contains('tidal-link-bio') ? 'tidal' : 'unknown';
 
-        trackArtistClick(
+        trackMusicServiceLink(
           this.artistData.artist.name,
           platform,
           this.index + 1,
