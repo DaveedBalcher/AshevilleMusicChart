@@ -62,9 +62,9 @@ function sendPageView(page) {
 
   // Set page title based on tab
   const tabTitles = {
-    'top': 'Asheville Music Chart - Top 10',
-    'hottest': 'Asheville Music Chart - Hottest',
-    'shows': 'Asheville Music Chart - Shows'
+    'top': 'Top 10',
+    'hottest': 'Hottest',
+    'shows': 'Shows'
   };
 
   document.title = tabTitles[tab] || 'Asheville Music Chart';
