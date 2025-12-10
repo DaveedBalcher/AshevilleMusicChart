@@ -1,4 +1,5 @@
 import { getAnimationStartTime, getAnimatedValue, createAnimationController } from './streamAnimation.js';
+import { trackArtistClick, trackBioToggle } from './analytics.js';
 
 export function renderArtistCells(container, artistsData, timestamp) {
   // Clean up any existing cells' animation controllers
@@ -17,17 +18,27 @@ export function renderArtistCells(container, artistsData, timestamp) {
       return diff / currentWeek.totalListens;
   }));
 
+  // Get current tab for tracking
+  const currentTab = getCurrentTab();
+
   artistsData.forEach((artistData, index) => {
-      const cell = new ArtistCell(artistData, index, maxImprovement, timestamp);
+      const cell = new ArtistCell(artistData, index, maxImprovement, timestamp, currentTab);
       container.appendChild(cell.render());
       container._activeCells.push(cell);
   });
 }
 
+function getCurrentTab() {
+  const hash = window.location.hash.replace(/^#\/?/, '').toLowerCase();
+  const validTabs = ['top', 'hottest', 'shows'];
+  return validTabs.includes(hash) ? hash : 'top';
+}
+
 class ArtistCell {
-  constructor(artistData, index, maxImprovement, timestamp) {
+  constructor(artistData, index, maxImprovement, timestamp, currentTab) {
       this.artistData = artistData;
       this.index = index;
+      this.currentTab = currentTab;
       this.currentWeek = artistData.weeks[artistData.weeks.length - 1];
       this.previousWeek = artistData.weeks.length > 1 ?
           artistData.weeks[artistData.weeks.length - 2] : null;
@@ -155,6 +166,7 @@ class ArtistCell {
     // Setup bio toggle if bio exists
     if (hasBio) {
       this.setupBioToggle();
+      this.setupStreamingLinkTracking();
     }
 
       return cell;
@@ -184,6 +196,8 @@ class ArtistCell {
         toggleBtn.setAttribute('aria-label', 'Show artist bio');
         toggleBtn.querySelector('i').className = 'fas fa-plus';
 
+        trackBioToggle(this.artistData.artist.name, 'collapse', this.index + 1);
+
         setTimeout(() => {
           this.cellElement.classList.remove('bio-collapsing');
         }, 300);
@@ -195,11 +209,33 @@ class ArtistCell {
         toggleBtn.setAttribute('aria-label', 'Hide artist bio');
         toggleBtn.querySelector('i').className = 'fas fa-minus';
 
+        trackBioToggle(this.artistData.artist.name, 'expand', this.index + 1);
+
         // Show music service buttons after expand starts
         if (musicServiceLinks) {
           musicServiceLinks.classList.add('visible');
         }
       }
+    });
+  }
+
+  setupStreamingLinkTracking() {
+    const streamingLinks = this.cellElement.querySelectorAll('.music-service-link');
+
+    streamingLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        const platform = link.classList.contains('spotify-link-bio') ? 'spotify' :
+                        link.classList.contains('apple-link-bio') ? 'apple_music' :
+                        link.classList.contains('youtube-link-bio') ? 'youtube' :
+                        link.classList.contains('tidal-link-bio') ? 'tidal' : 'unknown';
+
+        trackArtistClick(
+          this.artistData.artist.name,
+          platform,
+          this.index + 1,
+          this.currentTab
+        );
+      });
     });
   }
 

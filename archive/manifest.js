@@ -1,4 +1,5 @@
 export const archiveManifest = [
+  { importPath: '../archive/data_2025-11-22T05-43-03-120Z.js', filename: 'data_2025-11-22T05-43-03-120Z.js' },
   { importPath: '../archive/data_2025-06-13T12-47-06-325Z.js', filename: 'data_2025-06-13T12-47-06-325Z.js' },
   { importPath: '../archive/data_2025-05-17T02-47-36-597Z.js', filename: 'data_2025-05-17T02-47-36-597Z.js' },
   { importPath: '../archive/data_2025-04-27T14-03-58-136Z.js', filename: 'data_2025-04-27T14-03-58-136Z.js' },

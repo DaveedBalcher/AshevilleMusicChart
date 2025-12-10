@@ -55,6 +55,20 @@ function renderMainMenu(container) {
     // Close menu when clicking a link
     menuLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
+        // Track external navigation
+        const destination = link.classList.contains('support-button') ? 'support_asheville' :
+                           link.classList.contains('recommend-button') ? 'recommend_artist' :
+                           link.classList.contains('feedback-button') ? 'give_feedback' : 'unknown';
+
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'external_navigation', {
+            destination: destination,
+            url: link.href,
+            device_type: window.innerWidth <= 768 ? 'mobile' :
+                        window.innerWidth <= 1024 ? 'tablet' : 'desktop'
+          });
+        }
+
         if (mainMenu) {
           mainMenu.classList.remove('menu-open');
         }

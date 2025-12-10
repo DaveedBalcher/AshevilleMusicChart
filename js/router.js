@@ -4,6 +4,8 @@
  * Provides URL routing for Top, Hottest, and Shows tabs
  */
 
+import { trackTabView } from './analytics.js';
+
 const VALID_TABS = ['top', 'hottest', 'shows'];
 const DEFAULT_TAB = 'top';
 
@@ -72,6 +74,7 @@ function initRouter(onTabChange) {
   // Handle hash changes (back/forward buttons, manual hash edits)
   const handleHashChange = () => {
     const tabName = getTabFromHash();
+    trackTabView(tabName, 'hash_change');
     onTabChange(tabName, false); // false = don't update hash (prevent loop)
   };
 

@@ -200,9 +200,15 @@ export function renderChart(container, data, options = {}) {
 
   function setupShareButton(button) {
     if (!button) return;
+    let isSharing = false;
+
     const handleShare = async (event) => {
       event.preventDefault();
       event.stopPropagation();
+
+      // Prevent double-click issues
+      if (isSharing) return;
+      isSharing = true;
 
       const currentTab = getCurrentTabName();
 
@@ -222,6 +228,8 @@ export function renderChart(container, data, options = {}) {
           if (err.name !== 'AbortError') {
             console.log('Share failed:', err);
           }
+        } finally {
+          isSharing = false;
         }
       } else {
         // Fallback: copy to clipboard
@@ -235,9 +243,11 @@ export function renderChart(container, data, options = {}) {
           setTimeout(() => {
             button.innerHTML = originalHTML;
             button.classList.remove('share-success');
+            isSharing = false;
           }, 1500);
         } catch (err) {
           console.log('Copy to clipboard failed:', err);
+          isSharing = false;
         }
       }
     };
@@ -330,13 +340,17 @@ export function renderChart(container, data, options = {}) {
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      navigateToTab(tab.getAttribute('data-tab'));
+      const tabName = tab.getAttribute('data-tab');
+      trackTabView(tabName, 'desktop_tab');
+      navigateToTab(tabName);
     });
   });
 
   bottomNavItems.forEach(item => {
     item.addEventListener('click', () => {
-      navigateToTab(item.getAttribute('data-tab'));
+      const tabName = item.getAttribute('data-tab');
+      trackTabView(tabName, 'bottom_nav');
+      navigateToTab(tabName);
     });
   });
 
