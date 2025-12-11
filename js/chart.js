@@ -84,14 +84,15 @@ export function renderChart(container, data, options = {}) {
   }
 
   const hasDisplayRange = Boolean(startDateIso && endDateIso);
-  const formattedStartDate = startDateIso ? formatDate(startDateIso) : '';
+  const displayDateIso = hasDisplayRange ? addDays(endDateIso, -1) : startDateIso;
+  const formattedDisplayDate = displayDateIso ? formatDate(displayDateIso) : '';
 
   // Banner for Top tab (same for desktop and mobile)
   const topBanner = hasDisplayRange
     ? `<div class="avl-top-banner">
       <i class="fas fa-trophy banner-icon"></i>
-      <h2 class="avl-banner-title">AVL Top 10</h2>
-      <p class="avl-banner-subtitle">Week of ${formattedStartDate}</p>
+      <h2 class="avl-banner-title">Top 10 Artists</h2>
+      <p class="avl-banner-subtitle">Streams counted through ${formattedDisplayDate}</p>
       <div class="avl-banner-buttons">
         <i class="fas fa-info-circle info-icon" role="button" tabindex="0" aria-label="Show ranking information"></i>
         <button class="share-button" aria-label="Share this chart">
@@ -101,7 +102,7 @@ export function renderChart(container, data, options = {}) {
     </div>`
     : `<div class="avl-top-banner">
       <i class="fas fa-trophy banner-icon"></i>
-      <h2 class="avl-banner-title">AVL Top 10</h2>
+      <h2 class="avl-banner-title">Top 10 Artists</h2>
       <p class="avl-banner-subtitle">Chart data is missing right now</p>
     </div>`;
 
@@ -109,8 +110,8 @@ export function renderChart(container, data, options = {}) {
   const hottestBanner = hasDisplayRange
     ? `<div class="avl-hottest-banner">
       <i class="fas fa-fire banner-icon"></i>
-      <h2 class="avl-banner-title">AVL Hottest</h2>
-      <p class="avl-banner-subtitle">Week of ${formattedStartDate}</p>
+      <h2 class="avl-banner-title">On the Rise</h2>
+      <p class="avl-banner-subtitle">Momentum tracked through ${formattedDisplayDate}</p>
       <div class="avl-banner-buttons">
         <i class="fas fa-info-circle info-icon" role="button" tabindex="0" aria-label="Show ranking information"></i>
         <button class="share-button" aria-label="Share this chart">
@@ -120,15 +121,15 @@ export function renderChart(container, data, options = {}) {
     </div>`
     : `<div class="avl-hottest-banner">
       <i class="fas fa-fire banner-icon"></i>
-      <h2 class="avl-banner-title">AVL Hottest</h2>
+      <h2 class="avl-banner-title">On the Rise</h2>
       <p class="avl-banner-subtitle">Chart data is missing right now</p>
     </div>`;
 
   // Banner for Shows tab (same for desktop and mobile)
   const showsBanner = `<div class="avl-shows-banner">
       <i class="fas fa-calendar-alt banner-icon"></i>
-      <h2 class="avl-banner-title">AVL Shows</h2>
-      <p class="avl-banner-subtitle">${currentMonth}</p>
+      <h2 class="avl-banner-title">Asheville Live</h2>
+      <p class="avl-banner-subtitle">Local show listings for ${currentMonth}</p>
     </div>`;
 
   const tabDescriptions = {
